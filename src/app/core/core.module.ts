@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AuthNavComponent } from './components/header/auth-nav/auth-nav.component';
+import { SharedModule } from '../shared/shared.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
@@ -10,10 +14,11 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent, FooterComponent, AuthNavComponent],
   imports: [
     CommonModule,
     HttpClientModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -22,6 +27,6 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
       },
     }),
   ],
-  exports: [TranslateModule],
+  exports: [TranslateModule, HeaderComponent, FooterComponent, SharedModule],
 })
 export class CoreModule {}

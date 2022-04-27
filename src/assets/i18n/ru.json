@@ -1,7 +1,11 @@
 {
-    "header": {
-        "lenguage": "ру",
-        "login": "войти",
-        "signup": "создать"
-    }
+  "header": {
+    "list": {
+      "welcome": "Главная",
+      "boards": "Доски"
+    },
+    "lenguage": "ру",
+    "login": "войти",
+    "signup": "создать"
+  }
 }

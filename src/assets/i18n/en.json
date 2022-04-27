@@ -1,7 +1,11 @@
 {
-    "header": {
-        "lenguage": "en",
-        "login": "login",
-        "signup": "sign up"
-    }
+  "header": {
+    "list": {
+      "welcome": "main",
+      "boards": "boards"
+    },
+    "lenguage": "en",
+    "login": "login",
+    "signup": "sign up"
+  }
 }

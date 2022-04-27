@@ -8,12 +8,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterModule } from '@angular/router';
+import { LogoComponent } from './components/logo/logo.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  declarations: [LogoComponent],
+  imports: [CommonModule, FormsModule, MatIconModule, RouterModule],
   exports: [
     FormsModule,
+    LogoComponent,
     ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
@@ -22,6 +27,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    RouterModule,
+    MatSlideToggleModule,
+    MatSelectModule,
   ],
 })
 export class SharedModule {}

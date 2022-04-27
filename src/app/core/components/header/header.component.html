@@ -1,0 +1,27 @@
+<header class="header" #header>
+  <div class="header__container">
+    <article class="header__left-part">
+      <app-logo></app-logo>
+      <nav class="header__nav">
+        <mat-select
+          class="header__lang-selection"
+          [(value)]="defaultLanguage"
+          (selectionChange)="setLenguage($event)"
+        >
+          <mat-option value="en">en</mat-option>
+          <mat-option value="ru">ru</mat-option>
+        </mat-select>
+        <ul class="header__list">
+          <li>
+            <a routerLink="/">{{ 'header.list.welcome' | translate }}</a>
+          </li>
+          <li>
+            <a routerLink="/boards">{{ 'header.list.boards' | translate }}</a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+
+    <app-auth-nav></app-auth-nav>
+  </div>
+</header>
