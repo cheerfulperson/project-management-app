@@ -1,0 +1,13 @@
+.auth-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+
+  &__line {
+    display: block;
+    height: 60%;
+    width: 1px;
+    background: white;
+  }
+}

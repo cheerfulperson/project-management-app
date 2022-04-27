@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './auth-nav.component.html',
   styleUrls: ['./auth-nav.component.scss'],
 })
-export class AuthNavComponent {}
+export class AuthNavComponent {
+  public isAuthorized: boolean = false;
+}

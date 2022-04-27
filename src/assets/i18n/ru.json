@@ -2,10 +2,14 @@
   "header": {
     "list": {
       "welcome": "Главная",
-      "boards": "Доски"
+      "boards": "Доски",
+      "createBoard": "Создать доску"
     },
-    "lenguage": "ру",
-    "login": "войти",
-    "signup": "создать"
+    "auth": {
+      "login": "войти",
+      "signup": "создать",
+      "editProfile": "Редактировать профиль",
+      "logout": "выйти"
+    }
   }
 }

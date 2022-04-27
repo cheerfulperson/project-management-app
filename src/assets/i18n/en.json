@@ -2,10 +2,14 @@
   "header": {
     "list": {
       "welcome": "main",
-      "boards": "boards"
+      "boards": "boards",
+      "createBoard": "create board"
     },
-    "lenguage": "en",
-    "login": "login",
-    "signup": "sign up"
+    "auth": {
+      "login": "login",
+      "signup": "sign up",
+      "editProfile": "edit profile",
+      "logout": "logout"
+    }
   }
 }
