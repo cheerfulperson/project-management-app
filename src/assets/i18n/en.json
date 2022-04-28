@@ -11,5 +11,21 @@
       "editProfile": "edit profile",
       "logout": "logout"
     }
+  },
+
+  "form": {
+    "name": "Name",
+    "login": "Login", 
+    "password": "Password",
+    "errors": {
+      "nameError": "Name is required",
+      "loginError": "Login is required",
+      "passwordError": "Password is required"
+    }
+    ,
+    "questions": {
+      "haveAccount": "Already have an account?",
+      "dontHaveAccount": "Don’t have an account?"
+    }
   }
 }
