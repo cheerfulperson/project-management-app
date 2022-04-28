@@ -1,0 +1,15 @@
+{
+  "header": {
+    "list": {
+      "welcome": "main",
+      "boards": "boards",
+      "createBoard": "create board"
+    },
+    "auth": {
+      "login": "login",
+      "signup": "sign up",
+      "editProfile": "edit profile",
+      "logout": "logout"
+    }
+  }
+}

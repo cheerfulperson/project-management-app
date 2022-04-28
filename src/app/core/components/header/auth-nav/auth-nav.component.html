@@ -1,0 +1,20 @@
+<div class="auth-nav">
+  <ng-template [ngIf]="isAuthorized">
+    <button mat-button class="auth-nav__button">
+      {{ 'header.auth.editProfile' | translate }}
+    </button>
+    <span class="auth-nav__line"></span>
+    <button mat-button color="warn" class="auth-nav__button">
+      {{ 'header.auth.logout' | translate }}
+    </button>
+  </ng-template>
+  <ng-template [ngIf]="!isAuthorized">
+    <button mat-button class="auth-nav__button">
+      {{ 'header.auth.login' | translate }}
+    </button>
+    <span class="auth-nav__line"></span>
+    <button mat-button class="auth-nav__button">
+      {{ 'header.auth.signup' | translate }}
+    </button>
+  </ng-template>
+</div>

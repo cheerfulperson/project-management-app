@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 14px;
+  font-family: 'Montserrat', sans-serif;
+  background: #122e58;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+a {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+h1::first-letter,
+h2::first-letter,
+h3::first-letter,
+a::first-letter,
+button::first-letter {
+  text-transform: capitalize;
+}

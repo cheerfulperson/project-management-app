@@ -1,0 +1,15 @@
+{
+  "header": {
+    "list": {
+      "welcome": "Главная",
+      "boards": "Доски",
+      "createBoard": "Создать доску"
+    },
+    "auth": {
+      "login": "войти",
+      "signup": "создать",
+      "editProfile": "Редактировать профиль",
+      "logout": "выйти"
+    }
+  }
+}
