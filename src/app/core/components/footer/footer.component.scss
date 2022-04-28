@@ -1,0 +1,25 @@
+.footer {
+    height: 50px;
+    background: black;
+    padding: 0 10px;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    &__block {
+        display: flex;
+        align-items: center;
+        font-weight: 300;
+        font-size: 14px;
+
+        p {
+            margin: 0 5px;
+        }
+    }
+}
