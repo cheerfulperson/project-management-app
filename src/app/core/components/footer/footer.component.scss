@@ -22,4 +22,22 @@
             margin: 0 5px;
         }
     }
+
+    &__buttom {
+        font-weight: 300;
+        padding: 2px 4px;
+
+        @media (max-width: 400px) {
+            min-width: 30px;
+        }
+    }
+
+    &__image {
+        width: 80px;
+        height: 40px;
+        @media (max-width: 400px) {
+            width: 60px;
+            height: 30px;
+        }
+    }
 }

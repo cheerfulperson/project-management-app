@@ -11,5 +11,13 @@
       "editProfile": "edit profile",
       "logout": "logout"
     }
+  },
+  "footer": {
+    "date": "by",
+    "names": {
+      "s": "Sergey",
+      "v": "Victor",
+      "e": "Egor"
+    }
   }
 }
