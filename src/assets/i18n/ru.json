@@ -11,5 +11,20 @@
       "editProfile": "Редактировать профиль",
       "logout": "выйти"
     }
+  },
+
+  "form": {
+    "name": "Имя",
+    "login": "Логин",
+    "password": "Пароль",
+    "errors": {
+      "nameError": "Имя является обязательным",
+      "loginError": "Логин является обязательным",
+      "passwordError": "Пароль является обязательным"
+    },
+    "questions": {
+      "haveAccount": "Уже есть аккаунт?",
+      "dontHaveAccount": "У вас нет аккаунта?"
+    }
   }
 }
