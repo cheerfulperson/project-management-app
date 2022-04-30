@@ -18,9 +18,15 @@
     "login": "Логин",
     "password": "Пароль",
     "errors": {
-      "nameError": "Имя является обязательным",
-      "loginError": "Логин является обязательным",
-      "passwordError": "Пароль является обязательным"
+      "requiredErrors": {
+        "nameError": "Имя является обязательным",
+        "loginError": "Логин является обязательным",
+        "passwordError": "Пароль является обязательным"
+      },
+      "otherErrors": {
+        "minLoginError": "Логин должен быть больше 3 букв",
+        "passwordError": "Ваш пароль слишком легок"
+      }
     },
     "questions": {
       "haveAccount": "Уже есть аккаунт?",

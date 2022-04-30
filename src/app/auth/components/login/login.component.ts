@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { numbers, regexp } from 'src/app/constants';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
   public loginForm: FormGroup = new FormGroup({
-    loginInput: new FormControl(),
-    passwordInput: new FormControl(),
+    loginInput: new FormControl(
+      '',
+      Validators.minLength(numbers.MinLoginLength)
+    ),
+    passwordInput: new FormControl(
+      '',
+      Validators.pattern(regexp.PasswordRegExp)
+    ),
   });
 }
