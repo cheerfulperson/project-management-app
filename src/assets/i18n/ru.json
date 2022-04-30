@@ -12,7 +12,6 @@
       "logout": "выйти"
     }
   },
-
   "form": {
     "name": "Имя",
     "login": "Логин",
@@ -26,5 +25,8 @@
       "haveAccount": "Уже есть аккаунт?",
       "dontHaveAccount": "У вас нет аккаунта?"
     }
+  },
+  "pageNotFound": {
+    "titleSmall": "Страница не найдена"
   }
 }
