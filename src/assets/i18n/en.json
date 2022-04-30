@@ -25,6 +25,7 @@
       },
       "otherErrors": {
         "minLoginError": "Login must be more than 3 letters",
+        "minNameError": "Name must be more than 2 letters",
         "passwordError": "Your password is too easy"
       }
     }

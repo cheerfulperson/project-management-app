@@ -5,7 +5,10 @@
       <mat-label>{{ 'form.name' | translate }}</mat-label>
       <input matInput formControlName="nameInput" required />
       <mat-error>{{
-        'form.errors.requiredErrors.nameError' | translate
+        (signUpForm.controls['nameInput'].hasError('minlength')
+          ? 'form.errors.otherErrors.minNameError'
+          : 'form.errors.requiredErrors.nameError'
+        ) | translate
       }}</mat-error>
     </mat-form-field>
 
@@ -13,7 +16,10 @@
       <mat-label>{{ 'form.login' | translate }}</mat-label>
       <input matInput formControlName="loginInput" required />
       <mat-error>{{
-        'form.errors.requiredErrors.loginError' | translate
+        (signUpForm.controls['loginInput'].hasError('minlength')
+          ? 'form.errors.otherErrors.minLoginError'
+          : 'form.errors.requiredErrors.loginError'
+        ) | translate
       }}</mat-error>
     </mat-form-field>
 
@@ -26,7 +32,10 @@
         required
       />
       <mat-error>{{
-        'form.errors.requiredErrors.passwordError' | translate
+        (signUpForm.controls['passwordInput'].hasError('pattern')
+          ? 'form.errors.otherErrors.passwordError'
+          : 'form.errors.requiredErrors.passwordError'
+        ) | translate
       }}</mat-error>
     </mat-form-field>
 

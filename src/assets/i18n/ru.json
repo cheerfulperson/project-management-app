@@ -25,6 +25,7 @@
       },
       "otherErrors": {
         "minLoginError": "Логин должен быть больше 3 букв",
+        "minNameError": "Имя должно быть больше 2 букв",
         "passwordError": "Ваш пароль слишком легок"
       }
     },
