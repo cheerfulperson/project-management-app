@@ -12,3 +12,8 @@ export enum numbers {
   MinNameLength = 3,
   MinLoginLength = 4,
 }
+
+export enum statusCodes {
+  Forbiden = 403,
+  PageNotFound = 404,
+}

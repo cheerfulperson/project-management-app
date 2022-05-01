@@ -1,0 +1,10 @@
+{
+  "/api/signin": {
+    "target": "http://localhost:4000/signin",
+    "secure": false,
+    "logLevel": "error",
+    "pathRewrite": {
+      "^/api/signin": ""
+    }
+  }
+}

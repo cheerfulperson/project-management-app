@@ -21,17 +21,23 @@
         required
       />
       <mat-error>{{
-        (loginForm.controls['passwordInput'].hasError('pattern')
-          ? 'form.errors.otherErrors.passwordError'
-          : 'form.errors.requiredErrors.passwordError'
-        ) | translate
+        'form.errors.requiredErrors.passwordError' | translate
       }}</mat-error>
     </mat-form-field>
 
-    <button class="submit-btn" mat-flat-button color="accent" type="submit">
+    <button
+      class="submit-btn"
+      mat-flat-button
+      color="accent"
+      type="submit"
+      (click)="login()"
+    >
       {{ 'header.auth.login' | translate }}
     </button>
   </form>
+
+  <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
   <p class="form__question">
     {{ 'form.questions.dontHaveAccount' | translate }}
   </p>
