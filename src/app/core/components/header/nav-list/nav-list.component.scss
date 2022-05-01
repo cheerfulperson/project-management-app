@@ -1,0 +1,47 @@
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: fit-content;
+  flex-wrap: wrap;
+  padding: 0 5px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-end;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  li {
+    margin: 0 8px;
+    text-transform: capitalize;
+    width: auto;
+
+    @media (max-width: 720px) {
+      width: 100%;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    a {
+      font-weight: 300;
+      font-size: 0.9em;
+      transition: 0.2s;
+
+      @media (max-width: 800px) {
+        font-size: 14px;
+      }
+      @media (max-width: 720px) {
+        font-weight: 400;
+        font-size: 22px;
+        text-shadow: 1px 1px 4px white;
+      }
+    }
+
+    &:hover a {
+      text-shadow: 2px 2px 4px white;
+    }
+  }
+}

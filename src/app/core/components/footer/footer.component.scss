@@ -3,6 +3,10 @@
     background: black;
     padding: 0 10px;
 
+    @media (max-width: 400px) {
+        padding: 0 10px;        
+    }
+
     &__container {
         display: flex;
         justify-content: space-between;
