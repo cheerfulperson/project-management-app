@@ -15,5 +15,6 @@ export enum numbers {
 
 export enum statusCodes {
   Forbiden = 403,
+  Conflict = 409,
   PageNotFound = 404,
 }

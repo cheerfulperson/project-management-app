@@ -39,10 +39,19 @@
       }}</mat-error>
     </mat-form-field>
 
-    <button class="submit-btn" mat-flat-button color="accent" type="submit">
+    <button
+      class="submit-btn"
+      mat-flat-button
+      color="accent"
+      type="submit"
+      (click)="signUp()"
+    >
       {{ 'header.auth.signup' | translate }}!
     </button>
   </form>
+
+  <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
   <p class="form__question">{{ 'form.questions.haveAccount' | translate }}</p>
   <button mat-button class="form__link" routerLink="/auth/login">
     {{ 'header.auth.login' | translate }}!
