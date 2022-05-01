@@ -18,6 +18,7 @@
     margin: 0 8px;
     text-transform: capitalize;
     width: auto;
+    transition: 0.2s;
 
     @media (max-width: 720px) {
       width: 100%;
@@ -42,6 +43,10 @@
 
     &:hover a {
       text-shadow: 2px 2px 4px white;
+    }
+
+    &:hover {
+        margin-top: 2px;
     }
   }
 }
