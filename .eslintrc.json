@@ -167,6 +167,13 @@
           }
         ]
       }
+    },
+    {
+      "files": ["*.scss"],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:prettier/recommended"
+      ]
     }
   ]
 }

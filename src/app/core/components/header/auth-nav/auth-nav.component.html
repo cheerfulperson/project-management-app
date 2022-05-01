@@ -15,11 +15,11 @@
     </button>
   </ng-template>
   <ng-template [ngIf]="!isAuthorized">
-    <button mat-button class="auth-nav__button">
+    <button mat-button class="auth-nav__button" routerLink="/auth/login">
       {{ 'header.auth.login' | translate }}
     </button>
     <span class="auth-nav__line"></span>
-    <button mat-button class="auth-nav__button">
+    <button mat-button class="auth-nav__button" routerLink="/auth/sign-up">
       {{ 'header.auth.signup' | translate }}
     </button>
   </ng-template>
