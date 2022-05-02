@@ -1,1 +1,22 @@
-<footer class="footer"></footer>
+<footer class="footer">
+  <article class="footer__container">
+    <div class="footer__block">
+      <mat-icon>copyright</mat-icon>
+      <p>2022 {{ 'footer.date' | translate }}</p>
+      <a
+        mat-button
+        class="footer__buttom"
+        *ngFor="let item of githubs"
+        [href]="[item['link']]"
+        >{{ item['name'] | translate }}</a
+      >
+    </div>
+    <a href="https://rs.school/angular/" class="footer__a">
+      <img
+        class="footer__image"
+        src="../../../../assets/svg/rs_school_js.svg"
+        alt="rss"
+      />
+    </a>
+  </article>
+</footer>

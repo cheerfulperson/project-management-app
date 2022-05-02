@@ -1,13 +1,14 @@
 .header {
-  position: sticky;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  top: 0;
   background: #000000;
   height: 65px;
-  box-shadow: 0 2px 5px #ffffff;
-  padding: 0 10px;
+  border-bottom: 3px solid #c84b31;
   transition: 0.3s height;
+  z-index: 100;
 
   &__container {
     display: flex;
@@ -32,29 +33,49 @@
     width: 40px;
     font-size: 16px;
     margin-left: 40px;
+
+    @media (max-width: 800px) {
+      margin-left: 20px;
+    }
   }
 
   &__list {
-    padding: 0 5px;
     margin-left: 25px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: fit-content;
-    li {
-      margin: 0 8px;
-      text-transform: capitalize;
-      width: auto;
 
-      a {
-        font-weight: 300;
-        font-size: 0.9em;
-        transition: 0.2s;
-      }
+    @media (max-width: 800px) {
+      margin-left: 10px;
+    }
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
 
-      &:hover a {
-        text-shadow: 1px 1px 4px white;
-      }
+  &__auth-nav {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    display: none;
+    @media (max-width: 720px) {
+      display: block;
+    }
+  }
+
+  &__panel {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    padding-top: 80px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    overflow-x: auto;
+    background: #000000;
+
+    @media (max-width: 720px) {
+      display: block;
     }
   }
 }
