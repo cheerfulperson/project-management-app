@@ -11,22 +11,22 @@
           <mat-option value="en">en</mat-option>
           <mat-option value="ru">ru</mat-option>
         </mat-select>
-        <ul class="header__list">
-          <li>
-            <a routerLink="/">{{ 'header.list.welcome' | translate }}</a>
-          </li>
-          <li>
-            <a routerLink="/boards">{{ 'header.list.boards' | translate }}</a>
-          </li>
-          <li>
-            <a routerLink="/create-board">{{
-              'header.list.createBoard' | translate
-            }}</a>
-          </li>
-        </ul>
+        <app-nav-list class="header__list"></app-nav-list>
       </nav>
     </article>
 
+    <app-auth-nav class="header__auth-nav"></app-auth-nav>
+    <button
+      mat-icon-button
+      aria-label="Menu icon"
+      class="header__menu-icon"
+      (click)="openPanel()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="header__panel" [@expandedPanel]="state">
     <app-auth-nav></app-auth-nav>
+    <app-nav-list></app-nav-list>
   </div>
 </header>

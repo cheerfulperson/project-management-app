@@ -12,7 +12,6 @@
       "logout": "logout"
     }
   },
-
   "form": {
     "name": "Name",
     "login": "Login", 
@@ -33,6 +32,14 @@
     "questions": {
       "haveAccount": "Already have an account?",
       "dontHaveAccount": "Don’t have an account?"
+    }
+  },
+  "footer": {
+    "date": "by",
+    "names": {
+      "s": "Sergey",
+      "v": "Victor",
+      "e": "Egor"
     }
   }
 }

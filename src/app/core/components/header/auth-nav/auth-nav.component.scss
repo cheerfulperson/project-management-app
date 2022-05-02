@@ -10,4 +10,15 @@
     width: 1px;
     background: white;
   }
+
+  &__icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+  }
+
+  &__name {
+      margin: 0 8px;
+      font-size: 14px;
+  }
 }
