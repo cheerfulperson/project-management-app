@@ -12,6 +12,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from './components/logo/logo.component';
 import { MatSelectModule } from '@angular/material/select';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [LogoComponent],
@@ -30,6 +31,7 @@ import { MatSelectModule } from '@angular/material/select';
     RouterModule,
     MatSlideToggleModule,
     MatSelectModule,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

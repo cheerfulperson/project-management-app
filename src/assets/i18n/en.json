@@ -27,6 +27,10 @@
       "dontHaveAccount": "Don’t have an account?"
     }
   },
+  "board": {
+    "title": "Board",
+    "createBtn": "Add new column"
+  },
   "footer": {
     "date": "by",
     "names": {
