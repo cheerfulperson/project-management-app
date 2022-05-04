@@ -28,15 +28,11 @@
         "minNameError": "Name must be more than 2 letters",
         "passwordError": "Your password is too easy"
       }
-    }
-    ,
+    },
     "questions": {
       "haveAccount": "Already have an account?",
       "dontHaveAccount": "Don’t have an account?"
     }
-  },
-  "pageNotFound": {
-    "titleSmall": "Page not found"
   },
   "footer": {
     "date": "by",
@@ -45,4 +41,8 @@
       "v": "Victor",
       "e": "Egor"
     }
+  },
+  "pageNotFound": {
+    "titleSmall": "Page not found"
+  }
 }
