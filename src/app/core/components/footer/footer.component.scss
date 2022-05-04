@@ -1,6 +1,47 @@
 .footer {
-  background: #000000;
-  height: 65px;
-  box-shadow: 0 -2px 5px #ffffff;
-  transition: 0.3s height;
+  height: 50px;
+  background: black;
+  padding: 0 10px;
+
+  @media (max-width: 400px) {
+    padding: 0 10px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+
+    p {
+      margin: 0 5px;
+    }
+  }
+
+  &__buttom {
+    font-weight: 300;
+    padding: 2px 4px;
+
+    @media (max-width: 400px) {
+      min-width: 30px;
+    }
+  }
+
+  &__image {
+    width: 80px;
+    height: 40px;
+    @media (max-width: 400px) {
+      width: 60px;
+      height: 30px;
+    }
+  }
 }

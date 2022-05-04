@@ -12,14 +12,29 @@
       "logout": "выйти"
     }
   },
+  "footer": {
+    "date": "",
+    "names": {
+      "s": "Сергей",
+      "v": "Виктор",
+      "e": "Егор"
+    }
+    },
   "form": {
     "name": "Имя",
     "login": "Логин",
     "password": "Пароль",
     "errors": {
-      "nameError": "Имя является обязательным",
-      "loginError": "Логин является обязательным",
-      "passwordError": "Пароль является обязательным"
+      "requiredErrors": {
+        "nameError": "Имя является обязательным",
+        "loginError": "Логин является обязательным",
+        "passwordError": "Пароль является обязательным"
+      },
+      "otherErrors": {
+        "minLoginError": "Логин должен быть больше 3 букв",
+        "minNameError": "Имя должно быть больше 2 букв",
+        "passwordError": "Ваш пароль слишком легок"
+      }
     },
     "questions": {
       "haveAccount": "Уже есть аккаунт?",

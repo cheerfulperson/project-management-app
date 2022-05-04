@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   home: '',
   auth: 'auth',
+  basicUrl: "https://project-management-app-db.herokuapp.com"
 };
 
 /*
