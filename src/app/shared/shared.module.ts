@@ -12,13 +12,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from './components/logo/logo.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
-  declarations: [LogoComponent],
-  imports: [CommonModule, FormsModule, MatIconModule, RouterModule],
+  declarations: [LogoComponent, ConfirmationModalComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconModule,
+    RouterModule,
+    MatButtonModule,
+  ],
   exports: [
     FormsModule,
     LogoComponent,
+    ConfirmationModalComponent,
     ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
