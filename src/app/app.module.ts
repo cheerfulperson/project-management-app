@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserInterceptor } from './auth/interceptors/user.interceptor';
 import { CoreModule } from './core/core.module';
+import { ProjectManagementClientModule } from './project-management-client/project-management-client.module';
 import { ApiService } from './core/services/api.service';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ApiService } from './core/services/api.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+    ProjectManagementClientModule,
   ],
   providers: [
     ApiService,

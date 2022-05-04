@@ -14,9 +14,10 @@
   },
   "form": {
     "name": "Name",
-    "login": "Login", 
+    "login": "Login",
     "password": "Password",
     "errors": {
+
       "requiredErrors": {
         "nameError": "Name is required",
         "loginError": "Login is required",
@@ -34,6 +35,9 @@
       "dontHaveAccount": "Don’t have an account?"
     }
   },
+  "pageNotFound": {
+    "titleSmall": "Page not found"
+  },
   "footer": {
     "date": "by",
     "names": {
@@ -41,5 +45,4 @@
       "v": "Victor",
       "e": "Egor"
     }
-  }
 }

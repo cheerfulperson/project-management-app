@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthNavComponent } from './components/header/auth-nav/auth-nav.component';
 import { SharedModule } from '../shared/shared.module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NavListComponent } from './components/header/nav-list/nav-list.component';
 
 // AoT requires an exported function for factories
@@ -19,6 +20,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
     HeaderComponent,
     FooterComponent,
     AuthNavComponent,
+    PageNotFoundComponent,
     NavListComponent,
   ],
   imports: [
