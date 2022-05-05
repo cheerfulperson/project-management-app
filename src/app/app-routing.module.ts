@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/typedef */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './project-management-app/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
