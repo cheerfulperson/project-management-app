@@ -9,6 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "npx eslint \"src/**/*.{ts,tsx,html,scss}\" --fix",
+    "check": "npx eslint \"src/**/*.{ts,tsx,html,scss}\"",
     "format": "npx prettier \"src/**/*.{ts,tsx,html,scss}\" --write"
   },
   "private": true,
