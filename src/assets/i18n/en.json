@@ -27,10 +27,17 @@
       "dontHaveAccount": "Don’t have an account?"
     }
   },
+
   "board": {
     "title": "Board",
-    "createBtn": "Add new column"
+    "createBtn": "Add new column",
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Change"
+    },
+    "addTask": "Add task"
   },
+
   "footer": {
     "date": "by",
     "names": {
