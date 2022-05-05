@@ -14,6 +14,7 @@
         *ngFor="let item of columns"
         [columnInfo]="item"
         [tasks]="item.tasks"
+        (deleteCol)="deleteColumn($event)"
       ></app-column>
     </article>
     <button mat-button class="board__button">

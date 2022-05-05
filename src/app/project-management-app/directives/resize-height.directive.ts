@@ -1,5 +1,5 @@
 import {
-  AfterContentChecked,
+  AfterViewChecked,
   Directive,
   ElementRef,
   HostListener,
@@ -9,7 +9,7 @@ import {
 @Directive({
   selector: '[appResizeHeight]',
 })
-export class ResizeHeightDirective implements AfterContentChecked {
+export class ResizeHeightDirective implements AfterViewChecked {
   @Input() public parentClass: string = '';
 
   public constructor(private el?: ElementRef<HTMLElement>) {}
@@ -18,7 +18,7 @@ export class ResizeHeightDirective implements AfterContentChecked {
     this.resize();
   }
 
-  public ngAfterContentChecked(): void {
+  public ngAfterViewChecked(): void {
     this.resize();
   }
 
@@ -27,10 +27,9 @@ export class ResizeHeightDirective implements AfterContentChecked {
       this.el?.nativeElement.closest(`.${this.parentClass}`);
     if (!parent || !this.el) return;
 
+    const minHeight: number = this.getMinHeight();
     const parentHeight: number = parseFloat(getComputedStyle(parent).height);
-    const elemHeight: number = this.getChildrenHeight() + Number('96');
-
-    const minHeight: number = 135;
+    const elemHeight: number = this.getChildrenHeight() + minHeight;
     if (parentHeight - elemHeight >= 0) {
       this.el.nativeElement.style.height = `fit-content`;
     } else {
@@ -51,5 +50,18 @@ export class ResizeHeightDirective implements AfterContentChecked {
     const sum: number =
       children[0].clientHeight + 2 * (childMargin + childPadding);
     return children[0] ? children.length * sum : 0;
+  }
+
+  private getMinHeight(): number {
+    const parent: HTMLElement | null | undefined =
+      this.el?.nativeElement.closest('.column');
+    if (!parent) return 0;
+
+    const constHeight: number =
+      window.innerWidth < parent.scrollWidth ? Number('121') : Number('111');
+    const title: HTMLElement | null = parent.querySelector('.column__title');
+    return title
+      ? parseFloat(getComputedStyle(title).height) + constHeight
+      : constHeight;
   }
 }
