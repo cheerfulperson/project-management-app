@@ -13,6 +13,16 @@
     }
   },
 
+  "board": {
+    "title": "Доска",
+    "createBtn": "Добавить новую колонку",
+    "buttons": {
+      "cancel": "Отмена",
+      "submit": "Изменить"
+    },
+    "addTask": "Добавить задание"
+  },
+
   "form": {
     "name": "Имя",
     "login": "Логин",
@@ -34,6 +44,7 @@
       "dontHaveAccount": "У вас нет аккаунта?"
     }
   },
+
   "footer": {
     "date": "",
     "names": {

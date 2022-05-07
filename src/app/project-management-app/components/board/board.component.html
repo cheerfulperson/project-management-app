@@ -1,0 +1,24 @@
+<section class="board" *ngIf="board">
+  <article class="board__header">
+    <p class="board__text">{{ 'board.title' | translate }}:</p>
+    <input class="board__title" [value]="board.title" />
+  </article>
+  <article
+    class="board__body"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="dropColumn($event)"
+  >
+    <article class="board__columns" cdkDropListGroup>
+      <app-column
+        *ngFor="let item of columns"
+        [columnInfo]="item"
+        [tasks]="item.tasks"
+        (deleteCol)="deleteColumn($event)"
+      ></app-column>
+    </article>
+    <button mat-button class="board__button">
+      + {{ 'board.createBtn' | translate }}
+    </button>
+  </article>
+</section>

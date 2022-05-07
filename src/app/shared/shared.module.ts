@@ -12,6 +12,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { LogoComponent } from './components/logo/logo.component';
 import { MatSelectModule } from '@angular/material/select';
+import { TranslateModule } from '@ngx-translate/core';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     RouterModule,
     MatSlideToggleModule,
     MatSelectModule,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

@@ -12,6 +12,7 @@
       "logout": "logout"
     }
   },
+
   "form": {
     "name": "Name",
     "login": "Login",
@@ -31,9 +32,24 @@
     },
     "questions": {
       "haveAccount": "Already have an account?",
-      "dontHaveAccount": "Don’t have an account?"
+      "dontHaveAccount": "Don`t have an account?"
     }
   },
+
+  "board": {
+    "title": "Board",
+    "createBtn": "Add new column",
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Change"
+    },
+    "addTask": "Add task"
+  },
+
+  "pageNotFound": {
+    "titleSmall": "Page not found"
+  },
+
   "footer": {
     "date": "by",
     "names": {
@@ -41,8 +57,5 @@
       "v": "Victor",
       "e": "Egor"
     }
-  },
-  "pageNotFound": {
-    "titleSmall": "Page not found"
   }
 }
