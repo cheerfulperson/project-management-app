@@ -6,9 +6,13 @@
   ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
-        "project": ["tsconfig.json"],
+        "project": [
+          "tsconfig.json"
+        ],
         "createDefaultProgram": true
       },
       "extends": [
@@ -50,19 +54,27 @@
           "error",
           {
             "selector": "class",
-            "format": ["PascalCase"],
+            "format": [
+              "PascalCase"
+            ],
             "leadingUnderscore": "forbid",
             "trailingUnderscore": "forbid"
           },
           {
             "selector": "variable",
-            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "format": [
+              "camelCase",
+              "PascalCase",
+              "UPPER_CASE"
+            ],
             "leadingUnderscore": "allow",
             "trailingUnderscore": "allow"
           },
           {
             "selector": "enumMember",
-            "format": ["PascalCase"]
+            "format": [
+              "PascalCase"
+            ]
           }
         ],
         "@typescript-eslint/typedef": [
@@ -78,7 +90,9 @@
             "variableDeclarationIgnoreFunction": true
           }
         ],
-        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-shadow": [
+          "error"
+        ],
         "arrow-body-style": "off",
         "curly": "off",
         "guard-for-in": "off",
@@ -132,17 +146,28 @@
         "@typescript-eslint/no-var-requires": "error",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/promise-function-async": "error",
-        "brace-style": ["error", "1tbs"],
+        "brace-style": [
+          "error",
+          "1tbs"
+        ],
         "id-blacklist": "off",
         "id-match": "off",
-        "max-lines": ["error", 500],
+        "max-lines": [
+          "error",
+          500
+        ],
         "no-duplicate-case": "error",
         "no-empty": "error",
         "no-invalid-this": "error",
         "no-magic-numbers": [
           "error",
           {
-            "ignore": [-1, 0, 1, 2]
+            "ignore": [
+              -1,
+              0,
+              1,
+              2
+            ]
           }
         ],
         "no-multiple-empty-lines": "error",
@@ -153,7 +178,9 @@
       }
     },
     {
-      "files": ["*.html"],
+      "files": [
+        "*.html"
+      ],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:prettier/recommended"
@@ -169,10 +196,20 @@
       }
     },
     {
-      "files": ["*.scss"],
+      "files": [
+        "*.scss"
+      ],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:prettier/recommended"
+      ]
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:ngrx/recommended"
       ]
     }
   ]
