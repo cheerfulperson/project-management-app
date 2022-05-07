@@ -2,12 +2,12 @@
   <li>
     <a routerLink="/">{{ 'header.list.welcome' | translate }}</a>
   </li>
-  <li>
+  <li *ngIf="isAuthorized | async">
     <a routerLink="/boards">{{ 'header.list.boards' | translate }}</a>
   </li>
-  <li>
-    <a routerLink="/create-board">{{
-      'header.list.createBoard' | translate
-    }}</a>
+  <li *ngIf="isAuthorized | async">
+    <a routerLink="/create-board">
+      {{ 'header.list.createBoard' | translate }}</a
+    >
   </li>
 </ul>

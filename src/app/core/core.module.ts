@@ -9,7 +9,6 @@ import { AuthNavComponent } from './components/header/auth-nav/auth-nav.componen
 import { SharedModule } from '../shared/shared.module';
 import { NavListComponent } from './components/header/nav-list/nav-list.component';
 import { StoreModule } from '@ngrx/store';
-import { sessionReducers } from '../ngrx/reducers/session.reducers';
 import { appReducers } from '../ngrx/reducers/app.reducers';
 import { SessionService } from './services/session.service';
 import { EffectsModule } from '@ngrx/effects';
@@ -39,7 +38,7 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
       },
     }),
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([SessionEffects])
+    EffectsModule.forRoot([SessionEffects]),
   ],
   exports: [TranslateModule, HeaderComponent, FooterComponent, SharedModule],
   providers: [SessionService],

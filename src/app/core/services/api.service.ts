@@ -14,13 +14,11 @@ import { Observable } from 'rxjs';
 export class ApiService {
   public constructor(private httpClient: HttpClient) {}
 
-  public login(userData: LoginUserModel): Observable<{
-    token: string;
-  }> {
-    return this.httpClient.post<LoginResponseModel>('/api/signin', userData);
+  public login(userData: LoginUserModel): Observable<LoginResponseModel> {
+    return this.httpClient.post<LoginResponseModel>('/signin', userData);
   }
 
   public signUp(userData: SignUpUserModel): Observable<SignUpResponseModel> {
-    return this.httpClient.post<SignUpResponseModel>('/api/signup', userData);
+    return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 }

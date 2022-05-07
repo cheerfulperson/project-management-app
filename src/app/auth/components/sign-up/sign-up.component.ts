@@ -5,8 +5,10 @@ import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 
 import { numbers, regexp, statusCodes } from 'src/app/constants';
-import { SignUpUserModel } from '../../models/user.model';
+import { LoginResponseModel, SignUpUserModel } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { Store } from '@ngrx/store';
+import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
 
 @Component({
   selector: 'app-sign-up',
@@ -30,7 +32,8 @@ export class SignUpComponent {
 
   public constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private store: Store
   ) {}
 
   public signUp(): void {
@@ -60,10 +63,14 @@ export class SignUpComponent {
       .subscribe(() => {
         this.authService
           .login({ login: user.login, password: user.password })
-          .subscribe((loginValue: { token: string }) => {
-            localStorage.setItem('isUserLoginIn', JSON.stringify(true));
-            localStorage.setItem('token', loginValue.token);
-            this.router.navigateByUrl(''); // TODO: navigate to main page
+          .subscribe(({ token }: LoginResponseModel) => {
+            const action: AddUserSession = new AddUserSession({
+              name: user.name,
+              id: '123456',
+              token: token,
+            });
+            this.store.dispatch(action);
+            this.router.navigateByUrl('');
           });
       });
   }

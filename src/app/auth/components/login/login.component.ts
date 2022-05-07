@@ -2,9 +2,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { catchError } from 'rxjs';
 
 import { numbers, statusCodes } from 'src/app/constants';
+import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
+import { LoginResponseModel } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -25,7 +28,8 @@ export class LoginComponent {
 
   public constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private store: Store
   ) {}
 
   public login(): void {
@@ -43,10 +47,14 @@ export class LoginComponent {
             throw err.error.message;
           })
         )
-        .subscribe((value: { token: string }) => {
-          localStorage.setItem('isUserLoginIn', JSON.stringify(true));
-          localStorage.setItem('token', value.token);
-          this.router.navigateByUrl(''); // TODO: navigate to main page
+        .subscribe(({ token }: LoginResponseModel) => {
+          const action: AddUserSession = new AddUserSession({
+            name: 'Name',
+            id: '123456',
+            token: token,
+          });
+          this.store.dispatch(action);
+          this.router.navigateByUrl('');
         });
     }
   }

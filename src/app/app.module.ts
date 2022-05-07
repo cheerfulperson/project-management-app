@@ -7,10 +7,6 @@ import { AppComponent } from './app.component';
 import { UserInterceptor } from './auth/interceptors/user.interceptor';
 import { CoreModule } from './core/core.module';
 import { ApiService } from './core/services/api.service';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { SessionEffects } from './ngrx/effects/session.effects';
-import { appReducers } from './ngrx/reducers/app.reducers';
 
 @NgModule({
   declarations: [AppComponent],
