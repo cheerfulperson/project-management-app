@@ -53,6 +53,7 @@ export class LoginComponent {
             id: '123456',
             token: token,
           });
+          console.log(token);
           this.store.dispatch(action);
           this.router.navigateByUrl('');
         });

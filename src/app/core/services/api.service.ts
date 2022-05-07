@@ -7,6 +7,10 @@ import {
   SignUpUserModel,
 } from 'src/app/auth/models/user.model';
 import { Observable } from 'rxjs';
+import {
+  Board,
+  CreateBoardDto,
+} from 'src/app/project-management-app/models/board.model';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +24,9 @@ export class ApiService {
 
   public signUp(userData: SignUpUserModel): Observable<SignUpResponseModel> {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
+  }
+
+  public createBoard(board: CreateBoardDto): Observable<Board> {
+    return this.httpClient.post<Board>('boards', board);
   }
 }
