@@ -1,6 +1,6 @@
 <div class="auth-nav">
   <ng-container *ngIf="isAuthorized; else templateA">
-    <p class="auth-nav__name" #name></p>
+    <p class="auth-nav__name" #name>{{ userName }}</p>
     <img
       class="auth-nav__icon"
       src="../../../../../assets/images/icon.png"

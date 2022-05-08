@@ -7,7 +7,10 @@ import { catchError } from 'rxjs';
 
 import { numbers, statusCodes } from 'src/app/constants';
 import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
-import { LoginResponseModel } from '../../models/user.model';
+import {
+  LoginResponseModel,
+  SignUpResponseModel,
+} from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -47,17 +50,24 @@ export class LoginComponent {
             throw err.error.message;
           })
         )
-        .subscribe(({ token }: LoginResponseModel) => {
-          const action: AddUserSession = new AddUserSession({
-            name: 'Name',
-            id: '123456',
-            token: token,
-          });
-          console.log(token);
-          this.store.dispatch(action);
-          this.router.navigateByUrl('');
-        });
+        .subscribe(({ token }: LoginResponseModel) =>
+          this.createUserSession(token)
+        );
     }
+  }
+
+  private createUserSession(token: string): void {
+    this.authService
+      .getUserByLogin(this.loginForm.controls['loginInput'].value, token)
+      .subscribe((data: SignUpResponseModel) => {
+        const action: AddUserSession = new AddUserSession({
+          name: data.name,
+          id: data.id,
+          token: token,
+        });
+        this.store.dispatch(action);
+        this.router.navigateByUrl('');
+      });
   }
 
   private showErrorMessage(message: string): void {
