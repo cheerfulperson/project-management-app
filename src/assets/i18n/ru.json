@@ -45,6 +45,19 @@
     }
   },
 
+  "mainPage": {
+    "title": "Доски",
+    "createForm": {
+      "title": "Создать новую доску",
+      "inputTitle": "Введите название доски",
+      "errorMessage": "Пожалуйста, введите название",
+      "buttons": {
+        "create": "Создать",
+        "cancel": "Отмена"
+      }
+    }
+  },
+
   "footer": {
     "date": "",
     "names": {

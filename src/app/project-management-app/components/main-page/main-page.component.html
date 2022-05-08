@@ -1,12 +1,13 @@
 <section class="main-page">
-  <h2 class="main-page__title">Boards</h2>
+  <h2 class="main-page__title">{{ 'mainPage.title' | translate }}</h2>
   <div class="main-page__boards-list">
     <div *ngFor="let board of boards">
       <app-board-item [board]="board"></app-board-item>
     </div>
+
     <div class="create-board">
       <button class="create-board__btn" (click)="toggleForm()">
-        Create new board
+        {{ 'mainPage.createForm.title' | translate }}
       </button>
 
       <form
@@ -14,24 +15,30 @@
         class="create-board__form"
         *ngIf="isFormActive"
       >
-        <h2 class="create-new-board-form__title">Create board</h2>
+        <h2 class="create-new-board-form__title">
+          {{ 'mainPage.createForm.title' | translate }}
+        </h2>
         <mat-form-field>
-          <mat-label>Enter board title:</mat-label>
+          <mat-label>{{
+            'mainPage.createForm.inputTitle' | translate
+          }}</mat-label>
           <input
             matInput
             autocomplete="off"
             type="text"
             formControlName="boardTitleInput"
           />
-          <mat-error>Please, enter the title</mat-error>
+          <mat-error>{{
+            'mainPage.createForm.errorMessage' | translate
+          }}</mat-error>
         </mat-form-field>
 
         <div class="create-board__form__btns">
           <button mat-flat-button color="accent" (click)="toggleForm()">
-            Cancel
+            {{ 'mainPage.createForm.buttons.cancel' | translate }}
           </button>
           <button mat-flat-button color="accent" (click)="createBoard()">
-            Create
+            {{ 'mainPage.createForm.buttons.create' | translate }}
           </button>
         </div>
       </form>

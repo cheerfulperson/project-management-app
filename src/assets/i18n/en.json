@@ -36,6 +36,19 @@
     }
   },
 
+  "mainPage": {
+    "title": "Boards",
+    "createForm": {
+      "title": "Create new board",
+      "inputTitle": "Enter board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Create",
+        "cancel": "Cancel"
+      }
+    }
+  },
+
   "board": {
     "title": "Board",
     "createBtn": "Add new column",
