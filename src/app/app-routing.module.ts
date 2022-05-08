@@ -5,16 +5,16 @@ import { PageNotFoundComponent } from './project-management-app/components/page-
 
 const routes: Routes = [
   {
+    path: 'auth',
+    loadChildren: async () =>
+      import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
     path: '',
     loadChildren: async () =>
       import('./project-management-app/project-management-app.module').then(
         (m) => m.ProjectManagementAppModule
       ),
-  },
-  {
-    path: 'auth',
-    loadChildren: async () =>
-      import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: '**',

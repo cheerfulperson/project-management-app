@@ -33,10 +33,10 @@ export class HeaderComponent {
   }
 
   @HostListener('window:scroll', ['$event']) public setSticky(): void {
-    if (window.scrollY <= Number('50')) {
+    if (window.scrollY === 0) {
       (this.header?.nativeElement as HTMLElement).style.height = '65px';
     }
-    if (window.scrollY > Number('65')) {
+    if (window.scrollY > 0) {
       (this.header?.nativeElement as HTMLElement).style.height = '50px';
     }
   }

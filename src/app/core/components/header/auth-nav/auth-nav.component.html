@@ -1,6 +1,6 @@
 <div class="auth-nav">
-  <ng-template [ngIf]="isAuthorized">
-    <p class="auth-nav__name" #name>Nameasdsad</p>
+  <ng-container *ngIf="isAuthorized; else templateA">
+    <p class="auth-nav__name" #name></p>
     <img
       class="auth-nav__icon"
       src="../../../../../assets/images/icon.png"
@@ -10,11 +10,11 @@
       <mat-icon>settings</mat-icon>
     </button>
     <span class="auth-nav__line"></span>
-    <button mat-button color="warn" class="auth-nav__button">
+    <button mat-button color="warn" class="auth-nav__button" (click)="logout()">
       {{ 'header.auth.logout' | translate }}
     </button>
-  </ng-template>
-  <ng-template [ngIf]="!isAuthorized">
+  </ng-container>
+  <ng-template #templateA>
     <button mat-button class="auth-nav__button" routerLink="/auth/login">
       {{ 'header.auth.login' | translate }}
     </button>
