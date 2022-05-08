@@ -1,0 +1,47 @@
+.footer {
+  height: 50px;
+  background: #122e58;
+  padding: 0 10px;
+
+  @media (max-width: 400px) {
+    padding: 0 10px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+
+    p {
+      margin: 0 5px;
+    }
+  }
+
+  &__buttom {
+    font-weight: 300;
+    padding: 2px 4px;
+
+    @media (max-width: 400px) {
+      min-width: 30px;
+    }
+  }
+
+  &__image {
+    width: 80px;
+    height: 40px;
+    @media (max-width: 400px) {
+      width: 60px;
+      height: 30px;
+    }
+  }
+}

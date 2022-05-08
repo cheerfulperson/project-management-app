@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [SignUpComponent, LoginComponent],
   imports: [
@@ -24,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
     TranslateModule,
   ],
   providers: [
+    AuthService,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'fill' },

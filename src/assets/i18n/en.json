@@ -12,20 +12,37 @@
       "logout": "logout"
     }
   },
-
   "form": {
     "name": "Name",
-    "login": "Login", 
+    "login": "Login",
     "password": "Password",
     "errors": {
-      "nameError": "Name is required",
-      "loginError": "Login is required",
-      "passwordError": "Password is required"
+
+      "requiredErrors": {
+        "nameError": "Name is required",
+        "loginError": "Login is required",
+        "passwordError": "Password is required"
+      },
+      "otherErrors": {
+        "minLoginError": "Login must be more than 3 letters",
+        "minNameError": "Name must be more than 2 letters",
+        "passwordError": "Your password is too easy"
+      }
     }
     ,
     "questions": {
       "haveAccount": "Already have an account?",
       "dontHaveAccount": "Don’t have an account?"
     }
-  }
+  },
+  "pageNotFound": {
+    "titleSmall": "Page not found"
+  },
+  "footer": {
+    "date": "by",
+    "names": {
+      "s": "Sergey",
+      "v": "Victor",
+      "e": "Egor"
+    }
 }

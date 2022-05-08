@@ -2,9 +2,14 @@
   <h2 class="form__title">{{ 'header.auth.login' | translate }}</h2>
   <form [formGroup]="loginForm">
     <mat-form-field>
-      <mat-label>{{ 'form.name' | translate }}</mat-label>
+      <mat-label>{{ 'form.login' | translate }}</mat-label>
       <input matInput formControlName="loginInput" required />
-      <mat-error>{{ 'form.errors.nameError' | translate }}</mat-error>
+      <mat-error>{{
+        (loginForm.controls['loginInput'].hasError('minlength')
+          ? 'form.errors.otherErrors.minLoginError'
+          : 'form.errors.requiredErrors.loginError'
+        ) | translate
+      }}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -15,13 +20,24 @@
         formControlName="passwordInput"
         required
       />
-      <mat-error>{{ 'form.errors.passwordError' | translate }}</mat-error>
+      <mat-error>{{
+        'form.errors.requiredErrors.passwordError' | translate
+      }}</mat-error>
     </mat-form-field>
 
-    <button class="submit-btn" mat-flat-button color="accent" type="submit">
+    <button
+      class="submit-btn"
+      mat-flat-button
+      color="accent"
+      type="submit"
+      (click)="login()"
+    >
       {{ 'header.auth.login' | translate }}
     </button>
   </form>
+
+  <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
   <p class="form__question">
     {{ 'form.questions.dontHaveAccount' | translate }}
   </p>
