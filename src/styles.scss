@@ -1,13 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
-  // height: 100%;
+  height: 100%;
 }
 body {
   margin: 0;
   font-size: 20px;
   font-weight: 500;
-  // line-height: 14px;
   font-family: 'Montserrat', sans-serif;
   background: #122e58;
   box-sizing: border-box;
@@ -41,4 +40,19 @@ h3::first-letter,
 a::first-letter,
 button::first-letter {
   text-transform: capitalize;
+}
+
+::-webkit-scrollbar-track {
+  padding: 2px 0;
+  background-color: #2c2c2c;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #c84b31;
 }

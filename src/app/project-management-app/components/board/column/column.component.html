@@ -1,0 +1,71 @@
+<article class="column" *ngIf="columnInfo" cdkDrag>
+  <div class="column__custom-placeholder" *cdkDragPlaceholder></div>
+
+  <div class="column__header">
+    <h3
+      class="column__title"
+      *ngIf="!isActiveTitle"
+      (click)="isActiveTitle = !isActiveTitle"
+    >
+      {{ columnInfo.title }}
+    </h3>
+    <div class="column__input-block" *ngIf="isActiveTitle">
+      <input
+        class="column__title-input"
+        type="text"
+        name="title"
+        [(ngModel)]="columnTitle"
+      />
+      <button
+        mat-button
+        class="column__input-button"
+        (click)="changeTitle(false)"
+      >
+        {{ 'board.buttons.cancel' | translate }}
+      </button>
+      <button
+        mat-button
+        class="column__input-button"
+        (click)="changeTitle(true)"
+      >
+        {{ 'board.buttons.submit' | translate }}
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="column__body"
+    appResizeHeight
+    [parentClass]="'board__body'"
+    *ngIf="tasks"
+    cdkDropList
+    [cdkDropListData]="tasks"
+    (cdkDropListDropped)="dropTask($event)"
+  >
+    <article *ngFor="let task of tasks" class="column__task" cdkDrag>
+      <p class="column__task-text">{{ task.title }}</p>
+      <p class="column__task-description">{{ task.description }}</p>
+      <button
+        mat-icon-button
+        class="column__task-delete-btn"
+        (click)="deleteTask(task.id)"
+      >
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </article>
+  </div>
+
+  <div class="column__footer">
+    <button mat-button class="column__add-button">
+      + {{ 'board.addTask' | translate }}
+    </button>
+    <button
+      mat-mini-fab
+      color="warn"
+      class="column__delete-btn"
+      (click)="deleteColumn()"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</article>

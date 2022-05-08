@@ -1,0 +1,42 @@
+
+.page-not-found {
+  width: 100%;
+  height: calc(100vh - 132px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.page-content {
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_title {
+    width: auto;
+  }
+}
+
+.title {
+  &-big {
+    font-size: 128px;
+    line-height: 141px;
+  }
+
+  &-small {
+    font-size: 64px;
+    line-height: 70px;
+  }
+
+  &-big,
+  &-small {
+    text-align: center;
+  }
+}

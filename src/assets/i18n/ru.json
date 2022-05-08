@@ -12,14 +12,17 @@
       "logout": "выйти"
     }
   },
-  "footer": {
-    "date": "",
-    "names": {
-      "s": "Сергей",
-      "v": "Виктор",
-      "e": "Егор"
-    }
+
+  "board": {
+    "title": "Доска",
+    "createBtn": "Добавить новую колонку",
+    "buttons": {
+      "cancel": "Отмена",
+      "submit": "Изменить"
     },
+    "addTask": "Добавить задание"
+  },
+
   "form": {
     "name": "Имя",
     "login": "Логин",
@@ -39,6 +42,15 @@
     "questions": {
       "haveAccount": "Уже есть аккаунт?",
       "dontHaveAccount": "У вас нет аккаунта?"
+    }
+  },
+
+  "footer": {
+    "date": "",
+    "names": {
+      "s": "Сергей",
+      "v": "Виктор",
+      "e": "Егор"
     }
   },
   "pageNotFound": {

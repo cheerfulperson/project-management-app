@@ -12,6 +12,7 @@
       "logout": "logout"
     }
   },
+
   "form": {
     "name": "Name",
     "login": "Login",
@@ -28,16 +29,27 @@
         "minNameError": "Name must be more than 2 letters",
         "passwordError": "Your password is too easy"
       }
-    }
-    ,
+    },
     "questions": {
       "haveAccount": "Already have an account?",
-      "dontHaveAccount": "Don’t have an account?"
+      "dontHaveAccount": "Don`t have an account?"
     }
   },
+
+  "board": {
+    "title": "Board",
+    "createBtn": "Add new column",
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Change"
+    },
+    "addTask": "Add task"
+  },
+
   "pageNotFound": {
     "titleSmall": "Page not found"
   },
+
   "footer": {
     "date": "by",
     "names": {
@@ -45,4 +57,5 @@
       "v": "Victor",
       "e": "Egor"
     }
+  }
 }
