@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BoardsGetResponse } from 'src/app/project-management-app/models/board.model';
+import { GetAllBoardsResponseModel } from 'src/app/project-management-app/models/board.model';
 
 @Component({
   selector: 'app-board-item',
@@ -7,7 +7,7 @@ import { BoardsGetResponse } from 'src/app/project-management-app/models/board.m
   styleUrls: ['./board-item.component.scss'],
 })
 export class BoardItemComponent {
-  @Input() public board: BoardsGetResponse = { id: '', title: '' };
+  @Input() public board: GetAllBoardsResponseModel = { id: '', title: '' };
 
   public isConfModalActive: boolean = false;
 

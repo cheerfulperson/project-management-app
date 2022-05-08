@@ -11,7 +11,7 @@ export interface Board extends CreateBoardDto {
   columns?: Column[];
 }
 
-export interface BoardsGetResponse {
+export interface GetAllBoardsResponseModel {
   id: string;
   title: string;
 }

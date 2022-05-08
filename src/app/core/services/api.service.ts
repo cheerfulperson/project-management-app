@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import {
   Board,
   CreateBoardDto,
+  GetAllBoardsResponseModel,
 } from 'src/app/project-management-app/models/board.model';
 
 @Injectable({
@@ -28,5 +29,9 @@ export class ApiService {
 
   public createBoard(board: CreateBoardDto): Observable<Board> {
     return this.httpClient.post<Board>('boards', board);
+  }
+
+  public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {
+    return this.httpClient.get<GetAllBoardsResponseModel[]>('/boards');
   }
 }

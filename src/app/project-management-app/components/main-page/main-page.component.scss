@@ -17,7 +17,7 @@
     column-gap: 40px;
     row-gap: 50px;
     margin-top: 40px;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
       width: 8px;
