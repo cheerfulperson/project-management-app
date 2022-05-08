@@ -14,12 +14,27 @@ import { BoardsGetResponse } from '../../models/board.model';
 })
 export class MainPageComponent {
   public boards: BoardsGetResponse[] = [
+    //! mocks data
     { id: '123', title: 'super mega project0' },
     { id: '123', title: 'super mega project1' },
     { id: '123', title: 'super mega project2' },
     { id: '123', title: 'super mega project3' },
     { id: '123', title: 'super mega project4' },
     { id: '123', title: 'super mega project5' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
+    { id: '123', title: 'super mega project6' },
     { id: '123', title: 'super mega project6' },
   ];
 
