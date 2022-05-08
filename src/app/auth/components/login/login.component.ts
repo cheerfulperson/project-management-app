@@ -60,6 +60,32 @@ export class LoginComponent {
     }
   }
 
+  public autoLogin(): void {
+    this.authService
+      .login({
+        login: 'user',
+        password: '123Qwerty!',
+      })
+      .pipe(
+        catchError((err: HttpErrorResponse) => {
+          if (err.status === statusCodes.Forbiden) {
+            this.showErrorMessage(err.error.message);
+          } else this.showErrorMessage('Server error');
+          throw err.error.message;
+        })
+      )
+      .subscribe(({ token }: LoginResponseModel) => {
+        const action: AddUserSession = new AddUserSession({
+          name: 'Name',
+          id: '123456',
+          token: token,
+        });
+        console.log(token);
+        this.store.dispatch(action);
+        this.router.navigateByUrl('');
+      });
+  }
+
   private showErrorMessage(message: string): void {
     this.errorMessage = message;
     setTimeout(() => {
