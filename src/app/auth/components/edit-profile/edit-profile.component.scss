@@ -1,0 +1,64 @@
+.form {
+  width: 450px;
+  height: 560px;
+  margin: 120px auto 0 auto;
+  border-radius: 25px;
+  padding: 35px 0 0 0;
+  text-align: center;
+  color: #fff;
+  background-color: #191919;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 50px auto 0 auto;
+    width: 340px;
+    font-size: 15px;
+
+    ::ng-deep .mat-form-field {
+      .mat-input-element {
+        color: #191919;
+      }
+
+      .mat-form-field-label {
+        color: #191919;
+        font-weight: 500;
+      }
+
+      .mat-form-field-flex {
+        background-color: #ffffff;
+        color: #191919;
+      }
+
+      .mat-form-field-required-marker {
+        color: #ff0000;
+      }
+    }
+
+    .submit-btn {
+      color: #fff;
+      background-color: #c84b31;
+      width: 180px;
+      margin: 0 auto;
+    }
+  }
+
+  &__error-message {
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-size: 12px;
+    color: #ff0000;
+  }
+
+  &__question {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  &__link {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #c84b31;
+  }
+}

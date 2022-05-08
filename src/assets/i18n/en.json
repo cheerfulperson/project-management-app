@@ -12,13 +12,11 @@
       "logout": "logout"
     }
   },
-
   "form": {
     "name": "Name",
     "login": "Login",
     "password": "Password",
     "errors": {
-
       "requiredErrors": {
         "nameError": "Name is required",
         "loginError": "Login is required",
@@ -35,7 +33,6 @@
       "dontHaveAccount": "Don`t have an account?"
     }
   },
-
   "board": {
     "title": "Board",
     "createBtn": "Add new column",
@@ -45,11 +42,6 @@
     },
     "addTask": "Add task"
   },
-
-  "pageNotFound": {
-    "titleSmall": "Page not found"
-  },
-
   "footer": {
     "date": "by",
     "names": {
@@ -57,5 +49,32 @@
       "v": "Victor",
       "e": "Egor"
     }
+  },
+  "pageNotFound": {
+    "titleSmall": "Page not found"
+  },
+  "homePage": {
+    "aboutTitle": "Our Project Management application is the success of your team's work.",
+    "aboutText": "By managing your project with our application, you get the following benefits:",
+    "aboutItems": {
+      "1": "- Full control over your project",
+      "2": "- Unlimited number of tasks in the project",
+      "3": "- Task scheduling",
+      "4": "- Control over project performers",
+      "5": "- Ability to add and remove tasks at any time",
+      "6": "- Ability to save and load projects",
+      "7": "- Control remotely"
+    },
+    "heroText": "By dividing the project into small tasks, you simplify the work process and the ability to divide the project between employees of different levels, capabilities and qualifications.",
+    "description": "This project was made as part of the Angular course at the RSSchool online school.",
+    "title": "Our team:",
+    "memberDescription": {
+      "s": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque recusandae aspernatur dicta vitae inventore alias laborum. Necessitatibus facilis eum accusamus, voluptatibus exercitationem alias blanditiis repellat optio! Asperiores, velit? Dolorum, ullam.",
+      "v": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatem ipsa corrupti pariatur animi iste est sit fuga maiores beatae distinctio amet, corporis voluptates libero consequatur, provident, quidem placeat aliquid.",
+      "e": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur pariatur autem aut. Illum distinctio obcaecati facere tenetur quo blanditiis accusamus deserunt aliquid soluta quam rerum doloribus, porro quos cum."
+    }
+  },
+  "edit": {
+    "title": "Edit profile"
   }
 }

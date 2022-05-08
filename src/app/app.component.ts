@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
     this.setLenguage();
 
     this.store.dispatch(new LoadUserSession());
-
   }
 
   private setLenguage(): void {
