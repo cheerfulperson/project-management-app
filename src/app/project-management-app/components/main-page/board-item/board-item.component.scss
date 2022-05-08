@@ -1,0 +1,30 @@
+.board-item-wrap {
+  position: relative;
+  transition: all .15s linear;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  .board-item {
+    position: relative;
+    width: 320px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9698a327;
+    border-radius: 20px;
+    cursor: pointer;
+    
+    &__title {
+      font-size: 20px;
+    }
+  
+    &__delete-btn {
+      position: absolute;
+      top: calc(100% - 50px);
+      left: calc(100% - 50px);
+    }
+  }
+}

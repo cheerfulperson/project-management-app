@@ -1,1 +1,18 @@
-<p>board-item works!</p>
+<div class="board-item-wrap">
+  <div class="board-item" routerLink="{{ board.id }}">
+    <h2 class="board-item__title">{{ board.title }}</h2>
+  </div>
+  <button
+    mat-mini-fab
+    color="warn"
+    class="board-item__delete-btn"
+    (click)="toggleConfModal()"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+<app-confirmation-modal
+  *ngIf="isConfModalActive"
+  deleteTypeName="board"
+  (userChoice)="deleteBoard($event)"
+></app-confirmation-modal>

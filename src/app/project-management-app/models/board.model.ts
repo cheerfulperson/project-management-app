@@ -10,3 +10,8 @@ export interface Board extends CreateBoardDto {
   id: string;
   columns?: Column[];
 }
+
+export interface BoardsGetResponse {
+  id: string;
+  title: string;
+}
