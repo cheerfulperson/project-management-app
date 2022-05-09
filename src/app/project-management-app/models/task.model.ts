@@ -13,3 +13,8 @@ export interface UpdateTaskDto extends CreateTaskDto {
 export interface Task extends UpdateTaskDto {
   id: string;
 }
+
+export interface TaskFormData {
+  title: string;
+  description: string;
+}

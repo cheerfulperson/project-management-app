@@ -17,8 +17,12 @@
         (deleteCol)="deleteColumn($event)"
       ></app-column>
     </article>
-    <button mat-button class="board__button">
+    <button mat-button class="board__button" (click)="triggerModal(true)">
       + {{ 'board.createBtn' | translate }}
     </button>
   </article>
 </section>
+<app-board-modal
+  *ngIf="isModalVisible"
+  (modalClose)="triggerModal(false)"
+></app-board-modal>
