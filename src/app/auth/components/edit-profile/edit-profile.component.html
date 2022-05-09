@@ -1,11 +1,11 @@
 <div class="form">
   <h2 class="form__title">{{ 'edit.title' | translate }}</h2>
-  <form [formGroup]="signUpForm">
+  <form [formGroup]="editProfileForm">
     <mat-form-field>
       <mat-label>{{ 'form.name' | translate }}</mat-label>
       <input matInput formControlName="nameInput" required />
       <mat-error>{{
-        (signUpForm.controls['nameInput'].hasError('minlength')
+        (editProfileForm.controls['nameInput'].hasError('minlength')
           ? 'form.errors.otherErrors.minNameError'
           : 'form.errors.requiredErrors.nameError'
         ) | translate
@@ -16,7 +16,7 @@
       <mat-label>{{ 'form.login' | translate }}</mat-label>
       <input matInput formControlName="loginInput" required />
       <mat-error>{{
-        (signUpForm.controls['loginInput'].hasError('minlength')
+        (editProfileForm.controls['loginInput'].hasError('minlength')
           ? 'form.errors.otherErrors.minLoginError'
           : 'form.errors.requiredErrors.loginError'
         ) | translate
@@ -33,28 +33,43 @@
         required
       />
       <mat-error>{{
-        (signUpForm.controls['passwordInput'].hasError('pattern')
+        (editProfileForm.controls['passwordInput'].hasError('pattern')
           ? 'form.errors.otherErrors.passwordError'
           : 'form.errors.requiredErrors.passwordError'
         ) | translate
       }}</mat-error>
     </mat-form-field>
+    <div class="submit-btns_container">
+      <button
+        class="submit-btn"
+        mat-flat-button
+        color="accent"
+        type="submit"
+        (click)="cancel()"
+      >
+        {{ 'edit.cancel' | translate }}
+      </button>
 
-    <button
-      class="submit-btn"
-      mat-flat-button
-      color="accent"
-      type="submit"
-      (click)="signUp()"
-    >
-      {{ 'header.auth.signup' | translate }}!
-    </button>
+      <button
+        class="submit-btn"
+        mat-flat-button
+        color="accent"
+        type="submit"
+        (click)="save()"
+      >
+        {{ 'edit.save' | translate }}
+      </button>
+    </div>
   </form>
 
   <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
 
-  <p class="form__question">{{ 'form.questions.haveAccount' | translate }}</p>
-  <button mat-button class="form__link" routerLink="/auth/login">
-    {{ 'header.auth.login' | translate }}!
+  <button
+    mat-button
+    class="delete-btn"
+    (click)="delete()"
+    routerLink="/auth/login"
+  >
+    {{ 'edit.delete' | translate }}
   </button>
 </div>

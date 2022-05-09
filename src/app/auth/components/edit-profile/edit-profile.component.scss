@@ -36,11 +36,22 @@
       }
     }
 
+    .submit-btns_container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
     .submit-btn {
       color: #fff;
       background-color: #c84b31;
-      width: 180px;
-      margin: 0 auto;
+      width: 140px;
+      transition: 0.25s ease-in-out;
+    }
+
+    .submit-btn:hover {
+      background-color: #d8634b;
+      color: #dbdbdb;
     }
   }
 
@@ -56,9 +67,15 @@
     font-size: 14px;
   }
 
-  &__link {
-    font-size: 14px;
-    margin-top: 5px;
+  .delete-btn {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 29px;
+    color: #fff;
+    transition: 0.25s ease-in-out;
+  }
+
+  .delete-btn:hover {
     color: #c84b31;
   }
 }

@@ -22,4 +22,20 @@ export class AuthService {
   public signUp(userData: SignUpUserModel): Observable<SignUpResponseModel> {
     return this.apiService.signUp(userData);
   }
+
+  public getUserData(userLogin: string): void {
+    this.apiService
+      .getAllUsers()
+      .subscribe((elements: SignUpResponseModel[]) => {
+        elements.filter((el: SignUpResponseModel) => el.login === userLogin);
+      });
+  }
+
+  public editProfile(userLogin: string): void {
+    this.apiService
+      .getAllUsers()
+      .subscribe((elements: SignUpResponseModel[]) => {
+        elements.filter((el: SignUpResponseModel) => el.login === userLogin);
+      });
+  }
 }

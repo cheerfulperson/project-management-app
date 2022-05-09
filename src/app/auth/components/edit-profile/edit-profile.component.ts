@@ -17,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
 export class EditProfileComponent {
   public errorMessage: string = '';
 
-  public signUpForm: FormGroup = new FormGroup({
+  public editProfileForm: FormGroup = new FormGroup({
     nameInput: new FormControl('', Validators.minLength(numbers.MinNameLength)),
     loginInput: new FormControl(
       '',
@@ -35,15 +35,15 @@ export class EditProfileComponent {
     private store: Store
   ) {}
 
-  public signUp(): void {
-    if (this.signUpForm.invalid) {
-      this.signUpForm.markAllAsTouched();
+  /*   public signUp(): void {
+    if (this.editProfileForm.invalid) {
+      this.editProfileForm.markAllAsTouched();
       return;
     }
     const user: SignUpUserModel = {
-      name: this.signUpForm.controls['nameInput'].value,
-      login: this.signUpForm.controls['loginInput'].value,
-      password: this.signUpForm.controls['passwordInput'].value,
+      name: this.editProfileForm.controls['nameInput'].value,
+      login: this.editProfileForm.controls['loginInput'].value,
+      password: this.editProfileForm.controls['passwordInput'].value,
     };
     this.authService
       .signUp({
@@ -72,11 +72,31 @@ export class EditProfileComponent {
             this.router.navigateByUrl('');
           });
       });
+  } */
+
+  public cancel(): void {
+    this.router.navigateByUrl('');
   }
+
+  public save(): void {
+    if (this.editProfileForm.invalid) {
+      this.editProfileForm.markAllAsTouched();
+      return;
+    }
+    const user: SignUpUserModel = {
+      name: this.editProfileForm.controls['nameInput'].value,
+      login: this.editProfileForm.controls['loginInput'].value,
+      password: this.editProfileForm.controls['passwordInput'].value,
+    };
+    this.authService.editProfile(user.login);
+    this.router.navigateByUrl('');
+  }
+
+  public delete(): void {}
 
   private showErrorMessage(message: string): void {
     this.errorMessage = message;
-    this.signUpForm.controls['loginInput'].setValue('');
+    this.editProfileForm.controls['loginInput'].setValue('');
     setTimeout(() => {
       this.errorMessage = '';
       // eslint-disable-next-line no-magic-numbers

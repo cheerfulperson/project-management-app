@@ -26,6 +26,16 @@ export class ApiService {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 
+  public getAllUsers(): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('/users');
+  }
+
+  public editProfile(
+    userData: SignUpResponseModel
+  ): Observable<SignUpResponseModel[]> {
+    return this.httpClient.post<SignUpResponseModel[]>('/users', userData);
+  }
+
   public createBoard(board: CreateBoardDto): Observable<Board> {
     return this.httpClient.post<Board>('boards', board);
   }

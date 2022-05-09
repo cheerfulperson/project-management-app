@@ -75,6 +75,9 @@
     }
   },
   "edit": {
-    "title": "Edit profile"
+    "title": "Edit profile",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete profile"
   }
 }
