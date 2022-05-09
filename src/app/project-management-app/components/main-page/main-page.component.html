@@ -1,6 +1,6 @@
 <section class="main-page">
   <h2 class="main-page__title">{{ 'mainPage.title' | translate }}</h2>
-  <div class="main-page__boards-list">
+  <div class="main-page__boards-list" *ngIf="!loading">
     <div *ngFor="let board of boards">
       <app-board-item
         [board]="board"
@@ -48,3 +48,5 @@
     </div>
   </div>
 </section>
+
+<app-spinner [loading]="loading"></app-spinner>

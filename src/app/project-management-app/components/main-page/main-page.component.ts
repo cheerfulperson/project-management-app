@@ -25,6 +25,8 @@ export class MainPageComponent implements OnInit {
 
   public isFormActive: boolean = false;
 
+  public loading: boolean = true;
+
   public constructor(private apiService: ApiService) {}
 
   public ngOnInit(): void {
@@ -32,6 +34,7 @@ export class MainPageComponent implements OnInit {
       .getAllBoards()
       .subscribe((boards: GetAllBoardsResponseModel[]) => {
         this.boards = boards;
+        this.loading = false;
       });
   }
 

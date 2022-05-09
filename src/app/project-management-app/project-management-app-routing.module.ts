@@ -8,7 +8,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'boards', component: MainPageComponent },
+  { path: 'boards', component: MainPageComponent, canActivate: [AuthGuard] },
   { path: 'boards/:id', component: BoardComponent, canActivate: [AuthGuard] },
   {
     path: '**',
