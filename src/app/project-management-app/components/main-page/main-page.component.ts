@@ -6,7 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { ApiService } from 'src/app/core/services/api.service';
-import { GetAllBoardsResponseModel } from '../../models/board.model';
+import {
+  CreateBoardResponseModel,
+  GetAllBoardsResponseModel,
+} from '../../models/board.model';
 
 @Component({
   selector: 'app-main-page',
@@ -48,5 +51,14 @@ export class MainPageComponent implements OnInit {
     );
   }
 
-  public createBoard(): void {}
+  public createBoard(): void {
+    if (this.createBoardForm.valid) {
+      this.apiService
+        .createBoard(this.createBoardForm.controls['boardTitleInput'].value)
+        .subscribe((value: CreateBoardResponseModel) => {
+          this.boards.push(value);
+          this.toggleForm();
+        });
+    }
+  }
 }

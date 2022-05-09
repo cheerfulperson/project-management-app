@@ -16,7 +16,7 @@ export interface GetAllBoardsResponseModel {
   title: string;
 }
 
-export interface DeleteBoardModel {
-  statusCode: number;
-  message: string;
+export interface CreateBoardResponseModel {
+  title: string;
+  id: string;
 }

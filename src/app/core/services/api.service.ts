@@ -8,8 +8,7 @@ import {
 } from 'src/app/auth/models/user.model';
 import { Observable } from 'rxjs';
 import {
-  Board,
-  CreateBoardDto,
+  CreateBoardResponseModel,
   GetAllBoardsResponseModel,
 } from 'src/app/project-management-app/models/board.model';
 
@@ -27,12 +26,12 @@ export class ApiService {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 
-  public createBoard(board: CreateBoardDto): Observable<Board> {
-    return this.httpClient.post<Board>('boards', board);
-  }
-
   public deleteBoard(id: string): void {
     this.httpClient.delete(`/boards/${id}`).subscribe();
+  }
+
+  public createBoard(title: string): Observable<CreateBoardResponseModel> {
+    return this.httpClient.post<CreateBoardResponseModel>('/boards', { title });
   }
 
   public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {
