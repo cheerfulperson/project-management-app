@@ -3,7 +3,7 @@
 
   &__title {
     width: 500px;
-    border-bottom: 2px #C84B31 solid;
+    border-bottom: 2px #c84b31 solid;
     font-size: 35px;
     text-align: center;
     margin: 0 auto;
@@ -32,15 +32,15 @@
       &__btn {
         width: 320px;
         height: 200px;
-  
+
         border-radius: 20px;
         border: 2px dashed #9698a3;
         background: none;
         color: #9698a3;
         font-size: 0.9em;
         cursor: pointer;
-        transition: all .15s linear;
-  
+        transition: all 0.15s linear;
+
         &:hover {
           color: #d1d1d6;
           border: 2px dashed #d1d1d6;
@@ -63,12 +63,12 @@
         border-radius: 18px;
         text-align: center;
         font-size: 15px;
-    
+
         .mat-form-field {
           width: 260px;
           font-size: 15px;
         }
-        
+
         &__title {
           font-size: 18px;
         }
@@ -82,7 +82,7 @@
             width: 90px;
             height: 35px;
             color: #fff;
-            background-color: #C84B31;
+            background-color: #c84b31;
             border-radius: 10px;
             font-family: Inter, sans-serif;
             font-size: 13px;
@@ -91,5 +91,5 @@
         }
       }
     }
-  }  
+  }
 }

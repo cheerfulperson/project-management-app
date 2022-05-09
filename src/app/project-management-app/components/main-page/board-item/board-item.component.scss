@@ -1,6 +1,6 @@
 .board-item-wrap {
   position: relative;
-  transition: all .15s linear;
+  transition: all 0.15s linear;
 
   &:hover {
     transform: scale(1.025);
@@ -27,14 +27,14 @@
     background-color: #9698a327;
     border-radius: 20px;
     cursor: pointer;
-    
+
     &__title {
       width: 280px;
       font-size: 20px;
       text-align: center;
       word-break: break-all;
     }
-  
+
     &__delete-btn {
       position: absolute;
       top: calc(100% - 50px);
@@ -63,7 +63,7 @@
       width: 260px;
       font-size: 14px;
     }
-    
+
     &__title {
       font-size: 18px;
     }
@@ -77,7 +77,7 @@
         width: 95px;
         height: 35px;
         color: #fff;
-        background-color: #C84B31;
+        background-color: #c84b31;
         border-radius: 10px;
         font-family: Inter, sans-serif;
         font-size: 13px;
