@@ -42,5 +42,11 @@ export class MainPageComponent implements OnInit {
     this.isFormActive = !this.isFormActive;
   }
 
+  public deleteBoard(boardId: string): void {
+    this.boards = this.boards.filter(
+      (el: GetAllBoardsResponseModel) => el.id !== boardId
+    );
+  }
+
   public createBoard(): void {}
 }

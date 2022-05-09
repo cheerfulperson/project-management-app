@@ -2,7 +2,10 @@
   <h2 class="main-page__title">{{ 'mainPage.title' | translate }}</h2>
   <div class="main-page__boards-list">
     <div *ngFor="let board of boards">
-      <app-board-item [board]="board"></app-board-item>
+      <app-board-item
+        [board]="board"
+        (delete)="deleteBoard($event)"
+      ></app-board-item>
     </div>
 
     <div class="create-board">

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ApiService } from 'src/app/core/services/api.service';
 import { GetAllBoardsResponseModel } from 'src/app/project-management-app/models/board.model';
 
 @Component({
@@ -9,7 +10,11 @@ import { GetAllBoardsResponseModel } from 'src/app/project-management-app/models
 export class BoardItemComponent {
   @Input() public board: GetAllBoardsResponseModel = { id: '', title: '' };
 
+  @Output() public delete: EventEmitter<string> = new EventEmitter();
+
   public isConfModalActive: boolean = false;
+
+  public constructor(private apiService: ApiService) {}
 
   public toggleConfModal(): void {
     this.isConfModalActive = !this.isConfModalActive;
@@ -20,7 +25,8 @@ export class BoardItemComponent {
       this.toggleConfModal();
       return;
     }
-    console.log('deleted');
+    this.apiService.deleteBoard(this.board.id);
+    this.delete.emit(this.board.id);
     this.toggleConfModal();
   }
 }

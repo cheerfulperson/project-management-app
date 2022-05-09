@@ -31,6 +31,10 @@ export class ApiService {
     return this.httpClient.post<Board>('boards', board);
   }
 
+  public deleteBoard(id: string): void {
+    this.httpClient.delete(`/boards/${id}`).subscribe();
+  }
+
   public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {
     return this.httpClient.get<GetAllBoardsResponseModel[]>('/boards');
   }
