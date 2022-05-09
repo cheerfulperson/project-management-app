@@ -7,7 +7,10 @@ import { catchError } from 'rxjs';
 
 import { numbers, statusCodes } from 'src/app/constants';
 import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
-import { LoginResponseModel } from '../../models/user.model';
+import {
+  LoginResponseModel,
+  SignUpResponseModel,
+} from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -47,40 +50,21 @@ export class LoginComponent {
             throw err.error.message;
           })
         )
-        .subscribe(({ token }: LoginResponseModel) => {
-          const action: AddUserSession = new AddUserSession({
-            name: 'Name',
-            id: '123456',
-            token: token,
-          });
-          console.log(token);
-          this.store.dispatch(action);
-          this.router.navigateByUrl('');
-        });
+        .subscribe(({ token }: LoginResponseModel) =>
+          this.createUserSession(token)
+        );
     }
   }
 
-  public autoLogin(): void {
+  private createUserSession(token: string): void {
     this.authService
-      .login({
-        login: 'user',
-        password: '123Qwerty!',
-      })
-      .pipe(
-        catchError((err: HttpErrorResponse) => {
-          if (err.status === statusCodes.Forbiden) {
-            this.showErrorMessage(err.error.message);
-          } else this.showErrorMessage('Server error');
-          throw err.error.message;
-        })
-      )
-      .subscribe(({ token }: LoginResponseModel) => {
+      .getUserByLogin(this.loginForm.controls['loginInput'].value, token)
+      .subscribe((data: SignUpResponseModel) => {
         const action: AddUserSession = new AddUserSession({
-          name: 'Name',
-          id: '123456',
+          name: data.name,
+          id: data.id,
           token: token,
         });
-        console.log(token);
         this.store.dispatch(action);
         this.router.navigateByUrl('');
       });

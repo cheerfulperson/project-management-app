@@ -29,22 +29,17 @@ export class AuthGuard implements CanActivate {
     ) {
       return (this.store as Store<IAppState>)
         .select(selectIsUserAuthorized)
-        .pipe(
-          map((value: boolean) => {
-            if (value) {
-              this.router.navigateByUrl('/404');
-            }
-            return !value;
-          })
-        );
+        .pipe(map((value: boolean) => this.checkAuth(!value)));
     }
-    return (this.store as Store<IAppState>).select(selectIsUserAuthorized).pipe(
-      map((value: boolean) => {
-        if (!value) {
-          this.router.navigateByUrl('/404');
-        }
-        return value;
-      })
-    );
+    return (this.store as Store<IAppState>)
+      .select(selectIsUserAuthorized)
+      .pipe(map((value: boolean) => this.checkAuth(value)));
+  }
+
+  private checkAuth(value: boolean): boolean {
+    if (!value) {
+      this.router.navigateByUrl('/404');
+    }
+    return value;
   }
 }

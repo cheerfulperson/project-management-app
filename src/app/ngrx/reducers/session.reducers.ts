@@ -2,7 +2,7 @@ import { ESessionActions, SessionActions } from '../actions/session.actions';
 import { initialSessionState, SessionState } from '../states/session.state';
 
 export const sessionReducers = (
-  state = initialSessionState,
+  state: SessionState = initialSessionState,
   action: SessionActions
 ): SessionState => {
   switch (action.type) {

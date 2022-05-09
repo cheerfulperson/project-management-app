@@ -3,10 +3,9 @@ import { Observable, of } from 'rxjs';
 import { UserSessionData } from 'src/app/shared/models/user-session.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SessionService {
-
   public getUserSessionData(): Observable<UserSessionData | null> {
     const data: string | null = localStorage.getItem('session');
     return of(data ? JSON.parse(data) : null);

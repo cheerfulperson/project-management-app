@@ -47,4 +47,10 @@ export class ApiService {
   public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {
     return this.httpClient.get<GetAllBoardsResponseModel[]>('/boards');
   }
+
+  public getUsersWithToken(token: string): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('users', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
 }

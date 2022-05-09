@@ -1,47 +1,58 @@
 <section class="about">
   <div class="wrapper">
-    <h2 class="about-title">
-      Наше приложение Управление проектами - успех работы Вашей команды.
-    </h2>
-    <h3 class="about-text">
-      Управляя своим проектом с помощью нашего приложения Вы получаете следующие
-      преимущества:
-    </h3>
-    <div class="about-content_head">
-      <div class="about-content_text">
-        <ul class="about-list">
-          <li class="about-list_item">- Полный контроль над своим проектом</li>
-          <li class="about-list_item">
-            - Неограниченное количество задач в проекте
-          </li>
-          <li class="about-list_item">- Планирование выполнения задач</li>
-          <li class="about-list_item">- Контроль над исполнителями проекта</li>
-          <li class="about-list_item">
-            - Возможность добавки и удаления задач в любое время
-          </li>
-          <li class="about-list_item">
-            - Возможность сохранять и загружать проекты
-          </li>
-          <li class="about-list_item">- Осуществление контроля удаленно</li>
-        </ul>
-      </div>
-      <div class="about-icons">
-        <img
-          src="../../../../assets/images/quality.png"
-          alt="icon"
-          class="icon"
-        />
-        <img
-          src="../../../../assets/images/tasks.png"
-          alt="tasks"
-          class="icon"
-        />
-        <img src="../../../../assets/images/save.png" alt="save" class="icon" />
-        <img
-          src="../../../../assets/images//work.png"
-          alt="icon"
-          class="icon"
-        />
+    <div class="about-content">
+      <h2 class="about-content_title">
+        {{ 'homePage.aboutTitle' | translate }}
+      </h2>
+      <h3 class="about-text">{{ 'homePage.aboutText' | translate }}</h3>
+      <div class="about-content_head">
+        <div class="about-content_text">
+          <ul class="about-list">
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.1' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.2' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.3' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.4' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.5' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.6' | translate }}
+            </li>
+            <li class="about-list_item">
+              {{ 'homePage.aboutItems.7' | translate }}
+            </li>
+          </ul>
+        </div>
+        <div class="about-icons">
+          <img
+            src="../../../../assets/images/quality.png"
+            alt="icon"
+            class="icon"
+          />
+          <img
+            src="../../../../assets/images/tasks.png"
+            alt="tasks"
+            class="icon"
+          />
+          <img
+            src="../../../../assets/images/save.png"
+            alt="save"
+            class="icon"
+          />
+          <img
+            src="../../../../assets/images//work.png"
+            alt="icon"
+            class="icon"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -57,9 +68,7 @@
         />
       </div>
       <div class="hero-content_text">
-        Разделяя проект на небольшие задачи - Вы упрощаете поцесс работы и
-        возможность поделить проект между сотрудниками разного уровня,
-        возможностей и квалификации.
+        {{ 'homePage.heroText' | translate }}
       </div>
     </div>
   </div>
@@ -68,15 +77,14 @@
 <section class="our-team">
   <div class="team-content">
     <div class="team-content_description">
-      Данный проект был сделан в рамках обучения на курсе Angular в онлайн-школе
-      RSSchool.
+      {{ 'homePage.description' | translate }}
     </div>
-    <h2 class="team-title">Наша команда:</h2>
+    <h2 class="team-title">{{ 'homePage.title' | translate }}</h2>
 
     <div class="team-members">
       <div class="team-member">
         <div class="team-member_title">
-          <h3 class="team-member_name">1 разработчик</h3>
+          <h3 class="team-member_name">{{ 'footer.names.s' | translate }}</h3>
         </div>
         <div class="team-member_body">
           <img
@@ -84,38 +92,31 @@
             src="../../../../assets/images/avatar.png"
             alt=""
           />
-          <span class="team-member_description"
-            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque
-            recusandae aspernatur dicta vitae inventore alias laborum.
-            Necessitatibus facilis eum accusamus, voluptatibus exercitationem
-            alias blanditiis repellat optio! Asperiores, velit? Dolorum,
-            ullam.</span
-          >
+          <span class="team-member_description">{{
+            'homePage.memberDescription.s' | translate
+          }}</span>
         </div>
       </div>
 
       <div class="team-member">
         <div class="team-member_title">
-          <h3 class="team-member_name">2 разработчик</h3>
+          <h3 class="team-member_name">{{ 'footer.names.v' | translate }}</h3>
         </div>
         <div class="team-member_body">
           <img
             class="team-member_avatar"
-            src="../../../../assets/images/avatar.png"
+            src="../../../../assets/images/victar.png"
             alt=""
           />
-          <span class="team-member_description"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-            voluptatem ipsa corrupti pariatur animi iste est sit fuga maiores
-            beatae distinctio amet, corporis voluptates libero consequatur,
-            provident, quidem placeat aliquid.</span
-          >
+          <span class="team-member_description">{{
+            'homePage.memberDescription.v' | translate
+          }}</span>
         </div>
       </div>
 
       <div class="team-member">
         <div class="team-member_title">
-          <h3 class="team-member_name">3 разработчик</h3>
+          <h3 class="team-member_name">{{ 'footer.names.e' | translate }}</h3>
         </div>
         <div class="team-member_body">
           <img
@@ -123,12 +124,9 @@
             src="../../../../assets/images/avatar.png"
             alt=""
           />
-          <span class="team-member_description"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-            tenetur pariatur autem aut. Illum distinctio obcaecati facere
-            tenetur quo blanditiis accusamus deserunt aliquid soluta quam rerum
-            doloribus, porro quos cum.</span
-          >
+          <span class="team-member_description">{{
+            'homePage.memberDescription.e' | translate
+          }}</span>
         </div>
       </div>
     </div>
