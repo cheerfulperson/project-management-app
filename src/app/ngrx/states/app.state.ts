@@ -4,7 +4,7 @@ export interface IAppState {
   userSession: SessionState;
 }
 
-export const initialAppState = {
+export const initialAppState: IAppState = {
   userSession: initialSessionState,
 };
 

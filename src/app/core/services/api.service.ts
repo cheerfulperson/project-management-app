@@ -29,4 +29,10 @@ export class ApiService {
   public createBoard(board: CreateBoardDto): Observable<Board> {
     return this.httpClient.post<Board>('boards', board);
   }
+
+  public getUsersWithToken(token: string): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('users', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
 }

@@ -1,8 +1,10 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { DeleteUserSession } from 'src/app/ngrx/actions/session.actions';
-import { selectIsUserAuthorized } from 'src/app/ngrx/selectors/session.selectors';
+import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
 import { IAppState } from 'src/app/ngrx/states/app.state';
+import { UserSessionData } from 'src/app/shared/models/user-session.model';
 
 @Component({
   selector: 'app-auth-nav',
@@ -14,12 +16,14 @@ export class AuthNavComponent implements AfterViewInit {
   public name?: ElementRef<HTMLElement>;
 
   public isAuthorized: boolean = false;
+  public userName: string = '';
 
-  public constructor(private store: Store) {
+  public constructor(private store: Store, private router: Router) {
     (this.store as Store<IAppState>)
-      .select(selectIsUserAuthorized)
-      .subscribe((data: boolean) => {
-        this.isAuthorized = data;
+      .select(selectSession)
+      .subscribe((data: UserSessionData | null) => {
+        this.isAuthorized = Boolean(data);
+        this.userName = data?.name || '';
       });
   }
 
@@ -30,6 +34,7 @@ export class AuthNavComponent implements AfterViewInit {
   public logout(): void {
     const action: DeleteUserSession = new DeleteUserSession();
     this.store.dispatch(action);
+    this.router.navigateByUrl('/');
   }
 
   private checkName(): void {
