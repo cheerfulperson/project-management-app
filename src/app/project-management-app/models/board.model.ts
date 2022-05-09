@@ -20,3 +20,5 @@ export interface CreateBoardResponseModel {
   title: string;
   id: string;
 }
+
+export interface UpdateBoardResponseModel extends CreateBoardResponseModel {}

@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import {
   CreateBoardResponseModel,
   GetAllBoardsResponseModel,
+  UpdateBoardResponseModel,
 } from 'src/app/project-management-app/models/board.model';
 
 @Injectable({
@@ -32,6 +33,15 @@ export class ApiService {
 
   public createBoard(title: string): Observable<CreateBoardResponseModel> {
     return this.httpClient.post<CreateBoardResponseModel>('/boards', { title });
+  }
+
+  public updateBoard(
+    title: string,
+    boardId: string
+  ): Observable<UpdateBoardResponseModel> {
+    return this.httpClient.put<UpdateBoardResponseModel>(`/boards/${boardId}`, {
+      title,
+    });
   }
 
   public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {

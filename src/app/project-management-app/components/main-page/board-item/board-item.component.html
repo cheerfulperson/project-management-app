@@ -2,15 +2,57 @@
   <div class="board-item" routerLink="{{ board.id }}">
     <h2 class="board-item__title">{{ board.title }}</h2>
   </div>
+
+  <button
+    class="edit-board"
+    (click)="toggleUpdateBoardForm()"
+    *ngIf="!isUpdateBoardFormActive"
+  >
+    <mat-icon>edit</mat-icon>
+  </button>
+
   <button
     mat-mini-fab
     color="warn"
     class="board-item__delete-btn"
     (click)="toggleConfModal()"
+    *ngIf="!isUpdateBoardFormActive"
   >
     <mat-icon>delete</mat-icon>
   </button>
+
+  <form
+    [formGroup]="updateBoardForm"
+    class="update-board-form"
+    *ngIf="isUpdateBoardFormActive"
+  >
+    <h2 class="update-board-form__title">
+      {{ 'mainPage.updateForm.title' | translate }}
+    </h2>
+    <mat-form-field>
+      <mat-label>{{ 'mainPage.updateForm.inputTitle' | translate }}</mat-label>
+      <input
+        matInput
+        autocomplete="off"
+        type="text"
+        formControlName="newBoardTitleInput"
+      />
+      <mat-error>{{
+        'mainPage.updateForm.errorMessage' | translate
+      }}</mat-error>
+    </mat-form-field>
+
+    <div class="update-board-form__btns">
+      <button mat-flat-button color="accent" (click)="toggleUpdateBoardForm()">
+        {{ 'mainPage.updateForm.buttons.cancel' | translate }}
+      </button>
+      <button mat-flat-button color="accent" (click)="updateBoard()">
+        {{ 'mainPage.updateForm.buttons.create' | translate }}
+      </button>
+    </div>
+  </form>
 </div>
+
 <app-confirmation-modal
   *ngIf="isConfModalActive"
   deleteTypeName="board"

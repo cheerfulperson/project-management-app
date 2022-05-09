@@ -46,6 +46,15 @@
         "create": "Create",
         "cancel": "Cancel"
       }
+    },
+    "updateForm": {
+      "title": "Update board",
+      "inputTitle": "Enter new board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Update",
+        "cancel": "Cancel"
+      }
     }
   },
 

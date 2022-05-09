@@ -15,10 +15,10 @@
 
       <form
         [formGroup]="createBoardForm"
-        class="create-board__form"
+        class="create-board-form"
         *ngIf="isFormActive"
       >
-        <h2 class="create-new-board-form__title">
+        <h2 class="create-board-form__title">
           {{ 'mainPage.createForm.title' | translate }}
         </h2>
         <mat-form-field>
@@ -36,7 +36,7 @@
           }}</mat-error>
         </mat-form-field>
 
-        <div class="create-board__form__btns">
+        <div class="create-board-form__btns">
           <button mat-flat-button color="accent" (click)="toggleForm()">
             {{ 'mainPage.createForm.buttons.cancel' | translate }}
           </button>
