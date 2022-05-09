@@ -13,8 +13,9 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 @NgModule({
-  declarations: [SignUpComponent, LoginComponent],
+  declarations: [SignUpComponent, LoginComponent, EditProfileComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
