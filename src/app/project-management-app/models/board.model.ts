@@ -10,3 +10,15 @@ export interface Board extends CreateBoardDto {
   id: string;
   columns?: Column[];
 }
+
+export interface GetAllBoardsResponseModel {
+  id: string;
+  title: string;
+}
+
+export interface CreateBoardResponseModel {
+  title: string;
+  id: string;
+}
+
+export interface UpdateBoardResponseModel extends CreateBoardResponseModel {}
