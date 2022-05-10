@@ -12,7 +12,6 @@
       "logout": "выйти"
     }
   },
-
   "board": {
     "title": "Доска",
     "createBtn": "Добавить новую колонку",
@@ -41,7 +40,6 @@
       }
     }
   },
-
   "form": {
     "name": "Имя",
     "login": "Логин",
@@ -63,7 +61,6 @@
       "dontHaveAccount": "У вас нет аккаунта?"
     }
   },
-
   "footer": {
     "date": "",
     "names": {
@@ -74,5 +71,31 @@
   },
   "pageNotFound": {
     "titleSmall": "Страница не найдена"
+  },
+  "homePage": {
+    "aboutTitle": "Наше приложение Управление проектами - успех работы Вашей команды.",
+    "aboutText": "Управляя своим проектом с помощью нашего приложения Вы получаете следующие преимущества:",
+    "aboutItems": {
+      "1": "- Полный контроль над своим проектом",
+      "2": "- Неограниченное количество задач в проекте",
+      "3": "- Планирование выполнения задач",
+      "4": "- Контроль над исполнителями проекта",
+      "5": "- Возможность добавки и удаления задач в любое время",
+      "6": "- Возможность сохранять и загружать проекты",
+      "7": "- Осуществление контроля удаленно"
+    },
+    "heroText": "Разделяя проект на небольшие задачи - Вы упрощаете поцесс работы и возможность поделить проект между сотрудниками разного уровня, возможностей и квалификации.",
+    "description": "Данный проект был сделан в рамках обучения на курсе Angular в онлайн-школе RSSchool.",
+    "title": "Наша команда:",
+    "memberDescription": {
+      "s": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque recusandae aspernatur dicta vitae inventore alias laborum. Necessitatibus facilis eum accusamus, voluptatibus exercitationem alias blanditiis repellat optio! Asperiores, velit? Dolorum, ullam.",
+      "v": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatem ipsa corrupti pariatur animi iste est sit fuga maiores beatae distinctio amet, corporis voluptates libero consequatur, provident, quidem placeat aliquid.",
+      "e": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur pariatur autem aut. Illum distinctio obcaecati facere tenetur quo blanditiis accusamus deserunt aliquid soluta quam rerum doloribus, porro quos cum."
+    }
+  },
+  "edit": {
+    "title": "Редактировать профиль",
+    "cancel": "Отмена",
+    "save": "Сохранить"
   }
 }

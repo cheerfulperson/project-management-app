@@ -11,38 +11,46 @@ export enum ESessionActions {
 }
 
 export class LoadUserSession {
-  public readonly type = ESessionActions.LoadUserSession;
+  public readonly type: ESessionActions.LoadUserSession =
+    ESessionActions.LoadUserSession;
 }
 
 export class LoadUserSessionSuccess {
-  public readonly type = ESessionActions.LoadUserSessionSuccess;
+  public readonly type: ESessionActions.LoadUserSessionSuccess =
+    ESessionActions.LoadUserSessionSuccess;
 
-  constructor(public payload: UserSessionData | null) {}
+  public constructor(public payload: UserSessionData | null) {}
 }
 
 export class GetUserSession {
-  public readonly type = ESessionActions.GetUserSession;
+  public readonly type: ESessionActions.GetUserSession =
+    ESessionActions.GetUserSession;
 }
 
 export class DeleteUserSession {
-  public readonly type = ESessionActions.DeleteUserSession;
+  public readonly type: ESessionActions.DeleteUserSession =
+    ESessionActions.DeleteUserSession;
 }
 
 export class DeleteUserSessionSuccess {
-  public readonly type = ESessionActions.DeleteUserSessionSuccess;
+  public readonly type: ESessionActions.DeleteUserSessionSuccess =
+    ESessionActions.DeleteUserSessionSuccess;
 }
 
 export class AddUserSession {
-  public readonly type = ESessionActions.AddUserSession;
+  public readonly type: ESessionActions.AddUserSession =
+    ESessionActions.AddUserSession;
 
-  constructor(public payload: UserSessionData) {}
+  public constructor(public payload: UserSessionData) {}
 }
 
 export class AddUserSessionSuccess {
-  public readonly type = ESessionActions.AddUserSessionSuccess;
+  public readonly type: ESessionActions.AddUserSessionSuccess =
+    ESessionActions.AddUserSessionSuccess;
 
-  constructor(public payload: UserSessionData) {}
+  public constructor(public payload: UserSessionData) {}
 }
+
 export type SessionActions =
   | LoadUserSession
   | LoadUserSessionSuccess

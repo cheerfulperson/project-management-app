@@ -1,25 +1,20 @@
-import { Component } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError } from 'rxjs';
-
-import { numbers, regexp, statusCodes } from 'src/app/constants';
-import {
-  LoginResponseModel,
-  SignUpResponseModel,
-  SignUpUserModel,
-} from '../../models/user.model';
-import { AuthService } from '../../services/auth.service';
 import { Store } from '@ngrx/store';
+import { catchError } from 'rxjs';
+import { numbers, regexp, statusCodes } from 'src/app/constants';
 import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
+import { LoginResponseModel, SignUpUserModel } from '../../models/user.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.scss'],
 })
-export class SignUpComponent {
+export class EditProfileComponent {
   public errorMessage: string = '';
 
   public signUpForm: FormGroup = new FormGroup({
@@ -45,15 +40,17 @@ export class SignUpComponent {
       this.signUpForm.markAllAsTouched();
       return;
     }
-
     const user: SignUpUserModel = {
       name: this.signUpForm.controls['nameInput'].value,
       login: this.signUpForm.controls['loginInput'].value,
       password: this.signUpForm.controls['passwordInput'].value,
     };
-
     this.authService
-      .signUp(user)
+      .signUp({
+        name: user.name,
+        login: user.login,
+        password: user.password,
+      })
       .pipe(
         catchError((err: HttpErrorResponse) => {
           if (err.status === statusCodes.Conflict) {
@@ -62,13 +59,13 @@ export class SignUpComponent {
           throw err.error.message;
         })
       )
-      .subscribe((data: SignUpResponseModel) => {
+      .subscribe(() => {
         this.authService
           .login({ login: user.login, password: user.password })
           .subscribe(({ token }: LoginResponseModel) => {
             const action: AddUserSession = new AddUserSession({
-              name: data.name,
-              id: data.id,
+              name: user.name,
+              id: '123456',
               token: token,
             });
             this.store.dispatch(action);

@@ -104,4 +104,10 @@ export class ApiService {
       task
     );
   }
+
+  public getUsersWithToken(token: string): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('users', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
 }
