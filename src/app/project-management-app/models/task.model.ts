@@ -2,7 +2,7 @@ export interface CreateTaskDto {
   title: string;
   order: number;
   description: string;
-  userId: string;
+  userId: string | { [key: string]: undefined };
 }
 
 export interface UpdateTaskDto extends CreateTaskDto {

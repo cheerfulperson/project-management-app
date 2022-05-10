@@ -56,7 +56,11 @@
   </div>
 
   <div class="column__footer">
-    <button mat-button class="column__add-button">
+    <button
+      mat-button
+      class="column__add-button"
+      (click)="isModalVisible = true"
+    >
       + {{ 'board.addTask' | translate }}
     </button>
     <button
@@ -69,3 +73,11 @@
     </button>
   </div>
 </article>
+<app-board-modal
+  *ngIf="isModalVisible"
+  [isEditTaskModal]="true"
+  [board]="board"
+  [column]="columnInfo"
+  (modalClose)="isModalVisible = false"
+  (valueChange)="createTask($event)"
+></app-board-modal>

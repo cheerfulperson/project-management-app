@@ -47,11 +47,12 @@
     "boardModal": {
       "title": {
         "create": "create column",
-        "edit": "edit task"
+        "edit": "edit task",
+        "createTask": "Create Task"
       },
       "inputs": {
-        "title": "Еitle",
-        "description": "Вescription"
+        "title": "Title",
+        "description": "Description"
       },
       "buttons": {
         "cancel": "Cancel",

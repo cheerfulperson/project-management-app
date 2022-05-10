@@ -8,6 +8,7 @@
         matInput
         class="board-modal__input-title"
         formControlName="title"
+        [errorStateMatcher]="matcher"
       />
       <mat-error *ngIf="formGroup.invalid">{{
         'board.boardModal.errors.title' | translate
@@ -32,6 +33,7 @@
 
     <div class="board-modal__buttons-block">
       <button
+        type="button"
         mat-raised-button
         color="warn"
         class="board-modal__btn"

@@ -17,6 +17,7 @@ export class BoardComponent implements OnInit {
   public columns?: Column[];
   public isModalVisible: boolean = false;
   public isColumnChanged: boolean = true;
+  public columnToDelete?: Column;
 
   public constructor(
     private routeInfo: ActivatedRoute,
@@ -68,15 +69,28 @@ export class BoardComponent implements OnInit {
     this.triggerModal(false);
   }
 
-  public deleteColumn(id: string): void {
-    if (!this.board) return;
-    this.apiService.deleteColumn(this.board.id, id).subscribe(() => {
-      if (this.board && this.board?.columns) {
-        this.board.columns = this.board?.columns?.filter(
-          (col: Column): boolean => col.id !== id
-        );
-      }
-    });
+  public openConfirmWindow(id: string): void {
+    this.columnToDelete = this.board?.columns?.find(
+      (col: Column): boolean => col.id === id
+    );
+  }
+
+  public deleteColumn(choice: boolean): void {
+    if (!choice) {
+      this.columnToDelete = undefined;
+      return;
+    }
+    if (!this.board || !this.columnToDelete) return;
+    this.apiService
+      .deleteColumn(this.board.id, this.columnToDelete.id)
+      .subscribe(() => {
+        if (this.board && this.board?.columns) {
+          this.board.columns = this.board?.columns?.filter(
+            (col: Column): boolean => col.id !== this.columnToDelete?.id
+          );
+          this.columnToDelete = undefined;
+        }
+      });
   }
 
   private getBoardInfo(id: string): void {

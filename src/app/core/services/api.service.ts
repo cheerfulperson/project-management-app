@@ -83,13 +83,15 @@ export class ApiService {
     task: CreateTaskDto
   ): Observable<Task> {
     return this.httpClient.post<Task>(
-      `boards/${boardId}/columns/${columnId}`,
+      `boards/${boardId}/columns/${columnId}/tasks`,
       task
     );
   }
 
   public deleteTask(boardId: string, columnId: string): Observable<unknown> {
-    return this.httpClient.delete(`boards/${boardId}/columns/${columnId}`);
+    return this.httpClient.delete(
+      `boards/${boardId}/columns/${columnId}/tasks`
+    );
   }
 
   public updateTask(
@@ -98,7 +100,7 @@ export class ApiService {
     task: UpdateTaskDto
   ): Observable<Task> {
     return this.httpClient.put<Task>(
-      `boards/${boardId}/columns/${columnId}`,
+      `boards/${boardId}/columns/${columnId}/tasks`,
       task
     );
   }

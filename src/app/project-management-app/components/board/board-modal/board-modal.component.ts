@@ -32,10 +32,7 @@ export class BoardModalComponent {
   public buttonText: string = 'board.boardModal.buttons.create';
   public isEditTask: boolean = false;
   public formGroup: FormGroup = new FormGroup({
-    title: new FormControl('', [
-      Validators.required,
-      Validators.minLength(Number('3')),
-    ]),
+    title: new FormControl('', [Validators.minLength(Number('3'))]),
     description: new FormControl(''),
   });
   public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
@@ -53,15 +50,17 @@ export class BoardModalComponent {
     this.isEditTask = value;
 
     this.title = value
-      ? 'board.boardModal.title.edit'
+      ? `board.boardModal.title.${this.task ? 'edit' : 'createTask'}`
       : 'board.boardModal.title.create';
 
-    this.buttonText = value
-      ? 'board.boardModal.buttons.edit'
-      : 'board.boardModal.buttons.create';
+    this.buttonText =
+      value && this.task
+        ? 'board.boardModal.buttons.save'
+        : 'board.boardModal.buttons.create';
   }
 
   public apiTrigger(): void {
+    if (this.formGroup.invalid) return;
     if (this.isEditTask && this.task) {
       this.editTask();
     } else if (this.isEditTask) {
