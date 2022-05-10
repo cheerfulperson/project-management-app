@@ -23,6 +23,7 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     MatIconModule,
     RouterModule,
     MatButtonModule,
+    TranslateModule,
   ],
   exports: [
     FormsModule,

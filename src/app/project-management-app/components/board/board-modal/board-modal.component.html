@@ -28,7 +28,11 @@
         class="board-modal__textarea"
         placeholder="It makes..."
         formControlName="description"
+        [errorStateMatcher]="matcher"
       ></textarea>
+      <mat-error *ngIf="formGroup.invalid">{{
+        'board.boardModal.errors.title' | translate
+      }}</mat-error>
     </mat-form-field>
 
     <div class="board-modal__buttons-block">

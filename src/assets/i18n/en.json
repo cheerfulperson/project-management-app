@@ -95,5 +95,16 @@
   },
   "edit": {
     "title": "Edit profile"
+  },
+
+  "confirmWindow": {
+    "words": {
+      "first": "Remove the",
+      "seconed": "permanently"
+    },
+    "buttons": {
+      "cancel": "cancel",
+      "remove": "remove"
+    }
   }
 }

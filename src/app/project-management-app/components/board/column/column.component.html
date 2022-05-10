@@ -42,13 +42,21 @@
     [cdkDropListData]="tasks"
     (cdkDropListDropped)="dropTask($event)"
   >
-    <article *ngFor="let task of tasks" class="column__task" cdkDrag>
-      <p class="column__task-text">{{ task.title }}</p>
-      <p class="column__task-description">{{ task.description }}</p>
+    <article
+      *ngFor="let task of tasks | sortTasks"
+      class="column__task"
+      cdkDrag
+    >
+      <p class="column__task-text" (click)="selectTask(task)">
+        {{ task.title }}
+      </p>
+      <p class="column__task-description" (click)="selectTask(task)">
+        {{ task.description }}
+      </p>
       <button
         mat-icon-button
         class="column__task-delete-btn"
-        (click)="deleteTask(task.id)"
+        (click)="openConfirmWin(task.id)"
       >
         <mat-icon>delete_outline</mat-icon>
       </button>
@@ -76,8 +84,15 @@
 <app-board-modal
   *ngIf="isModalVisible"
   [isEditTaskModal]="true"
+  [task]="selectedTask"
   [board]="board"
   [column]="columnInfo"
-  (modalClose)="isModalVisible = false"
+  (modalClose)="closeModal()"
   (valueChange)="createTask($event)"
+  (taskEdit)="changeTask($event)"
 ></app-board-modal>
+<app-confirmation-modal
+  *ngIf="taskToDelete"
+  [deleteTypeName]="taskToDelete.title"
+  (userChoice)="deleteTask($event)"
+></app-confirmation-modal>

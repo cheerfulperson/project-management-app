@@ -27,7 +27,7 @@ export class ResizeHeightDirective implements AfterViewChecked {
       this.el?.nativeElement.closest(`.${this.parentClass}`);
     if (!parent || !this.el) return;
 
-    const minHeight: number = this.getMinHeight();
+    const minHeight: number = this.getMinHeight(parent);
     const parentHeight: number = parseFloat(getComputedStyle(parent).height);
     const elemHeight: number = this.getChildrenHeight() + minHeight;
     if (parentHeight - elemHeight >= 0) {
@@ -40,28 +40,34 @@ export class ResizeHeightDirective implements AfterViewChecked {
   private getChildrenHeight(): number {
     const children: HTMLCollection | undefined =
       this.el?.nativeElement.children;
-    if (!children || !children[0]) return 0;
-    const childMargin: number = parseFloat(
-      getComputedStyle(children[0]).margin
+    let childrenHeight: number = 0;
+    if (!children) return 0;
+    Array.from(children).forEach(
+      (el: Element) =>
+        (childrenHeight +=
+          el.clientHeight +
+          parseFloat(
+            getComputedStyle(el).margin +
+              parseFloat(getComputedStyle(el).padding)
+          ))
     );
-    const childPadding: number = parseFloat(
-      getComputedStyle(children[0]).padding
-    );
-    const sum: number =
-      children[0].clientHeight + 2 * (childMargin + childPadding);
-    return children[0] ? children.length * sum : 0;
+
+    return children[0] ? childrenHeight : 0;
   }
 
-  private getMinHeight(): number {
+  private getMinHeight(parentBlock: HTMLElement): number {
     const parent: HTMLElement | null | undefined =
       this.el?.nativeElement.closest('.column');
     if (!parent) return 0;
+    const title: HTMLElement | null = parent.querySelector('.column__title');
+    const footer: HTMLElement | null = parent.querySelector('.column__footer');
 
     const constHeight: number =
-      window.innerWidth < parent.scrollWidth ? Number('121') : Number('111');
-    const title: HTMLElement | null = parent.querySelector('.column__title');
-    return title
-      ? parseFloat(getComputedStyle(title).height) + constHeight
+      window.innerWidth < parentBlock.scrollWidth ? Number('75') : Number('65');
+    return title && footer
+      ? parseFloat(getComputedStyle(title).height) +
+          (footer?.clientHeight || 0) +
+          constHeight
       : constHeight;
   }
 }

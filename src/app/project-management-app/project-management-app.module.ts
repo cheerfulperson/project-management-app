@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { BoardModalComponent } from './components/board/board-modal/board-modal.component';
 import { SortByOrderPipe } from './pipes/sort-by-order.pipe';
+import { SortTasksPipe } from './pipes/sort-tasks.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SortByOrderPipe } from './pipes/sort-by-order.pipe';
     HomepageComponent,
     BoardModalComponent,
     SortByOrderPipe,
+    SortTasksPipe,
   ],
   imports: [
     CommonModule,

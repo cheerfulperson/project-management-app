@@ -88,19 +88,24 @@ export class ApiService {
     );
   }
 
-  public deleteTask(boardId: string, columnId: string): Observable<unknown> {
+  public deleteTask(
+    boardId: string,
+    columnId: string,
+    taskId: string
+  ): Observable<unknown> {
     return this.httpClient.delete(
-      `boards/${boardId}/columns/${columnId}/tasks`
+      `boards/${boardId}/columns/${columnId}/tasks/${taskId}`
     );
   }
 
   public updateTask(
     boardId: string,
     columnId: string,
+    taskId: string,
     task: UpdateTaskDto
   ): Observable<Task> {
     return this.httpClient.put<Task>(
-      `boards/${boardId}/columns/${columnId}/tasks`,
+      `boards/${boardId}/columns/${columnId}/tasks/${taskId}`,
       task
     );
   }

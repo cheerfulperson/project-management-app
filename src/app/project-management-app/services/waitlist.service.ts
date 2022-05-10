@@ -51,9 +51,10 @@ export class WaitlistService {
       newColumn.tasks = [];
     }
 
-    this.columns = this.board.columns?.map((column: Column) =>
-      column.id === newColumn.id ? newColumn : column
-    );
+    this.columns = this.board.columns?.map((column: Column) => {
+      console.log({ ...newColumn, ...column });
+      return column.id === newColumn.id ? { ...newColumn, ...column } : column;
+    });
   }
 
   private changeOrder(from: Column, to: Column): void {

@@ -18,3 +18,8 @@ export interface TaskFormData {
   title: string;
   description: string;
 }
+
+export interface TaskParams {
+  taskFrom: Task;
+  taskTo: Task;
+}
