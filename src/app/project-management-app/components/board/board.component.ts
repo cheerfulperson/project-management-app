@@ -18,6 +18,7 @@ export class BoardComponent implements OnInit {
   public isModalVisible: boolean = false;
   public isColumnChanged: boolean = true;
   public columnToDelete?: Column;
+  public isLoaded: boolean = false;
 
   public constructor(
     private routeInfo: ActivatedRoute,
@@ -96,6 +97,7 @@ export class BoardComponent implements OnInit {
   private getBoardInfo(id: string): void {
     this.apiService.getBoard(id).subscribe((board: Board) => {
       console.log(board);
+      this.isLoaded = true;
       this.board = board;
     });
   }

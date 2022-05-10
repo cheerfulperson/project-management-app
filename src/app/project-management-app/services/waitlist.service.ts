@@ -52,7 +52,6 @@ export class WaitlistService {
     }
 
     this.columns = this.board.columns?.map((column: Column) => {
-      console.log({ ...newColumn, ...column });
       return column.id === newColumn.id ? { ...newColumn, ...column } : column;
     });
   }

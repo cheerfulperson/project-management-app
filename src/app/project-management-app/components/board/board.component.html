@@ -1,7 +1,10 @@
 <section class="board" *ngIf="board">
   <article class="board__header">
+    <button class="board__left-btn" mat-icon-button routerLink="/boards">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
     <p class="board__text">{{ 'board.title' | translate }}:</p>
-    <input class="board__title" [value]="board.title" />
+    <p class="board__title">{{ board.title }}</p>
   </article>
   <article
     class="board__body"
@@ -34,3 +37,4 @@
   [deleteTypeName]="columnToDelete.title"
   (userChoice)="deleteColumn($event)"
 ></app-confirmation-modal>
+<app-spinner *ngIf="!isLoaded"></app-spinner>

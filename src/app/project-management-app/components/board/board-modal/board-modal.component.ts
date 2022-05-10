@@ -73,13 +73,11 @@ export class BoardModalComponent implements OnInit {
   }
 
   public apiTrigger(): void {
-    if (this.formGroup.invalid) return;
-
-    if (this.isEditTask && this.task) {
+    if (this.isEditTask && this.task && this.formGroup.valid) {
       this.editTask();
-    } else if (this.isEditTask) {
+    } else if (this.isEditTask && this.formGroup.valid) {
       this.createTask();
-    } else {
+    } else if (this.formGroup.get('title')?.valid) {
       this.createColumn();
     }
   }

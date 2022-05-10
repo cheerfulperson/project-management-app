@@ -8,6 +8,10 @@
   background: #9698a327;
   box-sizing: border-box;
 
+  @media all and (max-width: 600px) {
+    width: 220px;
+  }
+
   cursor: move;
   &__header {
     display: flex;
