@@ -94,22 +94,38 @@ export class BoardModalComponent {
       .select(selectSession)
       .subscribe((data: UserSessionData | null) => {
         if (this.board && this.column && data) {
-          this.apiService.createTask(this.board.id, this.column.id, {
-            title: this.formValue.title,
-            description: this.formValue.description,
-            order: this.column.tasks?.length || 1,
-            userId: data.id,
-          });
+          this.apiService
+            .createTask(this.board.id, this.column.id, {
+              title: this.formValue.title,
+              description: this.formValue.description,
+              order: this.column.tasks?.length || 1,
+              userId: data.id,
+            })
+            .subscribe((task: Task) => {
+              this.valueChange.emit(task);
+            });
         }
       });
   }
 
   private createColumn(): void {
     if (this.board) {
-      this.apiService.createColumn(this.board.id, {
-        title: this.formValue.title,
-        order: this.board.columns?.length || 1,
-      });
+      this.apiService
+        .createColumn(this.board.id, {
+          title: this.formValue.title,
+          order: this.getColumnOrder(),
+        })
+        .subscribe((column: Column) => this.valueChange.emit(column));
     }
+  }
+
+  private getColumnOrder(order: number = 0): number {
+    if (this.board && this.board.columns) {
+      order += 1;
+      return this.board.columns.find((value: Column) => value.order === order)
+        ? this.getColumnOrder(order)
+        : order;
+    }
+    return 1;
   }
 }

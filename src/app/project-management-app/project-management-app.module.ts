@@ -9,6 +9,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { BoardModalComponent } from './components/board/board-modal/board-modal.component';
+import { SortByOrderPipe } from './pipes/sort-by-order.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BoardModalComponent } from './components/board/board-modal/board-modal.
     PageNotFoundComponent,
     HomepageComponent,
     BoardModalComponent,
+    SortByOrderPipe,
   ],
   imports: [
     CommonModule,

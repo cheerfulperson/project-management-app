@@ -11,7 +11,7 @@
   >
     <article class="board__columns" cdkDropListGroup>
       <app-column
-        *ngFor="let item of columns"
+        *ngFor="let item of board.columns | sortByOrder"
         [columnInfo]="item"
         [tasks]="item.tasks"
         (deleteCol)="deleteColumn($event)"
@@ -24,5 +24,8 @@
 </section>
 <app-board-modal
   *ngIf="isModalVisible"
+  [board]="board"
   (modalClose)="triggerModal(false)"
+  (valueChange)="createColumn($event)"
 ></app-board-modal>
+<!-- <app-confirmation-modal></app-confirmation-modal> -->

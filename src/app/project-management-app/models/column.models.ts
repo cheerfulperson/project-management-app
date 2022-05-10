@@ -11,3 +11,8 @@ export interface Column extends CreateColumnDto {
   id: string;
   tasks?: Task[];
 }
+
+export interface FunctionColumnParams {
+  columnFrom: Column;
+  columnTo: Column;
+}

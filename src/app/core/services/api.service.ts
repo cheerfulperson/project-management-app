@@ -71,7 +71,7 @@ export class ApiService {
     columnId: string,
     column: CreateColumnDto
   ): Observable<Column> {
-    return this.httpClient.post<Column>(
+    return this.httpClient.put<Column>(
       `boards/${boardId}/columns/${columnId}`,
       column
     );
