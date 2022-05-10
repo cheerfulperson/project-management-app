@@ -33,6 +33,27 @@
       "dontHaveAccount": "Don`t have an account?"
     }
   },
+  "mainPage": {
+    "title": "Boards",
+    "createForm": {
+      "title": "Create new board",
+      "inputTitle": "Enter board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Create",
+        "cancel": "Cancel"
+      }
+    },
+    "updateForm": {
+      "title": "Update board",
+      "inputTitle": "Enter new board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Update",
+        "cancel": "Cancel"
+      }
+    }
+  },
   "board": {
     "title": "Board",
     "createBtn": "Add new column",

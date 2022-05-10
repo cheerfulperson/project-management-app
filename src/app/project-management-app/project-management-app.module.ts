@@ -12,6 +12,8 @@ import { BoardModalComponent } from './components/board/board-modal/board-modal.
 import { SortByOrderPipe } from './pipes/sort-by-order.pipe';
 import { SortTasksPipe } from './pipes/sort-tasks.pipe';
 
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { BoardItemComponent } from './components/main-page/board-item/board-item.component';
 @NgModule({
   declarations: [
     BoardComponent,
@@ -22,6 +24,8 @@ import { SortTasksPipe } from './pipes/sort-tasks.pipe';
     BoardModalComponent,
     SortByOrderPipe,
     SortTasksPipe,
+    MainPageComponent,
+    BoardItemComponent,
   ],
   imports: [
     CommonModule,

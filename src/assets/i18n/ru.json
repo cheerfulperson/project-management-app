@@ -61,6 +61,27 @@
       "dontHaveAccount": "У вас нет аккаунта?"
     }
   },
+  "mainPage": {
+    "title": "Доски",
+    "createForm": {
+      "title": "Создать новую доску",
+      "inputTitle": "Введите название доски",
+      "errorMessage": "Пожалуйста, введите название",
+      "buttons": {
+        "create": "Создать",
+        "cancel": "Отмена"
+      }
+    },
+    "updateForm": {
+      "title": "Обновить доску",
+      "inputTitle": "Введите новое название доски",
+      "errorMessage": "Пожалуйста, введите название",
+      "buttons": {
+        "create": "Обновить",
+        "cancel": "Отмена"
+      }
+    }
+  },
   "footer": {
     "date": "",
     "names": {

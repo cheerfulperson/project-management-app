@@ -9,7 +9,9 @@ import {
 import { catchError, Observable } from 'rxjs';
 import {
   Board,
-  CreateBoardDto,
+  CreateBoardResponseModel,
+  GetAllBoardsResponseModel,
+  UpdateBoardResponseModel,
 } from 'src/app/project-management-app/models/board.model';
 import { Router } from '@angular/router';
 import {
@@ -36,8 +38,25 @@ export class ApiService {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 
-  public createBoard(board: CreateBoardDto): Observable<Board> {
-    return this.httpClient.post<Board>('boards', board);
+  public deleteBoard(id: string): void {
+    this.httpClient.delete(`/boards/${id}`).subscribe();
+  }
+
+  public createBoard(title: string): Observable<CreateBoardResponseModel> {
+    return this.httpClient.post<CreateBoardResponseModel>('/boards', { title });
+  }
+
+  public updateBoard(
+    title: string,
+    boardId: string
+  ): Observable<UpdateBoardResponseModel> {
+    return this.httpClient.put<UpdateBoardResponseModel>(`/boards/${boardId}`, {
+      title,
+    });
+  }
+
+  public getAllBoards(): Observable<GetAllBoardsResponseModel[]> {
+    return this.httpClient.get<GetAllBoardsResponseModel[]>('/boards');
   }
 
   public getBoards(): Observable<Board[]> {

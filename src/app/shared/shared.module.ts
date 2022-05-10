@@ -14,9 +14,10 @@ import { LogoComponent } from './components/logo/logo.component';
 import { MatSelectModule } from '@angular/material/select';
 import { TranslateModule } from '@ngx-translate/core';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
-  declarations: [LogoComponent, ConfirmationModalComponent],
+  declarations: [LogoComponent, ConfirmationModalComponent, SpinnerComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,11 +25,13 @@ import { ConfirmationModalComponent } from './components/confirmation-modal/conf
     RouterModule,
     MatButtonModule,
     TranslateModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     FormsModule,
     LogoComponent,
     ConfirmationModalComponent,
+    SpinnerComponent,
     ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
