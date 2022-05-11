@@ -24,6 +24,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MatIconModule,
     RouterModule,
     MatButtonModule,
+    TranslateModule,
     MatProgressSpinnerModule,
   ],
   exports: [

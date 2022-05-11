@@ -19,7 +19,26 @@
       "cancel": "Отмена",
       "submit": "Изменить"
     },
-    "addTask": "Добавить задание"
+    "addTask": "Добавить задание",
+    "boardModal": {
+      "title": {
+        "create": "Создать колонку",
+        "edit": "Редактировать задание",
+        "createTask": "Создать задание"
+      },
+      "inputs": {
+        "title": "Заголовок",
+        "description": "Описание"
+      },
+      "buttons": {
+        "cancel": "отмена",
+        "create": "создать",
+        "save": "сохранить"
+      },
+      "errors": {
+        "title": "Не менее 3-ёх символов"
+      }
+    }
   },
   "form": {
     "name": "Имя",
@@ -40,6 +59,27 @@
     "questions": {
       "haveAccount": "Уже есть аккаунт?",
       "dontHaveAccount": "У вас нет аккаунта?"
+    }
+  },
+  "mainPage": {
+    "title": "Доски",
+    "createForm": {
+      "title": "Создать новую доску",
+      "inputTitle": "Введите название доски",
+      "errorMessage": "Пожалуйста, введите название",
+      "buttons": {
+        "create": "Создать",
+        "cancel": "Отмена"
+      }
+    },
+    "updateForm": {
+      "title": "Обновить доску",
+      "inputTitle": "Введите новое название доски",
+      "errorMessage": "Пожалуйста, введите название",
+      "buttons": {
+        "create": "Обновить",
+        "cancel": "Отмена"
+      }
     }
   },
   "footer": {
@@ -79,5 +119,15 @@
     "cancel": "Отмена",
     "save": "Сохранить",
     "delete": "Удалить профиль"
+  },
+  "confirmWindow": {
+    "words": {
+      "first": "Удалить",
+      "seconed": "навсегда"
+    },
+    "buttons": {
+      "cancel": "отмена",
+      "remove": "удалить"
+    }
   }
 }

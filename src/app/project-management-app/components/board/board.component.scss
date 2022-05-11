@@ -18,6 +18,22 @@
     box-sizing: border-box;
   }
 
+  &__left-btn {
+    margin-left: 10px;
+    color: white;
+    font-size: 22px;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff4d;
+    transition: 0.2s;
+
+    &:hover {
+      background: #9698a327;
+      transform: scale(1.1);
+    }
+  }
+
   &__text {
     font-size: 1.2em;
     margin: 0 10px 0 15px;

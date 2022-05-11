@@ -1,7 +1,13 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 125px);
+}
+
 .form {
   width: 450px;
   height: 560px;
-  margin: 120px auto 0 auto;
   border-radius: 25px;
   padding: 35px 0 0 0;
   text-align: center;

@@ -33,6 +33,27 @@
       "dontHaveAccount": "Don`t have an account?"
     }
   },
+  "mainPage": {
+    "title": "Boards",
+    "createForm": {
+      "title": "Create new board",
+      "inputTitle": "Enter board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Create",
+        "cancel": "Cancel"
+      }
+    },
+    "updateForm": {
+      "title": "Update board",
+      "inputTitle": "Enter new board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Update",
+        "cancel": "Cancel"
+      }
+    }
+  },
   "board": {
     "title": "Board",
     "createBtn": "Add new column",
@@ -40,7 +61,26 @@
       "cancel": "Cancel",
       "submit": "Change"
     },
-    "addTask": "Add task"
+    "addTask": "Add task",
+    "boardModal": {
+      "title": {
+        "create": "create column",
+        "edit": "edit task",
+        "createTask": "Create Task"
+      },
+      "inputs": {
+        "title": "Title",
+        "description": "Description"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "create": "create",
+        "save": "save"
+      },
+      "errors": {
+        "title": "At least 3 characters"
+      }
+    }
   },
   "footer": {
     "date": "by",
@@ -79,5 +119,15 @@
     "cancel": "Cancel",
     "save": "Save",
     "delete": "Delete profile"
+  },
+  "confirmWindow": {
+    "words": {
+      "first": "Remove the",
+      "seconed": "permanently"
+    },
+    "buttons": {
+      "cancel": "cancel",
+      "remove": "remove"
+    }
   }
 }
