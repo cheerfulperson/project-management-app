@@ -5,7 +5,11 @@ import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 
 import { numbers, regexp, statusCodes } from 'src/app/constants';
-import { LoginResponseModel, SignUpUserModel } from '../../models/user.model';
+import {
+  LoginResponseModel,
+  SignUpResponseModel,
+  SignUpUserModel,
+} from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 import { Store } from '@ngrx/store';
 import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
@@ -41,17 +45,15 @@ export class SignUpComponent {
       this.signUpForm.markAllAsTouched();
       return;
     }
+
     const user: SignUpUserModel = {
       name: this.signUpForm.controls['nameInput'].value,
       login: this.signUpForm.controls['loginInput'].value,
       password: this.signUpForm.controls['passwordInput'].value,
     };
+
     this.authService
-      .signUp({
-        name: user.name,
-        login: user.login,
-        password: user.password,
-      })
+      .signUp(user)
       .pipe(
         catchError((err: HttpErrorResponse) => {
           if (err.status === statusCodes.Conflict) {
@@ -60,13 +62,13 @@ export class SignUpComponent {
           throw err.error.message;
         })
       )
-      .subscribe(() => {
+      .subscribe((data: SignUpResponseModel) => {
         this.authService
           .login({ login: user.login, password: user.password })
           .subscribe(({ token }: LoginResponseModel) => {
             const action: AddUserSession = new AddUserSession({
-              name: user.name,
-              id: '123456',
+              name: data.name,
+              id: data.id,
               token: token,
             });
             this.store.dispatch(action);
