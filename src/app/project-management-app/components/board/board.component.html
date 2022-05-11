@@ -1,7 +1,10 @@
 <section class="board" *ngIf="board">
   <article class="board__header">
+    <button class="board__left-btn" mat-icon-button routerLink="/boards">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
     <p class="board__text">{{ 'board.title' | translate }}:</p>
-    <input class="board__title" [value]="board.title" />
+    <p class="board__title">{{ board.title }}</p>
   </article>
   <article
     class="board__body"
@@ -11,14 +14,27 @@
   >
     <article class="board__columns" cdkDropListGroup>
       <app-column
-        *ngFor="let item of columns"
+        *ngFor="let item of board.columns | sortByOrder"
+        [board]="board"
         [columnInfo]="item"
-        [tasks]="item.tasks"
-        (deleteCol)="deleteColumn($event)"
+        [tasks]="item?.tasks"
+        (deleteCol)="openConfirmWindow($event)"
       ></app-column>
     </article>
-    <button mat-button class="board__button">
+    <button mat-button class="board__button" (click)="triggerModal(true)">
       + {{ 'board.createBtn' | translate }}
     </button>
   </article>
 </section>
+<app-board-modal
+  *ngIf="isModalVisible"
+  [board]="board"
+  (modalClose)="triggerModal(false)"
+  (valueChange)="createColumn($event)"
+></app-board-modal>
+<app-confirmation-modal
+  *ngIf="columnToDelete"
+  [deleteTypeName]="columnToDelete.title"
+  (userChoice)="deleteColumn($event)"
+></app-confirmation-modal>
+<app-spinner *ngIf="!isLoaded"></app-spinner>

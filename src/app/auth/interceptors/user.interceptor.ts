@@ -4,19 +4,22 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
+  HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
 import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
 import { IAppState } from 'src/app/ngrx/states/app.state';
 import { UserSessionData } from 'src/app/shared/models/user-session.model';
+import { DeleteUserSession } from 'src/app/ngrx/actions/session.actions';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class UserInterceptor implements HttpInterceptor {
   public token: string | null = null;
 
-  public constructor(private store: Store) {
+  public constructor(private store: Store, private router: Router) {
     (this.store as Store<IAppState>)
       .select(selectSession)
       .subscribe((session: UserSessionData | null) => {
@@ -39,7 +42,17 @@ export class UserInterceptor implements HttpInterceptor {
       url: `${environment.basicUrl}${url}`,
     });
 
-    return next.handle(this.addAuthToken(reqInfo));
+    return next.handle(this.addAuthToken(reqInfo)).pipe(
+      catchError((err: HttpErrorResponse) => {
+        const status: number = 401;
+        const action: DeleteUserSession = new DeleteUserSession();
+        if (err.status === status) {
+          this.store.dispatch(action);
+          this.router.navigateByUrl('/');
+        }
+        return [];
+      })
+    );
   }
 
   public addAuthToken(request: HttpRequest<unknown>): HttpRequest<unknown> {

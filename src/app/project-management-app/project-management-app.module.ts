@@ -8,6 +8,10 @@ import { ResizeHeightDirective } from './directives/resize-height.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { BoardModalComponent } from './components/board/board-modal/board-modal.component';
+import { SortByOrderPipe } from './pipes/sort-by-order.pipe';
+import { SortTasksPipe } from './pipes/sort-tasks.pipe';
+
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BoardItemComponent } from './components/main-page/board-item/board-item.component';
 @NgModule({
@@ -17,6 +21,9 @@ import { BoardItemComponent } from './components/main-page/board-item/board-item
     ResizeHeightDirective,
     PageNotFoundComponent,
     HomepageComponent,
+    BoardModalComponent,
+    SortByOrderPipe,
+    SortTasksPipe,
     MainPageComponent,
     BoardItemComponent,
   ],

@@ -61,7 +61,26 @@
       "cancel": "Cancel",
       "submit": "Change"
     },
-    "addTask": "Add task"
+    "addTask": "Add task",
+    "boardModal": {
+      "title": {
+        "create": "create column",
+        "edit": "edit task",
+        "createTask": "Create Task"
+      },
+      "inputs": {
+        "title": "Title",
+        "description": "Description"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "create": "create",
+        "save": "save"
+      },
+      "errors": {
+        "title": "At least 3 characters"
+      }
+    }
   },
   "footer": {
     "date": "by",
@@ -97,5 +116,16 @@
   },
   "edit": {
     "title": "Edit profile"
+  },
+
+  "confirmWindow": {
+    "words": {
+      "first": "Remove the",
+      "seconed": "permanently"
+    },
+    "buttons": {
+      "cancel": "cancel",
+      "remove": "remove"
+    }
   }
 }

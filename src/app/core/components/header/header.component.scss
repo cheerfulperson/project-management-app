@@ -58,6 +58,7 @@
 
   &__menu-icon {
     display: none;
+    margin-right: 5px;
     @media (max-width: 720px) {
       display: block;
     }
