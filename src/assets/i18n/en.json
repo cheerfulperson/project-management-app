@@ -123,7 +123,8 @@
   "confirmWindow": {
     "words": {
       "first": "Remove the",
-      "seconed": "permanently"
+      "seconed": "permanently",
+      "target": "profile"
     },
     "buttons": {
       "cancel": "cancel",

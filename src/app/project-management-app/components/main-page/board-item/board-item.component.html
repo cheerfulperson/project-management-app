@@ -55,6 +55,6 @@
 
 <app-confirmation-modal
   *ngIf="isConfModalActive"
-  deleteTypeName="board"
+  [deleteTypeName]="board.title"
   (userChoice)="deleteBoard($event)"
 ></app-confirmation-modal>

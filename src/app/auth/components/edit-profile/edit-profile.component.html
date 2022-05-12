@@ -27,12 +27,15 @@
       <mat-form-field>
         <mat-label>{{ 'form.password' | translate }}</mat-label>
         <input
-          type="password"
+          type="{{ isViewPassword ? 'text' : 'password' }}"
           autocomplete="off"
           matInput
           formControlName="passwordInput"
           required
         />
+        <mat-icon class="eye-black" (click)="toggleViewPassword()">{{
+          isViewPassword ? 'visibility_on' : 'visibility_off'
+        }}</mat-icon>
         <mat-error>{{
           (editProfileForm.controls['passwordInput'].hasError('pattern')
             ? 'form.errors.otherErrors.passwordError'
@@ -46,7 +49,7 @@
           mat-flat-button
           color="accent"
           type="submit"
-          (click)="cancel()"
+          routerLink="/"
         >
           {{ 'edit.cancel' | translate }}
         </button>
@@ -65,13 +68,13 @@
 
     <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
 
-    <button
-      mat-button
-      class="delete-btn"
-      (click)="delete()"
-      routerLink="/auth/login"
-    >
+    <button mat-button class="delete-btn" (click)="confirmDelete()">
       {{ 'edit.delete' | translate }}
     </button>
   </div>
 </div>
+<app-confirmation-modal
+  *ngIf="isConfirmWindowOpen"
+  [deleteTypeName]="userName"
+  (userChoice)="deleteProfile($event)"
+></app-confirmation-modal>

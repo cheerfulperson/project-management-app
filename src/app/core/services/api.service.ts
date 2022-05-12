@@ -42,10 +42,19 @@ export class ApiService {
     return this.httpClient.get<SignUpResponseModel[]>('/users');
   }
 
-  public editProfile(
-    userData: SignUpResponseModel
-  ): Observable<SignUpResponseModel[]> {
-    return this.httpClient.post<SignUpResponseModel[]>('/users', userData);
+  public updateUserProfile(
+    updatedUserData: SignUpUserModel,
+    userId: string
+  ): Observable<SignUpUserModel> {
+    console.log(updatedUserData, userId);
+    return this.httpClient.put<SignUpUserModel>(
+      `/users/${userId}`,
+      updatedUserData
+    );
+  }
+
+  public deleteUserProfile(userId: string): void {
+    this.httpClient.delete(`/users/${userId}`).subscribe();
   }
 
   public deleteBoard(id: string): void {

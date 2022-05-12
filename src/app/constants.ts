@@ -18,3 +18,7 @@ export enum statusCodes {
   Conflict = 409,
   PageNotFound = 404,
 }
+
+export enum Timer {
+  MessageErrorView = 5000,
+}

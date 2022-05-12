@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable, Subscriber, switchMap } from 'rxjs';
 
 import { ApiService } from 'src/app/core/services/api.service';
+import { DeleteUserSession } from 'src/app/ngrx/actions/session.actions';
 import {
   LoginResponseModel,
   LoginUserModel,
@@ -13,10 +16,20 @@ import {
   providedIn: 'root',
 })
 export class AuthService {
-  public constructor(private apiService: ApiService) {}
+  public constructor(
+    private apiService: ApiService,
+    private store: Store,
+    private router: Router
+  ) {}
 
   public login(userData: LoginUserModel): Observable<LoginResponseModel> {
     return this.apiService.login(userData);
+  }
+
+  public logout(): void {
+    const action: DeleteUserSession = new DeleteUserSession();
+    this.store.dispatch(action);
+    this.router.navigateByUrl('/');
   }
 
   public signUp(userData: SignUpUserModel): Observable<SignUpResponseModel> {
@@ -31,13 +44,6 @@ export class AuthService {
       });
   }
 
-  public editProfile(userLogin: string): void {
-    this.apiService
-      .getAllUsers()
-      .subscribe((elements: SignUpResponseModel[]) => {
-        elements.filter((el: SignUpResponseModel) => el.login === userLogin);
-      });
-  }
   public getUserByLogin(
     login: string,
     token: string

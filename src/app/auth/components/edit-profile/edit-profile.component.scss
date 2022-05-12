@@ -37,6 +37,17 @@
         color: #191919;
       }
 
+      .mat-form-field-infix {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .eye-black {
+        object-fit: cover;
+        color: #191919;
+        cursor: pointer;
+      }
+
       .mat-form-field-required-marker {
         color: #ff0000;
       }

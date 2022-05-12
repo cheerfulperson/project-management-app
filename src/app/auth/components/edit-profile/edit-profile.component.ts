@@ -1,12 +1,12 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { catchError } from 'rxjs';
-import { numbers, regexp, statusCodes } from 'src/app/constants';
-import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
-import { LoginResponseModel, SignUpUserModel } from '../../models/user.model';
+import { numbers, regexp, Timer } from 'src/app/constants';
+import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
+import { SignUpUserModel } from '../../models/user.model';
+import { UserSessionData } from 'src/app/shared/models/user-session.model';
+import { IAppState } from 'src/app/ngrx/states/app.state';
+import { ApiService } from 'src/app/core/services/api.service';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -16,6 +16,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class EditProfileComponent {
   public errorMessage: string = '';
+
+  public id: string = '';
+
+  public userName: string = '';
+
+  public isViewPassword: boolean = false;
+
+  public isConfirmWindowOpen: boolean = false;
 
   public editProfileForm: FormGroup = new FormGroup({
     nameInput: new FormControl('', Validators.minLength(numbers.MinNameLength)),
@@ -30,52 +38,18 @@ export class EditProfileComponent {
   });
 
   public constructor(
+    private store: Store,
     private authService: AuthService,
-    private router: Router,
-    private store: Store
-  ) {}
-
-  /*   public signUp(): void {
-    if (this.editProfileForm.invalid) {
-      this.editProfileForm.markAllAsTouched();
-      return;
-    }
-    const user: SignUpUserModel = {
-      name: this.editProfileForm.controls['nameInput'].value,
-      login: this.editProfileForm.controls['loginInput'].value,
-      password: this.editProfileForm.controls['passwordInput'].value,
-    };
-    this.authService
-      .signUp({
-        name: user.name,
-        login: user.login,
-        password: user.password,
-      })
-      .pipe(
-        catchError((err: HttpErrorResponse) => {
-          if (err.status === statusCodes.Conflict) {
-            this.showErrorMessage(err.error.message);
-          } else this.showErrorMessage('Server error');
-          throw err.error.message;
-        })
-      )
-      .subscribe(() => {
-        this.authService
-          .login({ login: user.login, password: user.password })
-          .subscribe(({ token }: LoginResponseModel) => {
-            const action: AddUserSession = new AddUserSession({
-              name: user.name,
-              id: '123456',
-              token: token,
-            });
-            this.store.dispatch(action);
-            this.router.navigateByUrl('');
-          });
+    private apiService: ApiService
+  ) {
+    (this.store as Store<IAppState>)
+      .select(selectSession)
+      .subscribe((session: UserSessionData | null) => {
+        if (session) {
+          this.id = session.id;
+          this.userName = session.name;
+        }
       });
-  } */
-
-  public cancel(): void {
-    this.router.navigateByUrl('');
   }
 
   public save(): void {
@@ -83,23 +57,36 @@ export class EditProfileComponent {
       this.editProfileForm.markAllAsTouched();
       return;
     }
-    const user: SignUpUserModel = {
+    const userUpdatedData: SignUpUserModel = {
       name: this.editProfileForm.controls['nameInput'].value,
       login: this.editProfileForm.controls['loginInput'].value,
       password: this.editProfileForm.controls['passwordInput'].value,
     };
-    this.authService.editProfile(user.login);
-    this.router.navigateByUrl('');
+    this.apiService.updateUserProfile(userUpdatedData, this.id).subscribe();
   }
 
-  public delete(): void {}
+  public confirmDelete(): void {
+    this.isConfirmWindowOpen = true;
+  }
+
+  public deleteProfile(choice: boolean): void {
+    console.log(choice);
+    if (choice) {
+      this.apiService.deleteUserProfile(this.id);
+    }
+    this.isConfirmWindowOpen = false;
+    this.authService.logout();
+  }
+
+  public toggleViewPassword(): void {
+    this.isViewPassword = !this.isViewPassword;
+  }
 
   private showErrorMessage(message: string): void {
     this.errorMessage = message;
     this.editProfileForm.controls['loginInput'].setValue('');
     setTimeout(() => {
       this.errorMessage = '';
-      // eslint-disable-next-line no-magic-numbers
-    }, 5000);
+    }, Timer.MessageErrorView);
   }
 }

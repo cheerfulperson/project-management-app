@@ -11,7 +11,6 @@ export class ConfirmationModalComponent {
 
   @Input() public set deleteTypeName(value: string) {
     const maxlength: number = 12;
-
     this.name = value;
     if (value.length > maxlength) {
       this.name = value
