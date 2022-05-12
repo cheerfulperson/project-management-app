@@ -1,77 +1,73 @@
 <section class="about">
-  <div class="wrapper">
-    <div class="about-content">
+  <div class="about-content">
+    <article class="about-text_block">
       <h2 class="about-content_title">
         {{ 'homePage.aboutTitle' | translate }}
       </h2>
-      <h3 class="about-text">{{ 'homePage.aboutText' | translate }}</h3>
-      <div class="about-content_head">
-        <div class="about-content_text">
-          <ul class="about-list">
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.1' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.2' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.3' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.4' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.5' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.6' | translate }}
-            </li>
-            <li class="about-list_item">
-              {{ 'homePage.aboutItems.7' | translate }}
-            </li>
-          </ul>
-        </div>
-        <div class="about-icons">
-          <img
-            src="../../../../assets/images/quality.png"
-            alt="icon"
-            class="icon"
-          />
-          <img
-            src="../../../../assets/images/tasks.png"
-            alt="tasks"
-            class="icon"
-          />
-          <img
-            src="../../../../assets/images/save.png"
-            alt="save"
-            class="icon"
-          />
-          <img
-            src="../../../../assets/images//work.png"
-            alt="icon"
-            class="icon"
-          />
-        </div>
-      </div>
+      <p class="about-content_text">{{ 'homePage.subtext' | translate }}</p>
+      <button mat-raised-button class="about-btn" [routerLink]="routerLink">
+        {{ 'homePage.btn' | translate }}
+      </button>
+    </article>
+    <img
+      class="about-image"
+      src="https://res.cloudinary.com/monday-blogs/fl_lossy,f_auto,q_auto/wp-blog/2021/01/Kanban-board-1.jpg"
+      alt=""
+    />
+    <!-- <div class="about-content_head">
+      
+        
+    </div> -->
+  </div>
+</section>
+
+<section class="main-nav">
+  <div class="main-nav__icons">
+    <button mat-button matTooltip="{{ 'homePage.nav.about' | translate }}">
+      <mat-icon class="main-nav__icon">public</mat-icon>
+    </button>
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.ourBenefits' | translate }}"
+    >
+      <mat-icon class="main-nav__icon"> list_alt</mat-icon>
+    </button>
+    <button mat-button matTooltip="{{ 'homePage.nav.rss' | translate }}">
+      <mat-icon class="main-nav__icon">school</mat-icon>
+    </button>
+    <button mat-button matTooltip="{{ 'homePage.nav.aboutUs' | translate }}">
+      <mat-icon class="main-nav__icon">supervised_user_circle</mat-icon>
+    </button>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="hero__title">{{ 'homePage.about.whatIsKBoard' | translate }}</h2>
+    <p class="hero-content_text">
+      {{ 'homePage.about.description' | translate }}
+    </p>
+    <div class="hero-content_image">
+      <img
+        src="../../../../assets/images/hero.png"
+        alt="hero"
+        class="hero-image"
+      />
+      <p class="hero-content_img-text">
+        {{ 'homePage.about.heroText' | translate }}
+      </p>
     </div>
   </div>
 </section>
-<section class="hero">
-  <div class="wrapper">
-    <div class="hero-content">
-      <div class="hero-content_image">
-        <img
-          src="../../../../assets/images/hero.png"
-          alt="hero"
-          class="hero-image"
-        />
-      </div>
-      <div class="hero-content_text">
-        {{ 'homePage.heroText' | translate }}
-      </div>
-    </div>
-  </div>
+
+<section class="benefits">
+  <h2 class="benefits__title">{{ 'homePage.benefits.title' | translate }}</h2>
+  <p class="benefits__text">{{ 'homePage.benefits.aboutText' | translate }}</p>
+  <ul class="benefits__list">
+    <li class="benefits__list-item" *ngFor="let i of benefits">
+      <p>{{ i | translate }}</p>
+    </li>
+  </ul>
 </section>
 
 <section class="our-team">

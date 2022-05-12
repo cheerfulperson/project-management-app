@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { TranslateModule } from '@ngx-translate/core';
 import { ConfirmationModalComponent } from './components/confirmation-modal/confirmation-modal.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [LogoComponent, ConfirmationModalComponent, SpinnerComponent],
@@ -44,6 +45,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MatSlideToggleModule,
     MatSelectModule,
     TranslateModule,
+    MatTooltipModule,
   ],
 })
 export class SharedModule {}

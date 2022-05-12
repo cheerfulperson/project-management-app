@@ -96,17 +96,32 @@
   },
   "homePage": {
     "aboutTitle": "Our Project Management application is the success of your team's work.",
-    "aboutText": "By managing your project with our application, you get the following benefits:",
-    "aboutItems": {
-      "1": "- Full control over your project",
-      "2": "- Unlimited number of tasks in the project",
-      "3": "- Task scheduling",
-      "4": "- Control over project performers",
-      "5": "- Ability to add and remove tasks at any time",
-      "6": "- Ability to save and load projects",
-      "7": "- Control remotely"
+    "subtext": "Our team brings you the development tool used by agile teams",
+    "btn": "Get it",
+    "about": {
+      "whatIsKBoard": "What is a kanban board",
+      "description": "A kanban board is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). It can help both agile and DevOps teams establish order in their daily work. Kanban boards use cards, columns, and continuous improvement to help technology and service teams commit to the right amount of work, and get it done!",
+      "heroText": "By dividing the project into small tasks, you simplify the work process and the ability to divide the project between employees of different levels, capabilities and qualifications."
     },
-    "heroText": "By dividing the project into small tasks, you simplify the work process and the ability to divide the project between employees of different levels, capabilities and qualifications.",
+    "nav": {
+      "about": "What is a kanban board",
+      "ourBenefits": "Our benefits",
+      "rss": "About RSSchool",
+      "aboutUs": "Our team"
+    },
+    "benefits": {
+      "title": "Our benefits",
+      "aboutText": "By managing your project with our application, you get:",
+      "aboutItems": {
+        "1": "Full control over your project",
+        "2": "Unlimited number of tasks in the project",
+        "3": "Task scheduling",
+        "4": "Control over project performers",
+        "5": "Ability to add and remove tasks at any time",
+        "6": "Ability to save and load projects",
+        "7": "Control remotely"
+      }
+    },
     "description": "This project was made as part of the Angular course at the RSSchool online school.",
     "title": "Our team:",
     "memberDescription": {
