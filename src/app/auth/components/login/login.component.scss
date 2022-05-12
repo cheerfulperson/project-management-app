@@ -8,6 +8,30 @@
   color: #fff;
   background-color: #191919;
 
+  @media (max-width: 720px) {
+    width: 350px;
+    height: 360px;
+    margin: 100px auto 0 auto;
+    padding: 25px 0 0 0;
+  }
+
+  @media (max-width: 400px) {
+    width: 300px;
+    height: 310px;
+    margin: 80px auto 0 auto;
+    padding: 22px 0 0 0;
+  }
+
+  &__title {
+    @media (max-width: 720px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 16px;
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -16,7 +40,32 @@
     width: 340px;
     font-size: 15px;
 
+    @media (max-width: 720px) {
+      width: 280px;
+      font-size: 12px;
+      margin: 30px auto 0 auto;
+      row-gap: 25px;
+    }
+
+    @media (max-width: 400px) {
+      width: 240px;
+      font-size: 11px;
+      margin: 25px auto 0 auto;
+      row-gap: 18px;
+    }
+
     ::ng-deep .mat-form-field {
+      width: 340px;
+      margin: 0 auto;
+
+      @media (max-width: 720px) {
+        width: 280px;
+      }
+
+      @media (max-width: 400px) {
+        width: 240px;
+      }
+
       .mat-input-element {
         color: #191919;
       }
@@ -41,6 +90,14 @@
       background-color: #c84b31;
       width: 180px;
       margin: 0 auto;
+
+      @media (max-width: 720px) {
+        width: 150px;
+      }
+
+      @media (max-width: 400px) {
+        width: 100px;
+      }
     }
   }
 
@@ -54,11 +111,26 @@
   &__question {
     margin-top: 40px;
     font-size: 14px;
+
+    @media (max-width: 720px) {
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 11px;
+      margin-top: 22px;
+    }
   }
 
   &__link {
     font-size: 14px;
     margin-top: 5px;
     color: #c84b31;
+
+    @media (max-width: 400px) {
+      font-size: 12px;
+      margin-top: 0px;
+    }
   }
 }

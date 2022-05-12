@@ -21,6 +21,10 @@
   &__content {
     width: 100%;
     z-index: 101;
+
+    @media (max-width: 600px) {
+      left: calc(50% - 150px);
+    }
   }
 
   .wrap {
@@ -60,6 +64,10 @@
 
         font-size: 14px;
         font-family: 'Inter', sans-serif;
+
+        @media (max-width: 600px) {
+          font-size: 12px;
+        }
       }
     }
   }
