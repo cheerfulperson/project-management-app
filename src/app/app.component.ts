@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     (this.store as Store<IAppState>)
       .select(selectIsUserAuthorized)
       .subscribe((session: boolean) => {
-        if (session) {
+        if (session && this.router.url !== '' && this.router.url !== '/') {
           this.router.navigateByUrl('/boards');
         }
       });

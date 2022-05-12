@@ -1,10 +1,11 @@
 .board {
   position: relative;
+  max-width: 1400px;
   height: calc(100vh - 132px);
   overflow-y: hidden;
   overflow-x: hidden;
   margin: auto;
-  padding: 0 0 10px 0;
+  padding: 10px;
   box-sizing: border-box;
   border-radius: 5px;
   min-height: 450px;

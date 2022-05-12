@@ -91,7 +91,8 @@
     }
   },
   "pageNotFound": {
-    "titleSmall": "Page not found"
+    "titleSmall": "Error: 404 page not found",
+    "subtext": "Sorry, the page you're looking for cannot be accessed"
   },
   "homePage": {
     "aboutTitle": "Our Project Management application is the success of your team's work.",

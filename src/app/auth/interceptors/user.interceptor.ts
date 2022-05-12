@@ -49,8 +49,9 @@ export class UserInterceptor implements HttpInterceptor {
         if (err.status === status) {
           this.store.dispatch(action);
           this.router.navigateByUrl('/');
+          return [];
         }
-        return [];
+        throw err;
       })
     );
   }
