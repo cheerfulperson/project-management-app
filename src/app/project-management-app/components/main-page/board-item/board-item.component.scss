@@ -146,6 +146,10 @@
 
     &__title {
       font-size: 20px;
+
+      @media (max-width: 800px) {
+        font-size: 15px;
+      }
     }
 
     &__content {
@@ -155,6 +159,12 @@
       column-gap: 20px;
       row-gap: 15px;
       margin-top: 20px;
+
+      @media (max-width: 800px) {
+        row-gap: 10px;
+        column-gap: 15px;
+        margin-top: 15px;
+      }
 
       &__item {
         background-size: cover;
@@ -166,6 +176,11 @@
         transition: transform 0.15s linear;
         &:hover {
           transform: scale(1.08);
+        }
+
+        @media (max-width: 800px) {
+          height: 40px;
+          width: 40px;
         }
       }
     }
