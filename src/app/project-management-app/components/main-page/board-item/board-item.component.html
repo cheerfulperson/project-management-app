@@ -1,4 +1,4 @@
-<div class="board-item-wrap">
+<div class="board-item-wrap" #boardWrap>
   <div class="board-item" routerLink="{{ board.id }}">
     <h2 class="board-item__title">{{ board.title }}</h2>
   </div>
@@ -11,7 +11,11 @@
     <mat-icon>edit</mat-icon>
   </button>
 
-  <button class="settings-btn">
+  <button
+    class="settings-btn"
+    (click)="toggleChangeBg()"
+    *ngIf="!isChangeBgActive"
+  >
     <mat-icon>settings</mat-icon>
   </button>
 
@@ -56,8 +60,8 @@
     </div>
   </form>
 
-  <div class="bg-settings">
-    <div class="bg-settings__cancel">
+  <div class="bg-settings" *ngIf="isChangeBgActive">
+    <div class="bg-settings__cancel" (click)="toggleChangeBg()">
       <mat-icon>cancel</mat-icon>
     </div>
     <h2 class="bg-settings__title">
@@ -70,46 +74,54 @@
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/1.jpg');
         "
+        (click)="changeBoardBg(1)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/2.jpg');
         "
+        (click)="changeBoardBg(2)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/3.jpg');
         "
+        (click)="changeBoardBg(3)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/4.jpg');
         "
+        (click)="changeBoardBg(4)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/5.jpg');
         "
+        (click)="changeBoardBg(5)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/6.jpg');
         "
+        (click)="changeBoardBg(6)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="
           background-image: url('../../../../../assets/images/boardsBg-small/7.jpg');
         "
+        (click)="changeBoardBg(7)"
       ></div>
       <div
         class="bg-settings__content__item"
         style="background-color: #466594"
+        (click)="changeBoardBg(0)"
       ></div>
     </div>
   </div>
@@ -117,6 +129,6 @@
 
 <app-confirmation-modal
   *ngIf="isConfModalActive"
-  deleteTypeName="board"
+  deleteTypeName="{{ board.title }}"
   (userChoice)="deleteBoard($event)"
 ></app-confirmation-modal>
