@@ -115,13 +115,16 @@
     }
   },
   "edit": {
-    "title": "Edit profile"
+    "title": "Edit profile",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete profile"
   },
-
   "confirmWindow": {
     "words": {
       "first": "Remove the",
-      "seconed": "permanently"
+      "seconed": "permanently",
+      "target": "profile"
     },
     "buttons": {
       "cancel": "cancel",

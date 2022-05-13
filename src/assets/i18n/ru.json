@@ -117,12 +117,14 @@
   "edit": {
     "title": "Редактировать профиль",
     "cancel": "Отмена",
-    "save": "Сохранить"
+    "save": "Сохранить",
+    "delete": "Удалить профиль"
   },
   "confirmWindow": {
     "words": {
       "first": "Удалить",
-      "seconed": "навсегда"
+      "seconed": "навсегда",
+      "target": "профиль"
     },
     "buttons": {
       "cancel": "отмена",

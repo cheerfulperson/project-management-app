@@ -38,6 +38,25 @@ export class ApiService {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 
+  public getAllUsers(): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('/users');
+  }
+
+  public updateUserProfile(
+    updatedUserData: SignUpUserModel,
+    userId: string
+  ): Observable<SignUpUserModel> {
+    console.log(updatedUserData, userId);
+    return this.httpClient.put<SignUpUserModel>(
+      `/users/${userId}`,
+      updatedUserData
+    );
+  }
+
+  public deleteUserProfile(userId: string): void {
+    this.httpClient.delete(`/users/${userId}`).subscribe();
+  }
+
   public deleteBoard(id: string): void {
     this.httpClient.delete(`/boards/${id}`).subscribe();
   }
