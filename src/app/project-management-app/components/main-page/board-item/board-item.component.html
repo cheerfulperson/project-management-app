@@ -11,6 +11,10 @@
     <mat-icon>edit</mat-icon>
   </button>
 
+  <button class="settings-btn">
+    <mat-icon>settings</mat-icon>
+  </button>
+
   <button
     mat-mini-fab
     color="warn"
@@ -51,6 +55,64 @@
       </button>
     </div>
   </form>
+
+  <div class="bg-settings">
+    <div class="bg-settings__cancel">
+      <mat-icon>cancel</mat-icon>
+    </div>
+    <h2 class="bg-settings__title">
+      {{ 'mainPage.changeBg.title' | translate }}
+    </h2>
+
+    <div class="bg-settings__content">
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/1.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/2.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/3.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/4.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/5.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/6.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="
+          background-image: url('../../../../../assets/images/boardsBg-small/7.jpg');
+        "
+      ></div>
+      <div
+        class="bg-settings__content__item"
+        style="background-color: #466594"
+      ></div>
+    </div>
+  </div>
 </div>
 
 <app-confirmation-modal

@@ -8,8 +8,8 @@
 
   .edit-board {
     position: absolute;
-    top: 10px;
-    left: calc(100% - 45px);
+    top: 15px;
+    left: 10px;
 
     background: none;
     border: none;
@@ -108,6 +108,62 @@
         @media (max-width: 800px) {
           width: 80px;
           font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .settings-btn {
+    position: absolute;
+    top: 15px;
+    left: calc(100% - 45px);
+
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .bg-settings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    background-color: #191919;
+    border-radius: 25px;
+
+    &__cancel {
+      position: absolute;
+      left: calc(100% - 40px);
+      cursor: pointer;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 20px;
+      row-gap: 15px;
+      margin-top: 20px;
+
+      &__item {
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        transition: transform 0.15s linear;
+        &:hover {
+          transform: scale(1.08);
         }
       }
     }

@@ -52,6 +52,9 @@
         "create": "Update",
         "cancel": "Cancel"
       }
+    },
+    "changeBg": {
+      "title": "Background:"
     }
   },
   "board": {
