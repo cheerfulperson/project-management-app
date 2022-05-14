@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { catchError } from 'rxjs';
 
-import { numbers, statusCodes } from 'src/app/constants';
+import { ErrorMessages, numbers, StatusCodes, Timer } from 'src/app/constants';
 import { AddUserSession } from 'src/app/ngrx/actions/session.actions';
 import {
   LoginResponseModel,
@@ -44,9 +44,9 @@ export class LoginComponent {
         })
         .pipe(
           catchError((err: HttpErrorResponse) => {
-            if (err.status === statusCodes.Forbiden) {
-              this.showErrorMessage(err.error.message);
-            } else this.showErrorMessage('Server error');
+            if (err.status === StatusCodes.Forbiden) {
+              this.showErrorMessage(ErrorMessages.Forbiden);
+            } else this.showErrorMessage(ErrorMessages.OtherErrors);
             throw err.error.message;
           })
         )
@@ -72,9 +72,9 @@ export class LoginComponent {
 
   private showErrorMessage(message: string): void {
     this.errorMessage = message;
+    this.loginForm.controls['loginInput'].setValue('');
     setTimeout(() => {
       this.errorMessage = '';
-      // eslint-disable-next-line no-magic-numbers
-    }, 5000);
+    }, Timer.MessageErrorView);
   }
 }

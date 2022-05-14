@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { numbers, regexp, Timer } from 'src/app/constants';
+import { numbers, regexp } from 'src/app/constants';
 import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
 import { SignUpUserModel } from '../../models/user.model';
 import { UserSessionData } from 'src/app/shared/models/user-session.model';
@@ -70,23 +70,14 @@ export class EditProfileComponent {
   }
 
   public deleteProfile(choice: boolean): void {
-    console.log(choice);
     if (choice) {
       this.apiService.deleteUserProfile(this.id);
+      this.authService.logout();
     }
     this.isConfirmWindowOpen = false;
-    this.authService.logout();
   }
 
   public toggleViewPassword(): void {
     this.isViewPassword = !this.isViewPassword;
-  }
-
-  private showErrorMessage(message: string): void {
-    this.errorMessage = message;
-    this.editProfileForm.controls['loginInput'].setValue('');
-    setTimeout(() => {
-      this.errorMessage = '';
-    }, Timer.MessageErrorView);
   }
 }

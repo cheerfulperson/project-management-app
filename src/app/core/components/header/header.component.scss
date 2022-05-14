@@ -50,6 +50,12 @@
     }
   }
 
+  /*   &__search {
+    @media (max-width: 720px) {
+      display: none;
+    }
+  } */
+
   &__auth-nav {
     @media (max-width: 720px) {
       display: none;
