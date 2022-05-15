@@ -14,6 +14,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [SignUpComponent, LoginComponent, EditProfileComponent],
   imports: [
@@ -24,6 +25,7 @@ import { EditProfileComponent } from './components/edit-profile/edit-profile.com
     MatInputModule,
     MatButtonModule,
     TranslateModule,
+    SharedModule,
   ],
   providers: [
     AuthService,

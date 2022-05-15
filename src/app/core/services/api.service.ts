@@ -38,6 +38,24 @@ export class ApiService {
     return this.httpClient.post<SignUpResponseModel>('/signup', userData);
   }
 
+  public getAllUsers(): Observable<SignUpResponseModel[]> {
+    return this.httpClient.get<SignUpResponseModel[]>('/users');
+  }
+
+  public updateUserProfile(
+    updatedUserData: SignUpUserModel,
+    userId: string
+  ): Observable<SignUpUserModel> {
+    return this.httpClient.put<SignUpUserModel>(
+      `/users/${userId}`,
+      updatedUserData
+    );
+  }
+
+  public deleteUserProfile(userId: string): void {
+    this.httpClient.delete(`/users/${userId}`).subscribe();
+  }
+
   public deleteBoard(id: string): void {
     this.httpClient.delete(`/boards/${id}`).subscribe();
   }
@@ -74,6 +92,10 @@ export class ApiService {
     );
   }
 
+  public getAllColumns(boardId: string): Observable<Column[]> {
+    return this.httpClient.get<Column[]>(`boards/${boardId}/columns`);
+  }
+
   public createColumn(
     boardId: string,
     column: CreateColumnDto
@@ -93,6 +115,12 @@ export class ApiService {
     return this.httpClient.put<Column>(
       `boards/${boardId}/columns/${columnId}`,
       column
+    );
+  }
+
+  public getAllTasks(boardId: string, columnId: string): Observable<Task[]> {
+    return this.httpClient.get<Task[]>(
+      `boards/${boardId}/columns/${columnId}/tasks`
     );
   }
 

@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { catchError, Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
 import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
@@ -14,6 +14,7 @@ import { IAppState } from 'src/app/ngrx/states/app.state';
 import { UserSessionData } from 'src/app/shared/models/user-session.model';
 import { DeleteUserSession } from 'src/app/ngrx/actions/session.actions';
 import { Router } from '@angular/router';
+import { StatusCodes } from 'src/app/constants';
 
 @Injectable()
 export class UserInterceptor implements HttpInterceptor {
@@ -44,13 +45,12 @@ export class UserInterceptor implements HttpInterceptor {
 
     return next.handle(this.addAuthToken(reqInfo)).pipe(
       catchError((err: HttpErrorResponse) => {
-        const status: number = 401;
         const action: DeleteUserSession = new DeleteUserSession();
-        if (err.status === status) {
+        if (err.status === StatusCodes.Unauthorized) {
           this.store.dispatch(action);
           this.router.navigateByUrl('/');
         }
-        return [];
+        return throwError(err);
       })
     );
   }
