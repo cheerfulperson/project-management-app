@@ -52,11 +52,13 @@
 
 <section class="hero" #about>
   <div class="hero-content">
-    <h2 class="hero__title">{{ 'homePage.about.whatIsKBoard' | translate }}</h2>
-    <p class="hero-content_text">
+    <h2 class="hero__title" appScrollAnimation>
+      {{ 'homePage.about.whatIsKBoard' | translate }}
+    </h2>
+    <p class="hero-content_text" appScrollAnimation>
       {{ 'homePage.about.description' | translate }}
     </p>
-    <div class="hero-content_image">
+    <div class="hero-content_image" appScrollAnimation>
       <img
         src="../../../../assets/images/hero.png"
         alt="hero"
@@ -70,10 +72,18 @@
 </section>
 
 <section class="benefits" #benefitsSection>
-  <h2 class="benefits__title">{{ 'homePage.benefits.title' | translate }}</h2>
-  <p class="benefits__text">{{ 'homePage.benefits.aboutText' | translate }}</p>
+  <h2 class="benefits__title" appScrollAnimation>
+    {{ 'homePage.benefits.title' | translate }}
+  </h2>
+  <p class="benefits__text" appScrollAnimation>
+    {{ 'homePage.benefits.aboutText' | translate }}
+  </p>
   <ul class="benefits__list">
-    <li class="benefits__list-item" *ngFor="let i of benefits">
+    <li
+      class="benefits__list-item"
+      appScrollAnimation
+      *ngFor="let i of benefits"
+    >
       <p>{{ i | translate }}</p>
     </li>
   </ul>
@@ -81,10 +91,10 @@
 
 <section class="rs-school" #rss>
   <div class="rs-school__content">
-    <h2 class="rs-school__title">
+    <h2 class="rs-school__title" appScrollAnimation>
       {{ 'homePage.rsSchool.title' | translate }}
     </h2>
-    <p class="rs-school__subtext">
+    <p class="rs-school__subtext" appScrollAnimation>
       {{ 'homePage.rsSchool.subtext' | translate }}
       <a href="http://rollingscopes.com/">The Rolling Scopes</a>
     </p>
@@ -95,7 +105,7 @@
     >
       {{ 'homePage.rsSchool.button' | translate }}
     </a>
-    <article class="rs-school__text-block">
+    <article class="rs-school__text-block" appScrollAnimation>
       <h3 class="text-block__title">
         {{ 'homePage.rsSchool.mainText.title' | translate }}?
       </h3>
@@ -108,7 +118,11 @@
       </p>
     </article>
     <article class="rs-school__rss-benefits">
-      <div class="rss-benefits__item" *ngFor="let benefit of rssBenefits">
+      <div
+        class="rss-benefits__item"
+        appScrollAnimation
+        *ngFor="let benefit of rssBenefits"
+      >
         <h3 class="rss-benefits__title">
           {{ 'homePage.rsSchool.benefits.' + benefit + '.title' | translate }}
         </h3>
@@ -125,10 +139,16 @@
 
 <section class="team" #team>
   <div class="team-content">
-    <h2 class="team-title">{{ 'homePage.title' | translate }}</h2>
+    <h2 class="team-title" appScrollAnimation>
+      {{ 'homePage.title' | translate }}
+    </h2>
 
     <div class="team-members">
-      <div class="team-member" *ngFor="let dev of developers">
+      <div
+        class="team-member"
+        appScrollAnimation
+        *ngFor="let dev of developers"
+      >
         <img class="team-member_bg" [src]="dev.bg" alt="background" />
 
         <div class="team-member_body">

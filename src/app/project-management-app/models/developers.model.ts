@@ -22,7 +22,7 @@ export const selectedDevelopers: Developer[] = [
     bg: 'bg-v.png',
   },
   {
-    img: 'avatar.png',
+    img: 'egor.jpg',
     name: 'e',
     description: 'e',
     gitHub: 'https://github.com/cheerfulperson',
