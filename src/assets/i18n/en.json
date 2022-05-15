@@ -52,6 +52,9 @@
         "create": "Update",
         "cancel": "Cancel"
       }
+    },
+    "changeBg": {
+      "title": "Background:"
     }
   },
   "board": {
@@ -161,17 +164,33 @@
     }
   },
   "edit": {
-    "title": "Edit profile"
+    "title": "Edit profile",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete profile"
   },
-
   "confirmWindow": {
     "words": {
       "first": "Remove the",
-      "seconed": "permanently"
+      "seconed": "permanently",
+      "target": "profile"
     },
     "buttons": {
       "cancel": "cancel",
       "remove": "remove"
     }
+  },
+  "errors": {
+    "403": "User was not found!",
+    "409": "User login already exists!",
+    "server": "Server error"
+  },
+  "search": {
+    "placeholder": "Search",
+    "title": "Found tasks:",
+    "column_1": "№ task",
+    "column_2": "Title",
+    "column_3": "Description",
+    "not_found": "Tasks not found"
   }
 }

@@ -4,7 +4,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 
-import { numbers, regexp, statusCodes } from 'src/app/constants';
+import {
+  ErrorMessages,
+  numbers,
+  regexp,
+  StatusCodes,
+  Timer,
+} from 'src/app/constants';
 import {
   LoginResponseModel,
   SignUpResponseModel,
@@ -56,9 +62,9 @@ export class SignUpComponent {
       .signUp(user)
       .pipe(
         catchError((err: HttpErrorResponse) => {
-          if (err.status === statusCodes.Conflict) {
-            this.showErrorMessage(err.error.message);
-          } else this.showErrorMessage('Server error');
+          if (err.status === StatusCodes.Conflict) {
+            this.showErrorMessage(ErrorMessages.Conflict);
+          } else this.showErrorMessage(ErrorMessages.OtherErrors);
           throw err.error.message;
         })
       )
@@ -82,7 +88,6 @@ export class SignUpComponent {
     this.signUpForm.controls['loginInput'].setValue('');
     setTimeout(() => {
       this.errorMessage = '';
-      // eslint-disable-next-line no-magic-numbers
-    }, 5000);
+    }, Timer.MessageErrorView);
   }
 }
