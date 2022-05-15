@@ -183,8 +183,6 @@
   position: relative;
   padding-top: 60px;
 
-
-
   &__title {
     @extend %title-shared;
   }
@@ -202,8 +200,6 @@
       max-width: 1000px;
       margin: 10px auto;
 
-
-
       @media (max-width: 600px) {
         height: 400px;
       }
@@ -215,7 +211,6 @@
       padding-left: 5px;
       z-index: 1;
       @media (max-width: 768px) {
-        
       }
     }
 
@@ -541,7 +536,6 @@
       z-index: 1;
     }
 
-
     &_avatar {
       width: 150px;
       height: 150px;
@@ -562,5 +556,4 @@
       padding: 10px 5px;
     }
   }
-
 }

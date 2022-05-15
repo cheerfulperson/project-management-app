@@ -43,7 +43,6 @@
 }
 
 .title {
-
   &-big {
     font-size: 10em;
     line-height: 141px;
@@ -83,9 +82,9 @@
 
 @keyframes shadow {
   from {
-    text-shadow: 0px 0px 0px #00082c
+    text-shadow: 0px 0px 0px #00082c;
   }
-  
+
   to {
     text-shadow: 6px 6px 10px #00082c;
   }
@@ -93,10 +92,10 @@
 
 @keyframes spooky {
   from {
-    transform: translatey(.20em) scaley(.90) translateY(10px);
+    transform: translatey(0.2em) scaley(0.9) translateY(10px);
   }
-  
+
   to {
-    transform: translatey(-.20em) translateY(-10px);
+    transform: translatey(-0.2em) translateY(-10px);
   }
 }
