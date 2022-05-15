@@ -51,7 +51,9 @@
     </button>
   </form>
 
-  <p class="form__error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p class="form__error-message" *ngIf="errorMessage">
+    {{ errorMessage | translate }}
+  </p>
 
   <p class="form__question">{{ 'form.questions.haveAccount' | translate }}</p>
   <button mat-button class="form__link" routerLink="/auth/login">

@@ -13,12 +13,20 @@ export enum numbers {
   MinLoginLength = 4,
 }
 
-export enum statusCodes {
+export enum StatusCodes {
+  Unauthorized = 401,
   Forbiden = 403,
   Conflict = 409,
   PageNotFound = 404,
 }
 
+export enum ErrorMessages {
+  Forbiden = 'errors.403',
+  Conflict = 'errors.409',
+  OtherErrors = 'errors.server',
+}
+
 export enum Timer {
   MessageErrorView = 5000,
+  CloseSearchModal = 200,
 }

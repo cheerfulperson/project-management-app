@@ -13,6 +13,9 @@ import { appReducers } from '../ngrx/reducers/app.reducers';
 import { SessionService } from './services/session.service';
 import { EffectsModule } from '@ngrx/effects';
 import { SessionEffects } from '../ngrx/effects/session.effects';
+import { SearchComponent } from './components/header/search/search.component';
+import { SearchModalComponent } from './components/header/search-modal/search-modal.component';
+import { SearchTasksPipe } from './pipes/searchTasks.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
@@ -23,6 +26,9 @@ export function HttpLoaderFactory(httpClient: HttpClient): TranslateHttpLoader {
   declarations: [
     HeaderComponent,
     FooterComponent,
+    SearchComponent,
+    SearchModalComponent,
+    SearchTasksPipe,
     AuthNavComponent,
     NavListComponent,
   ],
