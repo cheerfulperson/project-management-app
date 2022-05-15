@@ -80,6 +80,9 @@
         "create": "Обновить",
         "cancel": "Отмена"
       }
+    },
+    "changeBg": {
+      "title": "Фон:"
     }
   },
   "footer": {
