@@ -15,6 +15,8 @@ export class HomepageComponent implements OnInit {
     { length: 7 },
     (el: undefined, i: number) => `homePage.benefits.aboutItems.${i + 1}`
   );
+  public rssBenefits: string[] = ['free', 'peaple', 'sertificate', 'period'];
+
   public constructor(private store: Store) {}
 
   public ngOnInit(): void {
