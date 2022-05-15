@@ -5,9 +5,4 @@
   <li *ngIf="isAuthorized | async">
     <a routerLink="/boards">{{ 'header.list.boards' | translate }}</a>
   </li>
-  <li *ngIf="isAuthorized | async">
-    <a routerLink="/create-board">
-      {{ 'header.list.createBoard' | translate }}</a
-    >
-  </li>
 </ul>

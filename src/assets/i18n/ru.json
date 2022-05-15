@@ -125,7 +125,7 @@
     },
     "rsSchool": {
       "title": "Онлайн курс «Разработка на Angular»",
-      "subtext": "Бесплатный курс от сообщества",
+      "subtext": "Данный проект был сделан в рамках обучения на курсе Angular от сообщества",
       "button": "Записаться",
       "mainText": {
         "title": "Для кого этот курс",
@@ -154,8 +154,7 @@
         }
       }
     },
-    "description": "Данный проект был сделан в рамках обучения на курсе Angular в онлайн-школе RSSchool.",
-    "title": "Наша команда:",
+    "title": "Наша команда",
     "memberDescription": {
       "s": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque recusandae aspernatur dicta vitae inventore alias laborum. Necessitatibus facilis eum accusamus, voluptatibus exercitationem alias blanditiis repellat optio! Asperiores, velit? Dolorum, ullam.",
       "v": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatem ipsa corrupti pariatur animi iste est sit fuga maiores beatae distinctio amet, corporis voluptates libero consequatur, provident, quidem placeat aliquid.",

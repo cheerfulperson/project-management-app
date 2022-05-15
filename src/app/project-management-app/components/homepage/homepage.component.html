@@ -19,25 +19,38 @@
 
 <section class="main-nav">
   <div class="main-nav__icons">
-    <button mat-button matTooltip="{{ 'homePage.nav.about' | translate }}">
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.about' | translate }}"
+      (click)="scrollTo(about)"
+    >
       <mat-icon class="main-nav__icon">public</mat-icon>
     </button>
     <button
       mat-button
       matTooltip="{{ 'homePage.nav.ourBenefits' | translate }}"
+      (click)="scrollTo(benefitsSection)"
     >
       <mat-icon class="main-nav__icon"> list_alt</mat-icon>
     </button>
-    <button mat-button matTooltip="{{ 'homePage.nav.rss' | translate }}">
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.rss' | translate }}"
+      (click)="scrollTo(rss)"
+    >
       <mat-icon class="main-nav__icon">school</mat-icon>
     </button>
-    <button mat-button matTooltip="{{ 'homePage.nav.aboutUs' | translate }}">
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.aboutUs' | translate }}"
+      (click)="scrollTo(team)"
+    >
       <mat-icon class="main-nav__icon">supervised_user_circle</mat-icon>
     </button>
   </div>
 </section>
 
-<section class="hero">
+<section class="hero" #about>
   <div class="hero-content">
     <h2 class="hero__title">{{ 'homePage.about.whatIsKBoard' | translate }}</h2>
     <p class="hero-content_text">
@@ -56,7 +69,7 @@
   </div>
 </section>
 
-<section class="benefits">
+<section class="benefits" #benefitsSection>
   <h2 class="benefits__title">{{ 'homePage.benefits.title' | translate }}</h2>
   <p class="benefits__text">{{ 'homePage.benefits.aboutText' | translate }}</p>
   <ul class="benefits__list">
@@ -66,7 +79,7 @@
   </ul>
 </section>
 
-<section class="rs-school">
+<section class="rs-school" #rss>
   <div class="rs-school__content">
     <h2 class="rs-school__title">
       {{ 'homePage.rsSchool.title' | translate }}
@@ -110,59 +123,21 @@
   </div>
 </section>
 
-<section class="our-team">
+<section class="team" #team>
   <div class="team-content">
-    <div class="team-content_description">
-      {{ 'homePage.description' | translate }}
-    </div>
     <h2 class="team-title">{{ 'homePage.title' | translate }}</h2>
 
     <div class="team-members">
-      <div class="team-member">
-        <div class="team-member_title">
-          <h3 class="team-member_name">{{ 'footer.names.s' | translate }}</h3>
-        </div>
-        <div class="team-member_body">
-          <img
-            class="team-member_avatar"
-            src="../../../../assets/images/avatar.png"
-            alt=""
-          />
-          <span class="team-member_description">{{
-            'homePage.memberDescription.s' | translate
-          }}</span>
-        </div>
-      </div>
+      <div class="team-member" *ngFor="let dev of developers">
+        <img class="team-member_bg" [src]="dev.bg" alt="background" />
 
-      <div class="team-member">
-        <div class="team-member_title">
-          <h3 class="team-member_name">{{ 'footer.names.v' | translate }}</h3>
-        </div>
         <div class="team-member_body">
-          <img
-            class="team-member_avatar"
-            src="../../../../assets/images/victar.png"
-            alt=""
-          />
-          <span class="team-member_description">{{
-            'homePage.memberDescription.v' | translate
-          }}</span>
-        </div>
-      </div>
-
-      <div class="team-member">
-        <div class="team-member_title">
-          <h3 class="team-member_name">{{ 'footer.names.e' | translate }}</h3>
-        </div>
-        <div class="team-member_body">
-          <img
-            class="team-member_avatar"
-            src="../../../../assets/images/avatar.png"
-            alt=""
-          />
-          <span class="team-member_description">{{
-            'homePage.memberDescription.e' | translate
-          }}</span>
+          <img class="team-member_avatar" [src]="dev.img" alt="img" />
+          <h3 class="team-member_name">{{ dev.name | translate }}</h3>
+          <a mat-button [href]="dev.gitHub">gitHub</a>
+          <p class="team-member_description">
+            {{ dev.description | translate }}
+          </p>
         </div>
       </div>
     </div>
