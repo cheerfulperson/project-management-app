@@ -1,0 +1,26 @@
+<section class="team" #team>
+  <div class="team-content">
+    <h2 class="team-title" appScrollAnimation>
+      {{ 'homePage.title' | translate }}
+    </h2>
+
+    <div class="team-members">
+      <div
+        class="team-member"
+        appScrollAnimation
+        *ngFor="let dev of developers"
+      >
+        <img class="team-member_bg" [src]="dev.bg" alt="background" />
+
+        <div class="team-member_body">
+          <img class="team-member_avatar" [src]="dev.img" alt="img" />
+          <h3 class="team-member_name">{{ dev.name | translate }}</h3>
+          <a mat-button [href]="dev.gitHub">gitHub</a>
+          <p class="team-member_description">
+            {{ dev.description | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

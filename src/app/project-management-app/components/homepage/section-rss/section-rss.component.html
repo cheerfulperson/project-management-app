@@ -1,0 +1,47 @@
+<section class="rs-school" #rss>
+  <div class="rs-school__content">
+    <h2 class="rs-school__title" appScrollAnimation>
+      {{ 'homePage.rsSchool.title' | translate }}
+    </h2>
+    <p class="rs-school__subtext" appScrollAnimation>
+      {{ 'homePage.rsSchool.subtext' | translate }}
+      <a href="http://rollingscopes.com/">The Rolling Scopes</a>
+    </p>
+    <a
+      mat-raised-button
+      href="https://rs.school/angular/"
+      class="rs-school__link"
+    >
+      {{ 'homePage.rsSchool.button' | translate }}
+    </a>
+    <article class="rs-school__text-block" appScrollAnimation>
+      <h3 class="text-block__title">
+        {{ 'homePage.rsSchool.mainText.title' | translate }}?
+      </h3>
+      <p class="text-block__subtext">
+        {{ 'homePage.rsSchool.mainText.subtext' | translate }}
+        <strong
+          >JavaScript, TypeScript, Git, GitHub, NPM, Webpack, CSS3 / HTML5,
+          Chrome DevTools, Figma, REST API</strong
+        >.
+      </p>
+    </article>
+    <article class="rs-school__rss-benefits">
+      <div
+        class="rss-benefits__item"
+        appScrollAnimation
+        *ngFor="let benefit of rssBenefits"
+      >
+        <h3 class="rss-benefits__title">
+          {{ 'homePage.rsSchool.benefits.' + benefit + '.title' | translate }}
+        </h3>
+        <p class="rss-benefits__subtext">
+          {{ 'homePage.rsSchool.benefits.' + benefit + '.subtext' | translate }}
+        </p>
+        <mat-icon class="rss-benefits__icon">{{
+          'homePage.rsSchool.benefits.' + benefit + '.icon' | translate
+        }}</mat-icon>
+      </div>
+    </article>
+  </div>
+</section>

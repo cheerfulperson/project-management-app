@@ -8,7 +8,7 @@ export interface Developer {
 
 export const selectedDevelopers: Developer[] = [
   {
-    img: 'avatar.png',
+    img: 'sergey.png',
     name: 's',
     description: 's',
     gitHub: 'https://github.com/Serhii1108',

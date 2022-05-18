@@ -7,18 +7,18 @@
   text-align: center;
   color: #fff;
   background-color: #191919;
-
+  
   @media (max-width: 720px) {
+    margin: 80px auto 20px auto;
     width: 350px;
     height: 460px;
-    margin: 100px auto 0 auto;
     padding: 27px 0 0 0;
   }
 
   @media (max-width: 400px) {
     width: 300px;
     height: 390px;
-    margin: 80px auto 0 auto;
+    margin: 60px auto 20px auto;
     padding: 22px 0 0 0;
   }
 

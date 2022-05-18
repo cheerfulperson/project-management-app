@@ -27,6 +27,11 @@
   color: black;
 }
 
+.searched-tasks {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 @keyframes animation {
   0% {
     height: 0;
@@ -39,14 +44,24 @@
 .table-column {
   font-size: 14px;
   text-align: left;
+  border: none;
   padding: 5px;
 }
 
 .column-1 {
-  width: 60px;
+  width: 50px;
+  text-align: center;
+}
+
+.tasks {
+  transition: 0.2s;
+}
+
+.column-order {
+  text-align: center;
 }
 
 .tasks:hover {
   cursor: pointer;
-  background-color: #f44336;
+  background-color: #e8e8e8;
 }

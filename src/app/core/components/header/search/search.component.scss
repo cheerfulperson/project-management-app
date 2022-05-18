@@ -6,6 +6,7 @@
   background-color: rgb(214, 214, 214);
   position: relative;
   border-radius: 5px;
+  width: 250px;
 
   @media (max-width: 1024px) {
     width: 150px;
@@ -24,6 +25,7 @@
   border: none;
   height: 24px;
   background-color: rgb(214, 214, 214);
+  width: 100%;
 
   @media (max-width: 1024px) {
     max-width: calc(100% - 52px);
