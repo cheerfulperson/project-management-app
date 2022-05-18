@@ -44,6 +44,7 @@
   >
     <article
       *ngFor="let task of tasks | sortTasks"
+      [ngClass]="{ yellow: task.priority === 1, red: task.priority === 2 }"
       class="column__task"
       cdkDrag
     >

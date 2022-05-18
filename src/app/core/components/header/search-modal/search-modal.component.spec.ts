@@ -11,9 +11,8 @@ describe('SearchModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchModalComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchModalComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
