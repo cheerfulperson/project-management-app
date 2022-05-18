@@ -44,6 +44,8 @@ export class BoardModalComponent implements OnInit {
   });
   public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
 
+  public priorityCurrValue: string | null = null;
+
   public constructor(private apiService: ApiService, private store: Store) {}
 
   private get formValue(): TaskFormData {
@@ -69,6 +71,7 @@ export class BoardModalComponent implements OnInit {
 
     if (this.task) {
       this.setFormGroupValue();
+      this.priorityCurrValue = this.task.priority.toString();
     }
   }
 
@@ -100,6 +103,7 @@ export class BoardModalComponent implements OnInit {
           order: this.task.order,
           title: this.formValue.title,
           description: this.formValue.description || ' ',
+          priority: this.priorityCurrValue ? Number(this.priorityCurrValue) : 0,
           userId: this.task.userId,
           columnId: this.column.id,
           boardId: this.board.id,
@@ -120,6 +124,9 @@ export class BoardModalComponent implements OnInit {
             .createTask(this.board.id, this.column.id, {
               title: this.formValue.title,
               description: this.formValue.description,
+              priority: this.priorityCurrValue
+                ? Number(this.priorityCurrValue)
+                : 0,
               order: this.getColumnTaskOrder(),
               userId: data.id,
               priority: 0,

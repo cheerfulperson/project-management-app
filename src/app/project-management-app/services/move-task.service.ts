@@ -26,6 +26,7 @@ export class MoveTaskService {
         title: taskInOldColomn.title,
         order: lastOrder,
         description: taskInOldColomn.description,
+        priority: taskInOldColomn.priority,
         userId: taskInOldColomn.userId,
         priority: taskInOldColomn.priority,
       })
@@ -131,6 +132,7 @@ export class MoveTaskService {
       order: newOrder,
       title: task.title,
       description: task.description,
+      priority: task.priority,
       userId: task.userId,
       columnId: columnId,
       boardId: board.id,

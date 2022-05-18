@@ -75,6 +75,15 @@
         "title": "Title",
         "description": "Description"
       },
+      "priority": {
+        "title": "Task priority:",
+        "options": {
+          "default": "Default",
+          "important": "Important",
+          "immediately": "Immediately"
+        }
+      },
+      
       "buttons": {
         "cancel": "Cancel",
         "create": "create",

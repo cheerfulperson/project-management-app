@@ -94,6 +94,16 @@
     cursor: pointer;
     transition: 0.2s;
 
+    &.yellow {
+      border-bottom: solid 2px rgb(255, 255, 0) !important;
+      box-shadow: 0 1px 2px yellow !important;
+    }
+
+    &.red {
+      border-bottom: solid 2px rgb(255, 0, 0) !important;
+      box-shadow: 0 1px 2px red !important;
+    }
+
     &:hover {
       background: #d1d1d134;
     }
