@@ -27,6 +27,7 @@ export class MoveTaskService {
         order: lastOrder,
         description: taskInOldColomn.description,
         userId: taskInOldColomn.userId,
+        priority: taskInOldColomn.priority,
       })
       .subscribe((task: Task) => {
         container.tasks = container.tasks?.map((oldTask: Task) =>
@@ -133,6 +134,7 @@ export class MoveTaskService {
       userId: task.userId,
       columnId: columnId,
       boardId: board.id,
+      priority: task.priority,
     };
   }
 }

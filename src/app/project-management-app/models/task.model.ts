@@ -2,6 +2,7 @@ export interface CreateTaskDto {
   title: string;
   order: number;
   description: string;
+  priority: number;
   userId: string | { [key: string]: undefined };
 }
 
