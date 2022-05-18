@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Store } from '@ngrx/store';
 import { selectSession } from 'src/app/ngrx/selectors/session.selectors';
@@ -49,8 +49,9 @@ export class UserInterceptor implements HttpInterceptor {
         if (err.status === StatusCodes.Unauthorized) {
           this.store.dispatch(action);
           this.router.navigateByUrl('/');
+          return [];
         }
-        return throwError(err);
+        throw err;
       })
     );
   }

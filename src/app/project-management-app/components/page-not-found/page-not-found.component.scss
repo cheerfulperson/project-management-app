@@ -17,25 +17,85 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 
   &_title {
     width: auto;
+  }
+
+  &__404-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 220px;
+    height: 230px;
+    animation: spooky 2s alternate infinite linear;
+
+    @media (max-width: 600px), (max-height: 600px) {
+      width: 120px;
+      height: 130px;
+    }
   }
 }
 
 .title {
   &-big {
-    font-size: 128px;
+    font-size: 10em;
     line-height: 141px;
+    text-shadow: 6px 6px 10px #00082c;
+    animation: shadow 3s alternate;
+
+    @media (max-width: 600px), (max-height: 600px) {
+      font-size: 5em;
+      line-height: 60px;
+    }
   }
 
   &-small {
-    font-size: 64px;
-    line-height: 70px;
+    font-size: 2em;
+    line-height: 40px;
+    @media (max-width: 600px), (max-height: 600px) {
+      font-size: 1em;
+      line-height: 20px;
+    }
+  }
+
+  &-subtext {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: 300;
+    @media (max-width: 600px), (max-height: 600px) {
+      font-size: 14px;
+    }
   }
 
   &-big,
-  &-small {
+  &-small,
+  &-subtext {
     text-align: center;
+  }
+}
+
+@keyframes shadow {
+  from {
+    text-shadow: 0px 0px 0px #00082c;
+  }
+
+  to {
+    text-shadow: 6px 6px 10px #00082c;
+  }
+}
+
+@keyframes spooky {
+  from {
+    transform: translatey(0.2em) scaley(0.9) translateY(10px);
+  }
+
+  to {
+    transform: translatey(-0.2em) translateY(-10px);
   }
 }

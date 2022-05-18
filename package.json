@@ -5,6 +5,7 @@
     "ng": "ng",
     "dev": "ng serve --open",
     "start": "node server.js",
+    "start:ng": "ng serve --configuration development --open",
     "start:prod": "ng serve --configuration production",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

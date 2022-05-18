@@ -14,6 +14,7 @@ import { SortTasksPipe } from './pipes/sort-tasks.pipe';
 
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BoardItemComponent } from './components/main-page/board-item/board-item.component';
+import { ScrollAnimationDirective } from './directives/scroll-animation.directive';
 @NgModule({
   declarations: [
     BoardComponent,
@@ -26,6 +27,7 @@ import { BoardItemComponent } from './components/main-page/board-item/board-item
     SortTasksPipe,
     MainPageComponent,
     BoardItemComponent,
+    ScrollAnimationDirective,
   ],
   imports: [
     CommonModule,
