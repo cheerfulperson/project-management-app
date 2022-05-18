@@ -107,7 +107,6 @@ export class BoardModalComponent implements OnInit {
           userId: this.task.userId,
           columnId: this.column.id,
           boardId: this.board.id,
-          priority: 0,
         })
         .subscribe((data: Task) => {
           this.taskEdit.emit(data);
@@ -129,7 +128,6 @@ export class BoardModalComponent implements OnInit {
                 : 0,
               order: this.getColumnTaskOrder(),
               userId: data.id,
-              priority: 0,
             })
             .subscribe((task: Task) => {
               this.valueChange.emit(task);
