@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { Board } from '../../models/board.model';
@@ -12,13 +12,14 @@ import { WaitlistService } from '../../services/waitlist.service';
   styleUrls: ['./board.component.scss'],
   providers: [WaitlistService],
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent implements OnInit, AfterViewInit, OnDestroy {
   public board?: Board;
   public columns?: Column[];
   public isModalVisible: boolean = false;
   public isColumnChanged: boolean = true;
   public columnToDelete?: Column;
   public isLoaded: boolean = false;
+  public bgNum: number = 0;
 
   public constructor(
     private routeInfo: ActivatedRoute,
@@ -31,6 +32,29 @@ export class BoardComponent implements OnInit {
       this.getBoardInfo(params['id']);
     });
     this.waitListService.setBoard(this.board);
+
+    const config: string | null = localStorage.getItem('boardBgConfig');
+    const currBoardId: string = this.routeInfo.snapshot.params['id'];
+    if (config) {
+      const item: { boardId: string; bgNum: number } = JSON.parse(
+        config
+      ).filter(
+        (el: { boardId: string; bgNum: number }) => el.boardId === currBoardId
+      )[0];
+      if (item) {
+        this.bgNum = item.bgNum;
+      }
+    }
+  }
+
+  public ngAfterViewInit(): void {
+    if (this.bgNum) {
+      document.body.style.backgroundImage = `url(../../../../../assets/images/boardsBg/${this.bgNum}.jpg)`;
+    }
+  }
+
+  public ngOnDestroy(): void {
+    document.body.style.backgroundImage = 'none';
   }
 
   public dropColumn(event: CdkDragDrop<Column[]>): void {

@@ -5,14 +5,8 @@
       class="auth-nav__icon"
       src="../../../../../assets/images/icon.png"
       alt="Profile"
-    />
-    <button
-      mat-icon-button
-      class="auth-nav__button"
       routerLink="/auth/edit-profile"
-    >
-      <mat-icon>settings</mat-icon>
-    </button>
+    />
     <span class="auth-nav__line"></span>
     <button mat-button color="warn" class="auth-nav__button" (click)="logout()">
       {{ 'header.auth.logout' | translate }}
