@@ -30,6 +30,14 @@
         "title": "Заголовок",
         "description": "Описание"
       },
+      "priority": {
+        "title": "Приоритет задания:",
+        "options": {
+          "default": "По умолчанию",
+          "important": "Важно",
+          "immediately": "Немедленно"
+        }
+      },
       "buttons": {
         "cancel": "отмена",
         "create": "создать",

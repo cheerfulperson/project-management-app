@@ -49,6 +49,21 @@ $constMaxWidth: 342px;
     min-height: 22.5px;
   }
 
+  &__priority {
+    width: 342px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &__btns-group {
+      font-size: 12px;
+      display: flex;
+      column-gap: 20px;
+      margin-top: 10px;
+    }
+  }
+
   &__buttons-block {
     display: flex;
     justify-content: space-around;

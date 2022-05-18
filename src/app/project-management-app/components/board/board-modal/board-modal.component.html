@@ -35,6 +35,30 @@
       }}</mat-error>
     </mat-form-field>
 
+    <div class="board-modal__priority" *ngIf="isEditTask">
+      <label id="priority-label">{{
+        'board.boardModal.priority.title' | translate
+      }}</label>
+      <mat-radio-group
+        class="board-modal__priority__btns-group"
+        aria-labelledby="priority-label"
+        [(ngModel)]="priorityCurrValue"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <mat-radio-button value="0">{{
+          'board.boardModal.priority.options.default' | translate
+        }}</mat-radio-button>
+
+        <mat-radio-button value="1">{{
+          'board.boardModal.priority.options.important' | translate
+        }}</mat-radio-button>
+
+        <mat-radio-button value="2">{{
+          'board.boardModal.priority.options.immediately' | translate
+        }}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
     <div class="board-modal__buttons-block">
       <button
         type="button"
