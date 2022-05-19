@@ -14,7 +14,7 @@ export class ScrollAnimationDirective implements OnInit {
 
     if (elemY < windowH - screenPart) {
       this.animate();
-    } else if (this.isAnimated) {
+    } else if (elemY > windowH && this.isAnimated) {
       this.isAnimated = false;
       this.setElementOpacity(0);
     }
