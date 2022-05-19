@@ -1,0 +1,32 @@
+<section class="main-nav">
+  <div class="main-nav__icons">
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.about' | translate }}"
+      (click)="scrollTo(about)"
+    >
+      <mat-icon class="main-nav__icon">public</mat-icon>
+    </button>
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.ourBenefits' | translate }}"
+      (click)="scrollTo(benefits)"
+    >
+      <mat-icon class="main-nav__icon"> list_alt</mat-icon>
+    </button>
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.rss' | translate }}"
+      (click)="scrollTo(rss)"
+    >
+      <mat-icon class="main-nav__icon">school</mat-icon>
+    </button>
+    <button
+      mat-button
+      matTooltip="{{ 'homePage.nav.aboutUs' | translate }}"
+      (click)="scrollTo(team)"
+    >
+      <mat-icon class="main-nav__icon">supervised_user_circle</mat-icon>
+    </button>
+  </div>
+</section>

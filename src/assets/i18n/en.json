@@ -167,9 +167,9 @@
     },
     "title": "Our team",
     "memberDescription": {
-      "s": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque recusandae aspernatur dicta vitae inventore alias laborum. Necessitatibus facilis eum accusamus, voluptatibus exercitationem alias blanditiis repellat optio! Asperiores, velit? Dolorum, ullam.",
-      "v": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptatem ipsa corrupti pariatur animi iste est sit fuga maiores beatae distinctio amet, corporis voluptates libero consequatur, provident, quidem placeat aliquid.",
-      "e": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro tenetur pariatur autem aut. Illum distinctio obcaecati facere tenetur quo blanditiis accusamus deserunt aliquid soluta quam rerum doloribus, porro quos cum."
+      "s": "Sergey is a fourteen-year-old guy who made a login, registration, boards page, very cool additional functionality, and also finalized and deployed the backend. I am also an active member of the team.",
+      "v": "Victor is the beginner Angular developer on the team. Participated in the creation of homepage, edit user profile and search task component. Participated in the discussion of the project.",
+      "e": "Hi! I am a team leader. Now I'll tell you a little about what I'm doing here. Initially, I worked with Header and Footer, then I created a page with a board, and also set up NgRx and created a user session. Helped a little with the welcome page."
     }
   },
   "edit": {

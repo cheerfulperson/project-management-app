@@ -14,7 +14,7 @@ export class ScrollAnimationDirective implements OnInit {
 
     if (elemY < windowH - screenPart) {
       this.animate();
-    } else if (this.isAnimated) {
+    } else if (elemY > windowH && this.isAnimated) {
       this.isAnimated = false;
       this.setElementOpacity(0);
     }
@@ -28,7 +28,10 @@ export class ScrollAnimationDirective implements OnInit {
   private animate(): void {
     if (!this.isAnimated) {
       this.el.nativeElement.animate(
-        [{ transform: 'translateY(30px)' }, { transform: 'translateY(0px)' }],
+        [
+          { transform: 'translateY(30px) scale(0.9)' },
+          { transform: 'translateY(0px) scale(1)' },
+        ],
         {
           duration: 400,
           iterations: 1,

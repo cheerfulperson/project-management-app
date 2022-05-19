@@ -2,7 +2,7 @@
   <div class="form">
     <h2 class="form__title">{{ 'edit.title' | translate }}</h2>
     <form [formGroup]="editProfileForm">
-      <mat-form-field>
+      <mat-form-field class="form__field">
         <mat-label>{{ 'form.name' | translate }}</mat-label>
         <input matInput formControlName="nameInput" required />
         <mat-error>{{
@@ -13,7 +13,7 @@
         }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="form__field">
         <mat-label>{{ 'form.login' | translate }}</mat-label>
         <input matInput formControlName="loginInput" required />
         <mat-error>{{
@@ -24,7 +24,7 @@
         }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field>
+      <mat-form-field class="form__field">
         <mat-label>{{ 'form.password' | translate }}</mat-label>
         <input
           type="{{ isViewPassword ? 'text' : 'password' }}"

@@ -1,0 +1,18 @@
+<section class="about">
+  <div class="about-content">
+    <article class="about-text_block">
+      <h2 class="about-content_title">
+        {{ 'homePage.aboutTitle' | translate }}
+      </h2>
+      <p class="about-content_text">{{ 'homePage.subtext' | translate }}</p>
+      <button mat-raised-button class="about-btn" [routerLink]="routerLink">
+        {{ 'homePage.btn' | translate }}
+      </button>
+    </article>
+    <img
+      class="about-image"
+      src="https://res.cloudinary.com/monday-blogs/fl_lossy,f_auto,q_auto/wp-blog/2021/01/Kanban-board-1.jpg"
+      alt=""
+    />
+  </div>
+</section>

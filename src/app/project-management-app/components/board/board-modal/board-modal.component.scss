@@ -25,7 +25,7 @@ $constMaxWidth: 342px;
     background: black;
     box-sizing: border-box;
 
-    @media (max-height: 400px) {
+    @media (max-height: 400px), (max-width: 480px) {
       transform: scale(0.8);
     }
   }
