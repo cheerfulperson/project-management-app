@@ -1,0 +1,33 @@
+<header class="header" #header>
+  <div class="header__container">
+    <article class="header__left-part">
+      <app-logo></app-logo>
+      <nav class="header__nav">
+        <mat-select
+          class="header__lang-selection"
+          [(value)]="defaultLanguage"
+          (selectionChange)="setLenguage($event)"
+        >
+          <mat-option value="en">en</mat-option>
+          <mat-option value="ru">ru</mat-option>
+        </mat-select>
+        <app-nav-list class="header__list"></app-nav-list>
+      </nav>
+    </article>
+
+    <app-search class="header__search"></app-search>
+    <app-auth-nav class="header__auth-nav"></app-auth-nav>
+    <button
+      mat-icon-button
+      aria-label="Menu icon"
+      class="header__menu-icon"
+      (click)="openPanel()"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="header__panel" [@expandedPanel]="state">
+    <app-auth-nav></app-auth-nav>
+    <app-nav-list></app-nav-list>
+  </div>
+</header>

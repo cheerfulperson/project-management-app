@@ -1,0 +1,11 @@
+<app-section-about></app-section-about>
+<app-section-nav
+  [about]="about"
+  [benefits]="benefits"
+  [rss]="rss"
+  [team]="team"
+></app-section-nav>
+<app-section-info (changeInfo)="about = $event"></app-section-info>
+<app-section-benefits (changeInfo)="benefits = $event"></app-section-benefits>
+<app-section-rss (changeInfo)="rss = $event"></app-section-rss>
+<app-section-team (changeInfo)="team = $event"></app-section-team>

@@ -1,0 +1,31 @@
+<div
+  class="search-container"
+  [ngClass]="{ active: isFocused }"
+  *ngIf="isAuthorized | async"
+>
+  <mat-icon class="search-icon" [ngClass]="{ active: isFocused }"
+    >search</mat-icon
+  >
+  <input
+    appearance="legacy"
+    type="text"
+    autocomplete="off"
+    placeholder="{{ 'search.placeholder' | translate }}"
+    class="search-input"
+    #input
+    (input)="search(input.value)"
+    (focus)="searchFocused(input)"
+    (blur)="searchUnfocused()"
+  />
+  <mat-icon
+    color="accent"
+    class="search-icon close-icon"
+    [ngClass]="{ active: isFocused }"
+    (click)="closeSearchModal()"
+    >close</mat-icon
+  >
+  <app-search-modal
+    *ngIf="isSearchModal"
+    (closeSearchModal)="closeSearchModal()"
+  ></app-search-modal>
+</div>

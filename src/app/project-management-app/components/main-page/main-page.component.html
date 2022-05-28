@@ -1,0 +1,52 @@
+<section class="main-page">
+  <h2 class="main-page__title">{{ 'mainPage.title' | translate }}</h2>
+  <div class="main-page__boards-list" *ngIf="!loading">
+    <div *ngFor="let board of boards">
+      <app-board-item
+        [board]="board"
+        (delete)="deleteBoard($event)"
+      ></app-board-item>
+    </div>
+
+    <div class="create-board">
+      <button class="create-board__btn" (click)="toggleForm()">
+        {{ 'mainPage.createForm.title' | translate }}
+      </button>
+
+      <form
+        [formGroup]="createBoardForm"
+        class="create-board-form"
+        *ngIf="isFormActive"
+      >
+        <h2 class="create-board-form__title">
+          {{ 'mainPage.createForm.title' | translate }}
+        </h2>
+        <mat-form-field>
+          <mat-label>{{
+            'mainPage.createForm.inputTitle' | translate
+          }}</mat-label>
+          <input
+            matInput
+            autocomplete="off"
+            type="text"
+            formControlName="boardTitleInput"
+          />
+          <mat-error>{{
+            'mainPage.createForm.errorMessage' | translate
+          }}</mat-error>
+        </mat-form-field>
+
+        <div class="create-board-form__btns">
+          <button mat-flat-button color="accent" (click)="toggleForm()">
+            {{ 'mainPage.createForm.buttons.cancel' | translate }}
+          </button>
+          <button mat-flat-button color="accent" (click)="createBoard()">
+            {{ 'mainPage.createForm.buttons.create' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<app-spinner *ngIf="loading"></app-spinner>

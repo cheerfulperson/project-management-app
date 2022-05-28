@@ -1,0 +1,24 @@
+<div class="search-modal">
+  <h2 class="search-modal_title">{{ 'search.title' | translate }}</h2>
+  <table class="searched-tasks">
+    <tr>
+      <th class="table-column column-1">
+        <mat-icon> format_list_numbered</mat-icon>
+      </th>
+      <th class="table-column column-2">{{ 'search.column_2' | translate }}</th>
+      <th class="table-column column-3">{{ 'search.column_3' | translate }}</th>
+    </tr>
+    <tr
+      class="tasks"
+      *ngFor="let task of tasks | searchTasks: searchTerm"
+      (click)="changeTask(task)"
+    >
+      <td class="table-column column-order">
+        {{ task.order }}
+      </td>
+      <td class="table-column">{{ task.title }}</td>
+      <td class="table-column">{{ task.description }}</td>
+    </tr>
+  </table>
+  <app-spinner *ngIf="!isTasksLoaded"> </app-spinner>
+</div>

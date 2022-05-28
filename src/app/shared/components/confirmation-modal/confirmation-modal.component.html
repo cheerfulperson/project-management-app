@@ -1,0 +1,20 @@
+<div class="confirmation-modal">
+  <div class="confirmation-modal__bg"></div>
+  <div class="confirmation-modal__content">
+    <div class="wrap">
+      <h3 class="title">
+        {{ 'confirmWindow.words.first' | translate }}
+        <span class="title__name">{{ name }}</span>
+        {{ 'confirmWindow.words.seconed' | translate }}?
+      </h3>
+      <div class="btns">
+        <button mat-flat-button color="accent" (click)="cancel()">
+          {{ 'confirmWindow.buttons.cancel' | translate }}
+        </button>
+        <button mat-flat-button color="accent" (click)="remove()">
+          {{ 'confirmWindow.buttons.remove' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

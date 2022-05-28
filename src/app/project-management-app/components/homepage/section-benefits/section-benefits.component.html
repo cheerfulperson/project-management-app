@@ -1,0 +1,17 @@
+<section class="benefits" #benefitsSection>
+  <h2 class="benefits__title" appScrollAnimation>
+    {{ 'homePage.benefits.title' | translate }}
+  </h2>
+  <p class="benefits__text" appScrollAnimation>
+    {{ 'homePage.benefits.aboutText' | translate }}
+  </p>
+  <ul class="benefits__list">
+    <li
+      class="benefits__list-item"
+      appScrollAnimation
+      *ngFor="let i of benefits"
+    >
+      <p>{{ i | translate }}</p>
+    </li>
+  </ul>
+</section>

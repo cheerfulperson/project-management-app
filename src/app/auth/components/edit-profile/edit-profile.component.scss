@@ -1,0 +1,118 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 125px);
+  min-height: 600px;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+
+  border-radius: 25px;
+  padding: 35px 0 0 0;
+  text-align: center;
+  color: #fff;
+  background-color: #191919;
+  box-sizing: border-box;
+  padding: 10px;
+
+  &__title {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 30px auto 0 auto;
+    font-size: 15px;
+    padding: 5px;
+
+    ::ng-deep .mat-form-field {
+      .mat-input-element {
+        color: #191919;
+      }
+
+      .mat-form-field-label {
+        color: #191919;
+        font-weight: 500;
+      }
+
+      .mat-form-field-flex {
+        background-color: #ffffff;
+        color: #191919;
+      }
+
+      .mat-form-field-infix {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .eye-black {
+        object-fit: cover;
+        color: #191919;
+        cursor: pointer;
+      }
+
+      .mat-form-field-required-marker {
+        color: #ff0000;
+      }
+    }
+
+    .submit-btns_container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 320px;
+      margin: auto;
+    }
+
+    .submit-btn {
+      color: #fff;
+      background-color: #c84b31;
+      width: 140px;
+      transition: 0.25s ease-in-out;
+
+      @media (max-width: 360px) {
+        width: 120px;
+      }
+    }
+
+    .submit-btn:hover {
+      background-color: #d8634b;
+      color: #dbdbdb;
+    }
+  }
+
+  &__error-message {
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-size: 12px;
+    color: #ff0000;
+  }
+
+  &__question {
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #fff;
+    transition: 0.25s ease-in-out;
+  }
+
+  .delete-btn:hover {
+    color: #c84b31;
+  }
+}

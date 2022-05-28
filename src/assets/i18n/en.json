@@ -1,0 +1,205 @@
+{
+  "header": {
+    "list": {
+      "welcome": "main",
+      "boards": "boards",
+      "createBoard": "create board"
+    },
+    "auth": {
+      "login": "login",
+      "signup": "sign up",
+      "editProfile": "edit profile",
+      "logout": "logout"
+    }
+  },
+  "form": {
+    "name": "Name",
+    "login": "Login",
+    "password": "Password",
+    "errors": {
+      "requiredErrors": {
+        "nameError": "Name is required",
+        "loginError": "Login is required",
+        "passwordError": "Password is required"
+      },
+      "otherErrors": {
+        "minLoginError": "Login must be more than 3 letters",
+        "minNameError": "Name must be more than 2 letters",
+        "passwordError": "Your password is too easy"
+      }
+    },
+    "questions": {
+      "haveAccount": "Already have an account?",
+      "dontHaveAccount": "Don`t have an account?"
+    }
+  },
+  "mainPage": {
+    "title": "Boards",
+    "createForm": {
+      "title": "Create new board",
+      "inputTitle": "Enter board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Create",
+        "cancel": "Cancel"
+      }
+    },
+    "updateForm": {
+      "title": "Update board",
+      "inputTitle": "Enter new board title",
+      "errorMessage": "Please, enter the title",
+      "buttons": {
+        "create": "Update",
+        "cancel": "Cancel"
+      }
+    },
+    "changeBg": {
+      "title": "Background:"
+    }
+  },
+  "board": {
+    "title": "Board",
+    "createBtn": "Add new column",
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Change"
+    },
+    "addTask": "Add task",
+    "boardModal": {
+      "title": {
+        "create": "create column",
+        "edit": "edit task",
+        "createTask": "Create Task"
+      },
+      "inputs": {
+        "title": "Title",
+        "description": "Description"
+      },
+      "priority": {
+        "title": "Task priority:",
+        "options": {
+          "default": "Default",
+          "important": "Important",
+          "immediately": "Immediately"
+        }
+      },
+      
+      "buttons": {
+        "cancel": "Cancel",
+        "create": "create",
+        "save": "save"
+      },
+      "errors": {
+        "title": "At least 3 characters"
+      }
+    }
+  },
+  "footer": {
+    "date": "by",
+    "names": {
+      "s": "Sergey",
+      "v": "Victor",
+      "e": "Egor"
+    }
+  },
+  "pageNotFound": {
+    "titleSmall": "Error: 404 page not found",
+    "subtext": "Sorry, the page you're looking for cannot be accessed"
+  },
+  "homePage": {
+    "aboutTitle": "Our Project Management application is the success of your team's work.",
+    "subtext": "Our team brings you the development tool used by agile teams",
+    "btn": "Try it",
+    "about": {
+      "whatIsKBoard": "What is a kanban board",
+      "description": "A kanban board is an agile project management tool designed to help visualize work, limit work-in-progress, and maximize efficiency (or flow). It can help both agile and DevOps teams establish order in their daily work. Kanban boards use cards, columns, and continuous improvement to help technology and service teams commit to the right amount of work, and get it done!",
+      "heroText": "By dividing the project into small tasks, you simplify the work process and the ability to divide the project between employees of different levels, capabilities and qualifications."
+    },
+    "nav": {
+      "about": "What is a kanban board",
+      "ourBenefits": "Our benefits",
+      "rss": "About RSSchool",
+      "aboutUs": "Our team"
+    },
+    "benefits": {
+      "title": "Our benefits",
+      "aboutText": "By managing your project with our application, you get:",
+      "aboutItems": {
+        "1": "Full control over your project",
+        "2": "Unlimited number of tasks in the project",
+        "3": "Task scheduling",
+        "4": "Control over project performers",
+        "5": "Ability to add and remove tasks at any time",
+        "6": "Ability to save and load projects",
+        "7": "Control remotely"
+      }
+    },
+    "rsSchool": {
+      "title": "Online course 'Development with Angular'",
+      "subtext": "This project was made as part of the Angular course from the community",
+      "button": "Sign up",
+      "mainText": {
+        "title": "Who is this course for",
+        "subtext": "The course is intended for RS School 2021Q3 students who have passed RS School stage #2, as well as for new students who have knowledge and practical experience in using the following technologies and tools"
+      },
+      "benefits": {
+        "free": {
+          "icon": "money_off",
+          "title": "Free education",
+          "subtext": "The principle of 'Pay it forward' works at RS School. We share our knowledge with students for free now, hoping that in the future they will return to us as mentors and pass on their knowledge to the next generation of students in the same way."
+        },
+        "peaple": {
+          "icon": "people",
+          "title": "For evryone",
+          "subtext": "Everyone can study at RS School, regardless of age, professional employment and place of residence."
+        },
+        "sertificate": {
+          "icon": "timelapse",
+          "title": "training term: 2 months",
+          "subtext": "A recording of the webinar will be posted on the school's YouTube channel."
+        },
+        "period": {
+          "icon": "beenhere",
+          "title": "Certificate",
+          "subtext": "A certificate is issued to all those who successfully complete the course."
+        }
+      }
+    },
+    "title": "Our team",
+    "memberDescription": {
+      "s": "Sergey is a fourteen-year-old guy who made a login, registration, boards page, very cool additional functionality, and also finalized and deployed the backend. I am also an active member of the team.",
+      "v": "Victor is the beginner Angular developer on the team. Participated in the creation of homepage, edit user profile and search task component. Participated in the discussion of the project.",
+      "e": "Hi! I am a team leader. Now I'll tell you a little about what I'm doing here. Initially, I worked with Header and Footer, then I created a page with a board, and also set up NgRx and created a user session. Helped a little with the welcome page."
+    }
+  },
+  "edit": {
+    "title": "Edit profile",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete profile"
+  },
+  "confirmWindow": {
+    "words": {
+      "first": "Remove the",
+      "seconed": "permanently",
+      "target": "profile"
+    },
+    "buttons": {
+      "cancel": "cancel",
+      "remove": "remove"
+    }
+  },
+  "errors": {
+    "403": "User was not found!",
+    "409": "User login already exists!",
+    "server": "Server error"
+  },
+  "search": {
+    "placeholder": "Search",
+    "title": "Found tasks:",
+    "column_1": "№ task",
+    "column_2": "Title",
+    "column_3": "Description",
+    "not_found": "Tasks not found"
+  }
+}

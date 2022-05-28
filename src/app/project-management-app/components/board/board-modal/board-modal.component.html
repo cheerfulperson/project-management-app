@@ -1,0 +1,82 @@
+<section class="board-modal">
+  <form class="board-modal__block" [formGroup]="formGroup">
+    <h2 class="board-modal__title">{{ title | translate }}</h2>
+
+    <mat-form-field class="board-modal__form-field" appearance="fill">
+      <mat-label>{{ 'board.boardModal.inputs.title' | translate }}</mat-label>
+      <input
+        matInput
+        class="board-modal__input-title"
+        formControlName="title"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="formGroup.invalid">{{
+        'board.boardModal.errors.title' | translate
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field
+      class="board-modal__form-field"
+      appearance="fill"
+      *ngIf="isEditTask"
+    >
+      <mat-label>{{
+        'board.boardModal.inputs.description' | translate
+      }}</mat-label>
+      <textarea
+        matInput
+        class="board-modal__textarea"
+        placeholder="It makes..."
+        formControlName="description"
+        [errorStateMatcher]="matcher"
+      ></textarea>
+      <mat-error *ngIf="formGroup.invalid">{{
+        'board.boardModal.errors.title' | translate
+      }}</mat-error>
+    </mat-form-field>
+
+    <div class="board-modal__priority" *ngIf="isEditTask">
+      <label id="priority-label">{{
+        'board.boardModal.priority.title' | translate
+      }}</label>
+      <mat-radio-group
+        class="board-modal__priority__btns-group"
+        aria-labelledby="priority-label"
+        [(ngModel)]="priorityCurrValue"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <mat-radio-button value="0">{{
+          'board.boardModal.priority.options.default' | translate
+        }}</mat-radio-button>
+
+        <mat-radio-button value="1">{{
+          'board.boardModal.priority.options.important' | translate
+        }}</mat-radio-button>
+
+        <mat-radio-button value="2">{{
+          'board.boardModal.priority.options.immediately' | translate
+        }}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div class="board-modal__buttons-block">
+      <button
+        type="button"
+        mat-raised-button
+        color="warn"
+        class="board-modal__btn"
+        (click)="closeModal()"
+      >
+        {{ 'board.boardModal.buttons.cancel' | translate }}
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        class="board-modal__btn"
+        (click)="apiTrigger()"
+      >
+        {{ buttonText | translate }}
+      </button>
+    </div>
+  </form>
+</section>
